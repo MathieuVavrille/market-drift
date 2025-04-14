@@ -1,28 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwsyt8rgai472"]
+[gd_scene load_steps=6 format=3 uid="uid://cwsyt8rgai472"]
 
 [ext_resource type="Script" uid="uid://dbkfhv6k6nr0n" path="res://player_cart.gd" id="1_s7862"]
 [ext_resource type="Texture2D" uid="uid://pvlwigo25qmr" path="res://assets/cart.png" id="2_7vr3x"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_28ymo"]
-radius = 46.0
+[sub_resource type="BoxMesh" id="BoxMesh_s7862"]
+size = Vector3(10, 6, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_525h3"]
-size = Vector2(185, 133)
+[sub_resource type="SphereMesh" id="SphereMesh_7vr3x"]
+radius = 2.0
+height = 4.0
 
-[node name="PlayerCart" type="RigidBody2D"]
-position = Vector2(174, 137)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28ymo"]
+radius = 3.0
+height = 14.0
+
+[node name="Player" type="RigidBody2D"]
+mass = 100.0
 gravity_scale = 0.0
 script = ExtResource("1_s7862")
 
+[node name="CartMesh" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(5, 0)
+mesh = SubResource("BoxMesh_s7862")
+
+[node name="PlayerMesh" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(-2, 0)
+mesh = SubResource("SphereMesh_7vr3x")
+
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(3, 0.999993)
-scale = Vector2(5, 5)
+position = Vector2(3, 0)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_7vr3x")
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-95, 0)
-shape = SubResource("CircleShape2D_28ymo")
-
-[node name="CartCollision" type="CollisionShape2D" parent="."]
-position = Vector2(43.5, 1.5)
-shape = SubResource("RectangleShape2D_525h3")
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_28ymo")

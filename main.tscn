@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvp1nbwd8imx"]
+
+[ext_resource type="Texture2D" uid="uid://b6g67s71e5hp7" path="res://assets/background_big.png" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://player_cart.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0xm2m")
+
+[node name="PlayerCart" parent="." instance=ExtResource("1_ig7tw")]
+mass = 50.0
+
+[node name="Camera2D" type="Camera2D" parent="PlayerCart"]
+zoom = Vector2(10, 10)
+position_smoothing_enabled = true
