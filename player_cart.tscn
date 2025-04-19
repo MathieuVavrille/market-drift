@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwsyt8rgai472"]
+[gd_scene load_steps=7 format=3 uid="uid://cwsyt8rgai472"]
 
 [ext_resource type="Script" uid="uid://dbkfhv6k6nr0n" path="res://player_cart.gd" id="1_s7862"]
-[ext_resource type="Texture2D" uid="uid://pvlwigo25qmr" path="res://assets/cart.png" id="2_7vr3x"]
+[ext_resource type="Texture2D" uid="uid://bw5xu5315xjxx" path="res://assets/player.png" id="2_s7862"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s7862"]
+friction = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_s7862"]
 size = Vector3(10, 6, 6)
@@ -16,6 +19,7 @@ height = 14.0
 
 [node name="Player" type="RigidBody2D"]
 mass = 100.0
+physics_material_override = SubResource("PhysicsMaterial_s7862")
 gravity_scale = 0.0
 script = ExtResource("1_s7862")
 
@@ -31,8 +35,9 @@ mesh = SubResource("SphereMesh_7vr3x")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(3, 0)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_7vr3x")
+rotation = 1.5708
+scale = Vector2(0.035, 0.032)
+texture = ExtResource("2_s7862")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(3, 0)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l0thkhrtrs5u"
-path="res://.godot/imported/banana_basket.png-17881b6f278a230c5435e226f935c5c2.ctex"
+uid="uid://dabjcw8mkfdmy"
+path="res://.godot/imported/pallet.png-7e33dfb6f99a60ea3199e52375046b9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/market_tiles/banana_basket.png"
-dest_files=["res://.godot/imported/banana_basket.png-17881b6f278a230c5435e226f935c5c2.ctex"]
+source_file="res://assets/market_tiles/pallet.png"
+dest_files=["res://.godot/imported/pallet.png-7e33dfb6f99a60ea3199e52375046b9e.ctex"]
 
 [params]
 
