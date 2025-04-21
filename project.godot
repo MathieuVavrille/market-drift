@@ -26,6 +26,7 @@ turn={
 [layer_names]
 
 2d_physics/layer_1="collisions"
+2d_physics/layer_2="objects"
 
 [rendering]
 
