@@ -52,7 +52,7 @@ func is_stopped():
 func _process(delta: float) -> void:
 	if inside_object != null and is_stopped():
 		$ProgressBar.visible = true
-		$ProgressBar.value += delta * 50
+		$ProgressBar.value += delta / 2
 		if $ProgressBar.value >= 100:
 			$ProgressBar.value =0.
 			$ProgressBar.visible = false

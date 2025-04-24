@@ -64,6 +64,7 @@ offset_top = -7.0
 offset_right = 36.0
 offset_bottom = 20.0
 scale = Vector2(0.25, 0.25)
+max_value = 1.0
 step = 0.001
 allow_greater = true
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://cvp1nbwd8imx"]
+[gd_scene load_steps=11 format=4 uid="uid://cvp1nbwd8imx"]
 
 [ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://player_cart.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cetg1mrx32spm" path="res://assets/market_tiles/banana.png" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://object_area.tscn" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://8jf0meo3fdmo" path="res://goal_arrow.tscn" id="6_272bh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("3_lquwl")
@@ -53,3 +54,7 @@ position_smoothing_enabled = true
 position = Vector2(15, 3)
 scale = Vector2(0.006, 0.006)
 texture = ExtResource("4_1bvp3")
+
+[node name="GoalArrow" parent="." node_paths=PackedStringArray("camera", "target") instance=ExtResource("6_272bh")]
+camera = NodePath("../PlayerCart/Camera2D")
+target = NodePath("../Object")
