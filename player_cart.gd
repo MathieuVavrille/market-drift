@@ -50,12 +50,15 @@ func is_stopped():
 	return linear_velocity == Vector2.ZERO and angular_velocity == 0
 
 func _process(delta: float) -> void:
+	if inside_object != null:
+		inside_object.achieved_percentage = $ProgressBar.value
 	if inside_object != null and is_stopped():
 		$ProgressBar.visible = true
 		$ProgressBar.value += delta / 2
-		if $ProgressBar.value >= 100:
+		if $ProgressBar.value >= 1:
 			$ProgressBar.value =0.
 			$ProgressBar.visible = false
+			inside_object.achieved()
 			inside_object = null
 	else:
 		$ProgressBar.value =0.

@@ -7,7 +7,12 @@ extends Node2D
 
 @onready var target_visibility = target.get_node("VisibleOnScreenNotifier2D")
 
-func _process(_delta):
+var rotation_speed = 0.25
+func _process(delta):
+	if target == null:
+		print("finished")
+		queue_free()
+		return
 	visible = not target_visibility.is_on_screen()
 	var viewport_size = get_viewport().size
 	var angle = (target.global_position - camera.global_position).angle()
@@ -19,16 +24,5 @@ func _process(_delta):
 
 func get_square_border_intersection(angle: float, size: Vector2) -> Vector2:
 	var dir = Vector2(cos(angle), sin(angle)).normalized()
-	var dx = dir.x
-	var dy = dir.y
-
-	var scale_x = INF
-	var scale_y = INF
-
-	if dx != 0.0:
-		scale_x = size.x / abs(dx)
-	if dy != 0.0:
-		scale_y = size.y / abs(dy)
-
-	var scale = min(scale_x, scale_y)
+	var scale = min(abs(size.x / dir.x), abs(size.y / dir.x))
 	return dir * scale
