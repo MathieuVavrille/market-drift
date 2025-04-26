@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbggpxj780byp"]
+[gd_scene load_steps=4 format=3 uid="uid://cbggpxj780byp"]
 
 [ext_resource type="Script" uid="uid://cyoy1ecojacg6" path="res://object_area.gd" id="1_1h7id"]
-[ext_resource type="Texture2D" uid="uid://cetg1mrx32spm" path="res://assets/market_tiles/banana.png" id="1_ng724"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_er367"]
-radius = 5.0
-height = 10.0
+[ext_resource type="Texture2D" uid="uid://gkg6uvnelk50" path="res://assets/object_area.png" id="2_1h7id"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_er367"]
 radius = 1.0
@@ -15,10 +11,6 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_1h7id")
 
-[node name="Sprite" type="MeshInstance2D" parent="."]
-mesh = SubResource("SphereMesh_er367")
-texture = ExtResource("1_ng724")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_er367")
 
@@ -27,10 +19,21 @@ position = Vector2(-5.96046e-08, 5.96046e-08)
 scale = Vector2(0.1, 0.1)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -4.0
-offset_top = -7.0
-offset_right = 36.0
-offset_bottom = 20.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 35.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 max_value = 1.0
 step = 0.001
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("2_1h7id")

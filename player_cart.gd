@@ -51,21 +51,13 @@ func is_stopped():
 
 func _process(delta: float) -> void:
 	if inside_object != null:
-		inside_object.achieved_percentage = $ProgressBar.value
-	if inside_object != null and is_stopped():
-		$ProgressBar.visible = true
-		$ProgressBar.value += delta / 2
-		if $ProgressBar.value >= 1:
-			$ProgressBar.value =0.
-			$ProgressBar.visible = false
-			inside_object.achieved()
-			inside_object = null
-	else:
-		$ProgressBar.value =0.
-		$ProgressBar.visible = false
+		inside_object.is_achieving = is_stopped()
+
 
 var inside_object = null
 func entered_object(area: Area2D) -> void:
 	inside_object = area
+	area.player = self
+	area.is_achieving = false
 func object_exited(_area: Area2D) -> void:
 	inside_object = null
