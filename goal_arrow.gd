@@ -17,11 +17,11 @@ func _process(delta):
 	var angle = (target.global_position - camera.global_position).angle()
 	global_rotation = angle
 	var ellipsis_vector = Vector2(cos(angle) * (viewport_size.x / 2.1 - 10),
-					  sin(angle) * (viewport_size.y / 2.1 - 10)) / camera.zoom  #TODO compute properly
-	var rectangle_vector = get_square_border_intersection(angle, viewport_size) / 2.1 / camera.zoom
+					  sin(angle) * (viewport_size.y / 2.1 - 20)) / camera.zoom  #TODO compute properly
+	var rectangle_vector = get_square_border_intersection(angle, viewport_size - Vector2i.ONE * 20) / 2.1 / camera.zoom
 	global_position = camera.get_screen_center_position() + (ellipsis_vector + 2 * rectangle_vector) / 3
 
 func get_square_border_intersection(angle: float, size: Vector2) -> Vector2:
 	var dir = Vector2(cos(angle), sin(angle)).normalized()
-	var scale = min(abs(size.x / dir.x), abs(size.y / dir.x))
+	var scale = min(abs(size.x / dir.x), abs(size.y / dir.y))
 	return dir * scale

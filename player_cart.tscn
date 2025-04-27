@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwsyt8rgai472"]
+[gd_scene load_steps=9 format=3 uid="uid://cwsyt8rgai472"]
 
 [ext_resource type="Script" uid="uid://dbkfhv6k6nr0n" path="res://player_cart.gd" id="1_s7862"]
 [ext_resource type="Texture2D" uid="uid://bw5xu5315xjxx" path="res://assets/player.png" id="2_s7862"]
@@ -20,6 +20,9 @@ height = 14.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s7862"]
 radius = 2.0
 height = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7862"]
+size = Vector2(5, 4)
 
 [node name="Player" type="RigidBody2D"]
 mass = 100.0
@@ -57,6 +60,10 @@ collision_mask = 2
 position = Vector2(3, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_s7862")
+
+[node name="PlaceholderRectangle" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 0)
+shape = SubResource("RectangleShape2D_s7862")
 
 [connection signal="area_entered" from="ObjectDetector" to="." method="entered_object"]
 [connection signal="area_exited" from="ObjectDetector" to="." method="object_exited"]

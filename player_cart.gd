@@ -5,6 +5,29 @@ extends RigidBody2D
 
 var FRICTION_STRENGTH = move_force / max_speed * 10
 
+func true_movement(cart_direction, input_vector):
+	var current_velocity = linear_velocity
+	var force_position = $PlayerMesh.global_position - global_position
+	var angle = cart_direction.angle_to(input_vector)
+	if angle < -PI:
+		angle += PI
+	if angle > PI:
+		angle -= PI
+	if abs(angle) < PI/16:
+		apply_torque(angle * 10000)
+	if abs(angle) < PI/2:
+		apply_force(input_vector * move_force, force_position)
+	else:
+		apply_force(input_vector * move_force / 1, force_position)
+
+func turn_movement(cart_direction, input_vector):
+	var proj = (input_vector.dot(cart_direction) / cart_direction.length_squared()) * cart_direction
+	var orth = input_vector - proj
+	var cross = input_vector.cross(cart_direction)
+	apply_torque(-cross * 2500)
+	var force_position = $PlayerMesh.global_position - global_position
+	apply_force(proj * move_force, force_position)
+
 func _physics_process(_delta):
 	var cart_direction = ($CartMesh.global_position - $PlayerMesh.global_position).normalized()
 	var input_vector = Vector2(
@@ -18,26 +41,9 @@ func _physics_process(_delta):
 	
 	if input_vector != Vector2.ZERO:
 		if Input.is_action_pressed("turn"):
-			var proj = (input_vector.dot(cart_direction) / cart_direction.length_squared()) * cart_direction
-			var orth = input_vector - proj
-			var cross = input_vector.cross(cart_direction)
-			apply_torque(-cross * 2500)
-			var force_position = $PlayerMesh.global_position - global_position
-			apply_force(proj * move_force, force_position)
+			turn_movement(cart_direction, input_vector)
 		else:
-			var current_velocity = linear_velocity
-			var force_position = $PlayerMesh.global_position - global_position
-			var angle = cart_direction.angle_to(input_vector)
-			if angle < -PI:
-				angle += PI
-			if angle > PI:
-				angle -= PI
-			if abs(angle) < PI/16:
-				apply_torque(angle * 10000)
-			if abs(angle) < PI/2:
-				apply_force(input_vector * move_force, force_position)
-			else:
-				apply_force(input_vector * move_force / 1, force_position)
+			true_movement(cart_direction, input_vector)
 	else: # no movement
 		if inside_object != null:
 			apply_central_force(-linear_velocity * 100)
@@ -61,3 +67,21 @@ func entered_object(area: Area2D) -> void:
 	area.is_achieving = false
 func object_exited(_area: Area2D) -> void:
 	inside_object = null
+	
+func get_random_point_in_placeholder() -> Vector2:  # TODO a better area than a rectangle: trapezoid would be better
+	var shape = $PlaceholderRectangle.shape as RectangleShape2D
+	var extents = shape.extents
+	var random_x = randf_range(-extents.x, extents.x)
+	var random_y = randf_range(-extents.y, extents.y)
+	return $PlaceholderRectangle.position + Vector2(random_x, random_y)
+	
+func get_object(object: Node2D):
+	ChildExchange.exchange(object, self)
+	var tween = get_tree().create_tween()
+	var goal_position = get_random_point_in_placeholder()
+	tween.tween_property(object, "position", goal_position, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	
+	
+	
+	
+	
