@@ -28,7 +28,11 @@ func _process(delta):
 
 const ACHIEVED_DURATION = 0.25
 func achieved():
+	is_achieved.emit()
 	var tween := get_tree().create_tween()
 	tween.tween_property($Vortex, "scale", Vector2(0, 0), ACHIEVED_DURATION).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	player.get_object($Object)
 	get_tree().create_timer(1.0).timeout.connect(queue_free)
+
+func get_texture():
+	return $Object.texture

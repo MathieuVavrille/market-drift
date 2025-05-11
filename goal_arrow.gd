@@ -7,8 +7,9 @@ extends Node2D
 
 @onready var target_visibility = target.get_node("VisibleOnScreenNotifier2D")
 
-var rotation_speed = 0.25
-func _process(delta):
+const ELLIPSIS_PROPORTION = 0.33
+
+func _process(_delta):
 	if target == null:
 		queue_free()
 		return
@@ -19,9 +20,12 @@ func _process(delta):
 	var ellipsis_vector = Vector2(cos(angle) * (viewport_size.x / 2.1 - 10),
 					  sin(angle) * (viewport_size.y / 2.1 - 20)) / camera.zoom  #TODO compute properly
 	var rectangle_vector = get_square_border_intersection(angle, viewport_size - Vector2i.ONE * 20) / 2.1 / camera.zoom
-	global_position = camera.get_screen_center_position() + (ellipsis_vector + 2 * rectangle_vector) / 3
+	global_position = camera.get_screen_center_position() + ellipsis_vector * ELLIPSIS_PROPORTION + rectangle_vector * (1 - ELLIPSIS_PROPORTION)
 
 func get_square_border_intersection(angle: float, size: Vector2) -> Vector2:
 	var dir = Vector2(cos(angle), sin(angle)).normalized()
-	var scale = min(abs(size.x / dir.x), abs(size.y / dir.y))
-	return dir * scale
+	var border_scale = min(abs(size.x / dir.x), abs(size.y / dir.y))
+	return dir * border_scale
+
+func set_sprite(object_texture):
+	$ObjectSprite.texture = object_texture

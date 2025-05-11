@@ -6,7 +6,6 @@ extends RigidBody2D
 var FRICTION_STRENGTH = move_force / max_speed * 10
 
 func true_movement(cart_direction, input_vector):
-	var current_velocity = linear_velocity
 	var force_position = $PlayerMesh.global_position - global_position
 	var angle = cart_direction.angle_to(input_vector)
 	if angle < -PI:
@@ -22,7 +21,6 @@ func true_movement(cart_direction, input_vector):
 
 func turn_movement(cart_direction, input_vector):
 	var proj = (input_vector.dot(cart_direction) / cart_direction.length_squared()) * cart_direction
-	var orth = input_vector - proj
 	var cross = input_vector.cross(cart_direction)
 	apply_torque(-cross * 2500)
 	var force_position = $PlayerMesh.global_position - global_position
@@ -55,7 +53,7 @@ func _physics_process(_delta):
 func is_stopped():
 	return linear_velocity == Vector2.ZERO and angular_velocity == 0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if inside_object != null:
 		inside_object.is_achieving = is_stopped()
 
@@ -81,7 +79,8 @@ func get_object(object: Node2D):
 	var goal_position = get_random_point_in_placeholder()
 	tween.tween_property(object, "position", goal_position, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
-	
+func get_camera() -> Camera2D:
+	return $Camera
 	
 	
 	

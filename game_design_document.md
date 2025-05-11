@@ -60,14 +60,18 @@ The game will feature multiple levels, and performing a certain time awards star
 
 ## Development Timeline
 
-### POC
+### TODO
 
-- [ ]
+- [x] Objectives
+- [] End of level
 
-### MVP
+- [] Goal arrow actual sprite
+- [] Cart wheels
 
-- [ ] 
+- [] Main Menu
+- [] Level menu
 
-### Beyond
+### TO FIX
 
-- [ ] 
+- [] goal arrow not pointing well
+
