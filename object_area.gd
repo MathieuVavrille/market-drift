@@ -13,7 +13,7 @@ func _ready():
 var is_achieving = false
 var rotation_speed = 0.5
 const MAX_SPEED = 50.
-const ACHIEVING_TIME = 2.
+const ACHIEVING_TIME = 1.
 func _process(delta):
 	if is_achieving and pb.value != 1.:
 		pb.value += delta / ACHIEVING_TIME

@@ -44,8 +44,8 @@ func _physics_process(_delta):
 			true_movement(cart_direction, input_vector)
 	else: # no movement
 		if inside_object != null:
-			apply_central_force(-linear_velocity * 100)
-			apply_torque(-angular_velocity * 1000)
+			apply_central_force(-linear_velocity * 250)
+			apply_torque(-angular_velocity * 2500)
 			if linear_velocity.length() < 0.25 and abs(angular_velocity) < 0.1:
 				linear_velocity = Vector2.ZERO
 				angular_velocity = 0
