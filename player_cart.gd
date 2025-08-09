@@ -74,7 +74,7 @@ func get_random_point_in_placeholder() -> Vector2:  # TODO a better area than a 
 	return $PlaceholderRectangle.position + Vector2(random_x, random_y)
 	
 func get_object(object: Node2D):
-	ChildExchange.exchange(object, self)
+	ChildExchange.exchange(object, $Objects)
 	var tween = get_tree().create_tween()
 	var goal_position = get_random_point_in_placeholder()
 	tween.tween_property(object, "position", goal_position, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)

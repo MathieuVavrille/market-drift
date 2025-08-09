@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://by2awiggnmed3"]
+[gd_scene load_steps=6 format=3 uid="uid://by2awiggnmed3"]
 
+[ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://object_area.tscn" id="1_37wl2"]
 [ext_resource type="Texture2D" uid="uid://cl3vb5pgqwtwb" path="res://assets/register.png" id="1_r642n"]
+[ext_resource type="Script" uid="uid://br340fjb6amtm" path="res://register.gd" id="1_vinpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37wl2"]
 size = Vector2(7.5, 20.375)
@@ -10,6 +12,11 @@ radius = 30.0
 height = 190.0
 
 [node name="Register" type="StaticBody2D"]
+script = ExtResource("1_vinpp")
+
+[node name="Area" parent="." instance=ExtResource("1_37wl2")]
+position = Vector2(-8, -5)
+is_end = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.03, 0.03)
@@ -23,3 +30,13 @@ shape = SubResource("RectangleShape2D_37wl2")
 position = Vector2(-1.5, -1)
 scale = Vector2(0.1, 0.1)
 shape = SubResource("CapsuleShape2D_vinpp")
+
+[node name="ConveyorStart" type="Marker2D" parent="."]
+position = Vector2(-2, -6)
+gizmo_extents = 5.0
+
+[node name="ConveyorEnd" type="Marker2D" parent="."]
+position = Vector2(-2, 6)
+gizmo_extents = 5.0
+
+[connection signal="is_achieved" from="Area" to="." method="_on_area_is_achieved"]

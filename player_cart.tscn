@@ -69,5 +69,7 @@ shape = SubResource("RectangleShape2D_s7862")
 zoom = Vector2(10, 10)
 position_smoothing_enabled = true
 
+[node name="Objects" type="Node2D" parent="."]
+
 [connection signal="area_entered" from="ObjectDetector" to="." method="entered_object"]
 [connection signal="area_exited" from="ObjectDetector" to="." method="object_exited"]
