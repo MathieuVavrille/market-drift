@@ -23,6 +23,7 @@ func object_area_achieved():
 	nb_achieved += 1
 	if nb_achieved == nb_objects:
 		$Register.activate()
+		instantiate_goal_arrow($Register/Area, null)
 
 
 func _on_register_finished() -> void:

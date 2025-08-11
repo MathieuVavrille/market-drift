@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://by2awiggnmed3"]
+[gd_scene load_steps=7 format=3 uid="uid://by2awiggnmed3"]
 
 [ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://object_area.tscn" id="1_37wl2"]
 [ext_resource type="Texture2D" uid="uid://cl3vb5pgqwtwb" path="res://assets/register.png" id="1_r642n"]
 [ext_resource type="Script" uid="uid://br340fjb6amtm" path="res://register.gd" id="1_vinpp"]
+[ext_resource type="AudioStream" uid="uid://dvsmv6cpj15fj" path="res://assets/sfx/barcode-scanner.wav" id="4_7y8y5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37wl2"]
 size = Vector2(7.5, 20.375)
@@ -38,5 +39,9 @@ gizmo_extents = 5.0
 [node name="ConveyorEnd" type="Marker2D" parent="."]
 position = Vector2(-2, 6)
 gizmo_extents = 5.0
+
+[node name="BeepPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7y8y5")
+volume_db = -10.0
 
 [connection signal="is_achieved" from="Area" to="." method="_on_area_is_achieved"]

@@ -29,6 +29,11 @@ func _on_area_is_achieved() -> void:
 	var delay = 0.01
 	for object in player.get_node("Objects").get_children():
 		get_tree().create_timer(delay).timeout.connect(func(): get_object(object))
+		get_tree().create_timer(delay + TIME_TO_BELT + TIME_TO_SCAN / 2).timeout.connect(beep)
 		delay += OBJECTS_DELAY
 	get_tree().create_timer(delay + TIME_TO_BELT + TIME_TO_SCAN).timeout.connect(finished.emit)
 	
+var pitch_variation = 0.1
+func beep():
+	$BeepPlayer.pitch_scale = 1.0 + randf_range(0, pitch_variation)
+	$BeepPlayer.play()
