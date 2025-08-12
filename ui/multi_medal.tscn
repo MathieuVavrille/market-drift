@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4ob6ydx3acs"]
+
+[ext_resource type="PackedScene" uid="uid://crb8y4vme7et8" path="res://ui/medal.tscn" id="1_l1msj"]
+[ext_resource type="Script" uid="uid://djxeak0cnw223" path="res://ui/multi_medal.gd" id="1_ywakq"]
+[ext_resource type="Texture2D" uid="uid://b72a7sypovu3h" path="res://assets/medals/background.png" id="2_fg570"]
+[ext_resource type="Texture2D" uid="uid://bm2jkym6efv80" path="res://assets/medals/author.png" id="2_td0mo"]
+[ext_resource type="Texture2D" uid="uid://2ff2a0aght5w" path="res://assets/medals/bronze.png" id="3_ywakq"]
+[ext_resource type="Texture2D" uid="uid://b0i0eqxe2jgvd" path="res://assets/medals/silver.png" id="4_fg570"]
+[ext_resource type="Texture2D" uid="uid://b3kuhktel34kl" path="res://assets/medals/gold.png" id="5_0py07"]
+
+[node name="MultiMedal" type="Node2D"]
+script = ExtResource("1_ywakq")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-3.72529e-09, -1.19209e-07)
+rotation = -0.0349066
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_fg570")
+
+[node name="Author" parent="." instance=ExtResource("1_l1msj")]
+visible = false
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("2_td0mo")
+color = "author"
+
+[node name="Bronze" parent="." instance=ExtResource("1_l1msj")]
+visible = false
+position = Vector2(-10, 8.5)
+scale = Vector2(0.093, 0.093)
+texture = ExtResource("3_ywakq")
+color = "bronze"
+
+[node name="Silver" parent="." instance=ExtResource("1_l1msj")]
+visible = false
+position = Vector2(12, 5)
+scale = Vector2(0.095, 0.095)
+texture = ExtResource("4_fg570")
+color = "silver"
+
+[node name="Gold" parent="." instance=ExtResource("1_l1msj")]
+visible = false
+position = Vector2(2, -13)
+scale = Vector2(0.095, 0.095)
+texture = ExtResource("5_0py07")
+color = "gold"

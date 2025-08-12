@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://crb8y4vme7et8"]
-
-[ext_resource type="Texture2D" uid="uid://2ff2a0aght5w" path="res://assets/medals/bronze.png" id="1_4wimb"]
-
-[node name="Medals" type="Node2D"]
-
-[node name="Bronze" type="Sprite2D" parent="."]
-texture = ExtResource("1_4wimb")

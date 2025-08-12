@@ -11,6 +11,10 @@ func _ready():
 		object.is_achieved.connect(object_area_achieved)
 		instantiate_goal_arrow(object, object.get_texture())
 
+func _process(_delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		$LevelEnd.get_node("Control").get_node("MultiMedal").add_medal()
+
 func instantiate_goal_arrow(object, texture):
 	var goal_arrow = goal_arrow_scene.instantiate()
 	goal_arrow.camera = $PlayerCart.get_camera()

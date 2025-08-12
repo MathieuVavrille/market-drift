@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://crb8y4vme7et8"]
+
+[ext_resource type="Script" uid="uid://c86yk5rekcdvf" path="res://ui/medal.gd" id="2_6so3y"]
+[ext_resource type="AudioStream" uid="uid://dim2wqdd27clq" path="res://assets/sfx/drum_end.wav" id="2_ax5yu"]
+
+[node name="Medal" type="Sprite2D"]
+script = ExtResource("2_6so3y")
+
+[node name="DrumEnd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ax5yu")
