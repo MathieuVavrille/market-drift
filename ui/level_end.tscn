@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs2mg5xyq08mw"]
+[gd_scene load_steps=5 format=3 uid="uid://bs2mg5xyq08mw"]
 
 [ext_resource type="PackedScene" uid="uid://b4ob6ydx3acs" path="res://ui/multi_medal.tscn" id="1_32sc8"]
-
-[sub_resource type="SystemFont" id="SystemFont_5g5vb"]
-subpixel_positioning = 0
-msdf_pixel_range = 100
+[ext_resource type="Script" uid="uid://be80mm2gtg5v7" path="res://ui/level_end.gd" id="1_ukl6e"]
+[ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="1_vkghd"]
+[ext_resource type="PackedScene" uid="uid://cshjw5w1n760w" path="res://ui/my_button.tscn" id="4_vymvp"]
 
 [node name="LevelEnd" type="CanvasLayer"]
+script = ExtResource("1_ukl6e")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -18,36 +18,91 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -133.5
-offset_top = -168.0
-offset_right = 133.5
-offset_bottom = 168.0
+offset_left = -250.0
+offset_top = -260.0
+offset_right = 750.0
+offset_bottom = 760.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.129412, 0.129412, 0.129412, 0.882353)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vkghd")
 
-[node name="Label" type="Label" parent="Control"]
+[node name="MyButton" parent="Control" instance=ExtResource("4_vymvp")]
+layout_mode = 1
+offset_left = -196.0
+offset_top = 89.0
+offset_right = 804.0
+offset_bottom = 1109.0
+scale = Vector2(0.2, 0.1)
+
+[node name="LevelCompleted" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.5
-offset_top = -158.5
-offset_right = 128.5
-offset_bottom = -113.5
+offset_left = -180.0
+offset_top = -204.0
+offset_right = 849.0
+offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource("SystemFont_5g5vb")
-theme_override_font_sizes/font_size = 32
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 128
 text = "Level Completed"
 
+[node name="PB" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -204.0
+offset_right = 849.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 128
+text = "Level Completed"
+
+[node name="Quit" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = 107.0
+offset_right = 120.0
+offset_bottom = 282.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 128
+text = "Quit"
+
 [node name="MultiMedal" parent="Control" instance=ExtResource("1_32sc8")]
+scale = Vector2(1.6, 1.6)
+
+[connection signal="pressed" from="Control/MyButton" to="." method="_on_my_button_pressed"]
