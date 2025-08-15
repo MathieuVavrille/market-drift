@@ -24,3 +24,16 @@ func add_medal():
 			tween.tween_property(medal, "modulate:a", 0, $Author.ANIMATION_DURATION).set_trans(Tween.TRANS_CUBIC)#.set_ease(Tween.EASE_OUT))
 			tween.tween_interval($Author.ANIMATION_DURATION / 3 * i)
 			tween.tween_property(medal, "modulate:a", 1, $Author.ANIMATION_DURATION)#.set_trans(Tween.TRANS_CUBIC)#.set_ease(Tween.EASE_OUT))
+
+
+func appear_multiple(medal_level: int, is_pb: bool):
+	$DrumRoll.play()
+	get_tree().create_timer(max(1.0, 0.5 + medal_level - visible_medals - $Bronze.ANIMATION_DURATION/2)).timeout.connect(func (): $DrumRoll.stop())
+	if not is_pb:
+		get_tree().create_timer(1.0).timeout.connect(func (): $Fart.play())
+	else:
+		if is_pb and medal_level == visible_medals:
+			get_tree().create_timer(1.0).timeout.connect(func (): $Bronze.get_node("DrumEnd").play())
+		else:
+			for i in range(visible_medals, medal_level):
+				get_tree().create_timer(0.5 + i-visible_medals).timeout.connect(add_medal)

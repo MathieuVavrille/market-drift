@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4ob6ydx3acs"]
+[gd_scene load_steps=10 format=3 uid="uid://b4ob6ydx3acs"]
 
 [ext_resource type="PackedScene" uid="uid://crb8y4vme7et8" path="res://ui/medal.tscn" id="1_l1msj"]
 [ext_resource type="Script" uid="uid://djxeak0cnw223" path="res://ui/multi_medal.gd" id="1_ywakq"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://2ff2a0aght5w" path="res://assets/medals/bronze.png" id="3_ywakq"]
 [ext_resource type="Texture2D" uid="uid://b0i0eqxe2jgvd" path="res://assets/medals/silver.png" id="4_fg570"]
 [ext_resource type="Texture2D" uid="uid://b3kuhktel34kl" path="res://assets/medals/gold.png" id="5_0py07"]
+[ext_resource type="AudioStream" uid="uid://dsvv4qld6bx5s" path="res://assets/sfx/drum_roll.wav" id="8_k02mj"]
+[ext_resource type="AudioStream" uid="uid://dufewi8tn6fkw" path="res://assets/sfx/fart.mp3" id="9_31dy8"]
 
 [node name="MultiMedal" type="Node2D"]
 script = ExtResource("1_ywakq")
@@ -43,3 +45,9 @@ position = Vector2(2, -13)
 scale = Vector2(0.095, 0.095)
 texture = ExtResource("5_0py07")
 color = "gold"
+
+[node name="DrumRoll" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_k02mj")
+
+[node name="Fart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_31dy8")
