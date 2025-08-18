@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs2mg5xyq08mw"]
+[gd_scene load_steps=8 format=3 uid="uid://bs2mg5xyq08mw"]
 
 [ext_resource type="PackedScene" uid="uid://b4ob6ydx3acs" path="res://ui/multi_medal.tscn" id="1_32sc8"]
 [ext_resource type="Script" uid="uid://be80mm2gtg5v7" path="res://ui/level_end.gd" id="1_ukl6e"]
 [ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="1_vkghd"]
-[ext_resource type="PackedScene" uid="uid://cshjw5w1n760w" path="res://ui/my_button.tscn" id="4_vymvp"]
+[ext_resource type="PackedScene" uid="uid://cshjw5w1n760w" path="res://ui/shaded_button.tscn" id="4_vymvp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukl6e"]
+size = Vector2(30, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vymvp"]
+size = Vector2(348.5, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovx2h"]
+size = Vector2(438, 26.5)
 
 [node name="LevelEnd" type="CanvasLayer"]
 script = ExtResource("1_ukl6e")
@@ -34,14 +43,6 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_vkghd")
 
-[node name="MyButton" parent="Control" instance=ExtResource("4_vymvp")]
-layout_mode = 1
-offset_left = -196.0
-offset_top = 89.0
-offset_right = 804.0
-offset_bottom = 1109.0
-scale = Vector2(0.2, 0.1)
-
 [node name="LevelCompleted" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
@@ -69,40 +70,162 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -180.0
-offset_top = -204.0
-offset_right = 849.0
-offset_bottom = -29.0
+offset_left = -25.0
+offset_top = -137.0
+offset_right = 721.0
+offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 128
-text = "Level Completed"
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 80
+text = "1:34.5
+Best 54.3"
+horizontal_alignment = 1
 
-[node name="Quit" type="Label" parent="Control"]
-layout_mode = 1
+[node name="MultiMedal" parent="Control" instance=ExtResource("1_32sc8")]
+position = Vector2(-100, -52)
+scale = Vector2(1.6, 1.6)
+
+[node name="Restart" type="Node2D" parent="Control"]
+position = Vector2(-96, 91)
+
+[node name="Button" parent="Control/Restart" instance=ExtResource("4_vymvp")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -90.0
+offset_top = -35.0
+offset_right = 910.0
+offset_bottom = 985.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.18, 0.07)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/Restart"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -148.0
-offset_top = 107.0
-offset_right = 120.0
-offset_bottom = 282.0
+offset_left = -67.0
+offset_top = -27.0
+offset_right = 283.0
+offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 128
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 100
+text = "Restart"
+
+[node name="Next" type="Node2D" parent="Control"]
+position = Vector2(106, 91)
+
+[node name="Button" parent="Control/Next" instance=ExtResource("4_vymvp")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -90.0
+offset_top = -35.0
+offset_right = 910.0
+offset_bottom = 985.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.18, 0.07)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/Next"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -27.0
+offset_right = 184.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 100
+text = "Next"
+
+[node name="Quit" type="Node2D" parent="Control"]
+position = Vector2(0, 169)
+
+[node name="Button" parent="Control/Quit" instance=ExtResource("4_vymvp")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -90.0
+offset_top = -35.0
+offset_right = 910.0
+offset_bottom = 985.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.18, 0.07)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/Quit"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -27.0
+offset_right = 184.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 100
 text = "Quit"
 
-[node name="MultiMedal" parent="Control" instance=ExtResource("1_32sc8")]
-scale = Vector2(1.6, 1.6)
+[node name="Node2D" type="Node2D" parent="."]
 
-[connection signal="pressed" from="Control/MyButton" to="." method="_on_my_button_pressed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(576, 347)
+shape = SubResource("RectangleShape2D_ukl6e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(779, 319)
+shape = SubResource("RectangleShape2D_ukl6e")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(375, 348)
+shape = SubResource("RectangleShape2D_ukl6e")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(581, 453)
+shape = SubResource("RectangleShape2D_vymvp")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(594, 366.75)
+shape = SubResource("RectangleShape2D_ovx2h")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(593, 180)
+shape = SubResource("RectangleShape2D_ovx2h")
+
+[connection signal="pressed" from="Control/Restart/Button" to="." method="_on_my_button_pressed"]
+[connection signal="pressed" from="Control/Next/Button" to="." method="_on_my_button_pressed"]
+[connection signal="pressed" from="Control/Quit/Button" to="." method="_on_my_button_pressed"]
