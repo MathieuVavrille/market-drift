@@ -1,16 +1,20 @@
 extends Sprite2D
 
-@export_enum("bronze", "silver", "gold", "author") var color: String
+@export_enum("bronze", "silver", "gold", "author") var color: String = "bronze"
 
 var original_scale = 1.
 func _ready():
 	original_scale = scale.x
-	#texture = load("res://assets/medals/" + color + ".png")
+
+func set_medal_color(new_color):
+	color = new_color
+	texture = load("res://assets/medals/" + color + ".png")
 	match color:
 		"bronze": $DrumEnd.pitch_scale = 1.0
 		"silver": $DrumEnd.pitch_scale = 1.1
 		"gold": $DrumEnd.pitch_scale = 1.2
 		"author": $DrumEnd.pitch_scale = 1.3
+	
 
 
 const ANIMATION_DURATION = 1. 
