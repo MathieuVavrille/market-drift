@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cvp1nbwd8imx"]
+[gd_scene load_steps=14 format=4 uid="uid://cvp1nbwd8imx"]
 
 [ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://main.gd" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://player_cart.tscn" id="1_ig7tw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://register.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/level_end.tscn" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://brc0v2j0cx8ge" path="res://LevelTimes.gd" id="9_kek77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("3_lquwl")
@@ -92,5 +93,14 @@ position = Vector2(2, -7)
 mass = 50.0
 
 [node name="LevelEnd" parent="." instance=ExtResource("8_5vw27")]
+
+[node name="LevelTimes" type="Node" parent="."]
+script = ExtResource("9_kek77")
+pb_time = 20.0
+author_time = 5.0
+gold_time = 10.0
+silver_time = 15.0
+bronze_time = 30.0
+metadata/_custom_type_script = "uid://brc0v2j0cx8ge"
 
 [connection signal="finished" from="Register" to="." method="_on_register_finished"]
