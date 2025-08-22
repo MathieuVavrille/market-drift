@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bs2mg5xyq08mw"]
+[gd_scene load_steps=8 format=3 uid="uid://bs2mg5xyq08mw"]
 
-[ext_resource type="PackedScene" uid="uid://b4ob6ydx3acs" path="res://ui/multi_medal.tscn" id="1_32sc8"]
 [ext_resource type="Script" uid="uid://be80mm2gtg5v7" path="res://ui/level_end.gd" id="1_ukl6e"]
 [ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="1_vkghd"]
 [ext_resource type="PackedScene" uid="uid://cshjw5w1n760w" path="res://ui/shaded_button.tscn" id="4_vymvp"]
-[ext_resource type="Texture2D" uid="uid://cox2qmd8mk4k0" path="res://assets/medals/pb_ribbon.png" id="5_vymvp"]
-[ext_resource type="PackedScene" uid="uid://crb8y4vme7et8" path="res://ui/medal.tscn" id="6_ovx2h"]
+[ext_resource type="PackedScene" uid="uid://dmdax8cqeil2n" path="res://ui/medal_times.tscn" id="5_vymvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukl6e"]
 size = Vector2(30, 300)
@@ -65,10 +63,6 @@ theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 128
 text = "Level Completed"
 
-[node name="MultiMedal" parent="Control" instance=ExtResource("1_32sc8")]
-position = Vector2(-100, -52)
-scale = Vector2(1.6, 1.6)
-
 [node name="Restart" type="Node2D" parent="Control"]
 position = Vector2(-96, 91)
 
@@ -93,9 +87,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.0
+offset_left = -78.0
 offset_top = -27.0
-offset_right = 283.0
+offset_right = 343.0
 offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -105,6 +99,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 17
 theme_override_font_sizes/font_size = 100
 text = "Restart"
+horizontal_alignment = 1
 
 [node name="Next" type="Node2D" parent="Control"]
 position = Vector2(106, 91)
@@ -122,6 +117,7 @@ offset_bottom = 985.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.18, 0.07)
+is_disabled = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Control/Next"]
@@ -130,9 +126,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.0
+offset_left = -77.0
 offset_top = -27.0
-offset_right = 184.0
+offset_right = 340.0
 offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -142,11 +138,12 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 17
 theme_override_font_sizes/font_size = 100
 text = "Next"
+horizontal_alignment = 1
 
-[node name="Quit" type="Node2D" parent="Control"]
+[node name="Menu" type="Node2D" parent="Control"]
 position = Vector2(0, 169)
 
-[node name="Button" parent="Control/Quit" instance=ExtResource("4_vymvp")]
+[node name="Button" parent="Control/Menu" instance=ExtResource("4_vymvp")]
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -159,18 +156,19 @@ offset_bottom = 985.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.18, 0.07)
+is_button = false
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control/Quit"]
+[node name="Label" type="Label" parent="Control/Menu"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -27.0
-offset_right = 184.0
-offset_bottom = 110.0
+offset_left = -78.0
+offset_top = -26.0
+offset_right = 342.0
+offset_bottom = 111.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
@@ -178,62 +176,12 @@ theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 17
 theme_override_font_sizes/font_size = 100
-text = "Quit"
-
-[node name="Times" type="Control" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 102.0
-offset_top = -49.0
-offset_right = 102.0
-offset_bottom = -49.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PB" type="Label" parent="Control/Times"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -77.0
-offset_right = 752.0
-offset_bottom = 340.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.35, 0.35)
-theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 17
-theme_override_font_sizes/font_size = 100
-text = "11:34.5
-x
-54.3333"
+text = "Menu"
 horizontal_alignment = 1
 
-[node name="PbRibbonL" type="Sprite2D" parent="Control/Times"]
-position = Vector2(-92, -1)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("5_vymvp")
-
-[node name="PbRibbonR" type="Sprite2D" parent="Control/Times"]
-position = Vector2(92, -1)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("5_vymvp")
-
-[node name="MedalL" parent="Control/Times" instance=ExtResource("6_ovx2h")]
-position = Vector2(-92, 46)
-scale = Vector2(0.07, 0.07)
-
-[node name="MedalR" parent="Control/Times" instance=ExtResource("6_ovx2h")]
-position = Vector2(92, 46)
-scale = Vector2(0.07, 0.07)
+[node name="MedalTimes" parent="Control" instance=ExtResource("5_vymvp")]
+visible = false
+position = Vector2(0, -52)
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -263,4 +211,4 @@ shape = SubResource("RectangleShape2D_ovx2h")
 
 [connection signal="pressed" from="Control/Restart/Button" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Control/Next/Button" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="Control/Quit/Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/Menu/Button" to="." method="_on_menu_button_pressed"]

@@ -96,11 +96,11 @@ mass = 50.0
 
 [node name="LevelTimes" type="Node" parent="."]
 script = ExtResource("9_kek77")
-pb_time = 20.0
-author_time = 5.0
-gold_time = 10.0
-silver_time = 15.0
-bronze_time = 30.0
+pb_time = 250
+author_time = 100
+gold_time = 150
+silver_time = 200
+bronze_time = 300
 metadata/_custom_type_script = "uid://brc0v2j0cx8ge"
 
 [connection signal="finished" from="Register" to="." method="_on_register_finished"]

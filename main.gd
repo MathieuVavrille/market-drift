@@ -14,7 +14,7 @@ func _ready():
 var medals = 0
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		$LevelEnd.get_node("Control").get_node("MultiMedal").appear_multiple(4, true)
+		$LevelEnd/Control/MedalTimes.appear(120, $LevelTimes)
 
 func instantiate_goal_arrow(object, texture):
 	var goal_arrow = goal_arrow_scene.instantiate()

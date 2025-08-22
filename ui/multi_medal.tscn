@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4ob6ydx3acs"]
+[gd_scene load_steps=9 format=3 uid="uid://b4ob6ydx3acs"]
 
 [ext_resource type="PackedScene" uid="uid://crb8y4vme7et8" path="res://ui/medal.tscn" id="1_l1msj"]
 [ext_resource type="Script" uid="uid://djxeak0cnw223" path="res://ui/multi_medal.gd" id="1_ywakq"]
 [ext_resource type="Texture2D" uid="uid://b72a7sypovu3h" path="res://assets/medals/background.png" id="2_fg570"]
 [ext_resource type="Texture2D" uid="uid://bm2jkym6efv80" path="res://assets/medals/author.png" id="2_td0mo"]
-[ext_resource type="Texture2D" uid="uid://2ff2a0aght5w" path="res://assets/medals/bronze.png" id="3_ywakq"]
 [ext_resource type="Texture2D" uid="uid://b0i0eqxe2jgvd" path="res://assets/medals/silver.png" id="4_fg570"]
 [ext_resource type="Texture2D" uid="uid://b3kuhktel34kl" path="res://assets/medals/gold.png" id="5_0py07"]
 [ext_resource type="AudioStream" uid="uid://dsvv4qld6bx5s" path="res://assets/sfx/drum_roll.wav" id="8_k02mj"]
@@ -29,8 +28,6 @@ color = "author"
 visible = false
 position = Vector2(-10, 8.5)
 scale = Vector2(0.093, 0.093)
-texture = ExtResource("3_ywakq")
-color = "bronze"
 
 [node name="Silver" parent="." instance=ExtResource("1_l1msj")]
 visible = false

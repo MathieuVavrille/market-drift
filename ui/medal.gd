@@ -6,7 +6,7 @@ var original_scale = 1.
 func _ready():
 	original_scale = scale.x
 
-func set_medal_color(new_color):
+func set_color(new_color):
 	color = new_color
 	texture = load("res://assets/medals/" + color + ".png")
 	match color:

@@ -14,5 +14,5 @@ func _on_next_button_pressed() -> void:
 	print("next")
 
 
-func _on_quit_button_pressed() -> void:
-	print("quit")
+func _on_menu_button_pressed() -> void:
+	print("menu")
