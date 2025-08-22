@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmdax8cqeil2n"]
+
+[ext_resource type="PackedScene" uid="uid://b4ob6ydx3acs" path="res://ui/multi_medal.tscn" id="1_k0hft"]
+[ext_resource type="Script" uid="uid://bffmm83w1k2u3" path="res://ui/medal_times.gd" id="1_qr6fh"]
+[ext_resource type="Texture2D" uid="uid://cox2qmd8mk4k0" path="res://assets/medals/pb_ribbon.png" id="2_qr6fh"]
+[ext_resource type="PackedScene" uid="uid://crb8y4vme7et8" path="res://ui/medal.tscn" id="3_sv858"]
+[ext_resource type="Texture2D" uid="uid://bi4fi1kus8y8g" path="res://assets/ui/finish_flag.png" id="5_sv858"]
+
+[node name="MedalTimes" type="Node2D"]
+script = ExtResource("1_qr6fh")
+
+[node name="MultiMedal" parent="." instance=ExtResource("1_k0hft")]
+position = Vector2(-100, 2.38419e-07)
+scale = Vector2(1.6, 1.6)
+
+[node name="MultiTimes" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = 5.0
+offset_right = 102.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Times" type="Label" parent="MultiTimes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -79.0
+offset_right = 752.0
+offset_bottom = 338.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 100
+text = "11:34.5
+x
+54.3333"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Logos" type="Node2D" parent="MultiTimes"]
+position = Vector2(0, -5)
+
+[node name="FinishL" type="Sprite2D" parent="MultiTimes/Logos"]
+position = Vector2(-92, -47)
+rotation = -3.14159
+scale = Vector2(0.08, -0.08)
+texture = ExtResource("5_sv858")
+
+[node name="FinishR" type="Sprite2D" parent="MultiTimes/Logos"]
+position = Vector2(92, -47)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_sv858")
+
+[node name="PbRibbonL" type="Sprite2D" parent="MultiTimes/Logos"]
+position = Vector2(-92.0001, 2)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_qr6fh")
+
+[node name="PbRibbonR" type="Sprite2D" parent="MultiTimes/Logos"]
+position = Vector2(70, 7)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_qr6fh")
+
+[node name="MedalL" parent="MultiTimes/Logos" instance=ExtResource("3_sv858")]
+position = Vector2(-92, 49)
+scale = Vector2(0.07, 0.07)
+
+[node name="MedalR" parent="MultiTimes/Logos" instance=ExtResource("3_sv858")]
+position = Vector2(92, 49)
+scale = Vector2(0.07, 0.07)
