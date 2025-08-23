@@ -32,7 +32,6 @@ func add_medal():
 func appear_multiple(medal_level: int, is_pb: bool):
 	$DrumRoll.play()
 	get_tree().create_timer(max(1.0, 0.5 + medal_level - visible_medals - $Bronze.ANIMATION_DURATION/2)).timeout.connect($DrumRoll.stop)
-	print(max(1.0, 0.5 + medal_level - visible_medals - $Bronze.ANIMATION_DURATION/2))
 	if not is_pb:
 		get_tree().create_timer(1.0).timeout.connect(func (): $Fart.play())
 		return 1.

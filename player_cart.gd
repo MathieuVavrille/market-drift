@@ -32,7 +32,6 @@ func _physics_process(_delta):
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	).normalized()
-	
 	# Drag
 	apply_central_force(-linear_velocity * FRICTION_STRENGTH)
 	apply_torque(-angular_velocity * 20)

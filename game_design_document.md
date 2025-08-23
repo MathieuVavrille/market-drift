@@ -55,21 +55,28 @@ Art will be done by hand with pencils and scanned.
 
 ## Game Experience
 
-The game will feature multiple levels, and performing a certain time awards stars.
+The game will feature multiple levels, and performing a certain time awards medals.
 
 
 ## Development Timeline
 
 ### TODO
 
+- [] Start countdown
 - [x] Objectives
-- [] End of level
+- [x] End of level
+- [] Switch between two modes (easy-hard)
 
 - [] Goal arrow actual sprite
 - [] Cart wheels
 
-- [] Main Menu
+- [] Main menu
+- [x] Pause menu
 - [] Level menu
+- [] Settings
+
+- [] Tutorial level
+- [] Create 10 levels (0/10)
 
 ### TO FIX
 

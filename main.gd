@@ -5,6 +5,7 @@ const goal_arrow_scene = preload("res://goal_arrow.tscn")
 var nb_objects = 0
 var start_time = 0
 func _ready():
+	$LevelEnd.level_times = $LevelTimes
 	start_time = Time.get_ticks_msec()
 	nb_objects = len($Objects.get_children())
 	for object in $Objects.get_children():
@@ -14,7 +15,7 @@ func _ready():
 var medals = 0
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		$LevelEnd/Control/MedalTimes.appear(120, $LevelTimes)
+		$LevelEnd.end_level(220)
 
 func instantiate_goal_arrow(object, texture):
 	var goal_arrow = goal_arrow_scene.instantiate()

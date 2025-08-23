@@ -1,13 +1,16 @@
 extends Node2D
 
+signal appeared
+
 const APPEAR_TIME = 0.5
 func appear(new_time, level_times):
 	# Old level times: the pb is not yet updated
 	var old_pb = level_times.pb_time
-	level_times.pb_time = min(level_times.pb_time, new_time)
+	if level_times.pb_time == 0 or level_times.pb_time > new_time:
+		level_times.pb_time = new_time
 	set_everything(new_time, level_times)
 	$MultiMedal.position = Vector2(0, 0)
-	if old_pb > level_times.bronze_time:
+	if old_pb > level_times.bronze_time or old_pb == 0:
 		$MultiMedal.set_medals(0)
 	elif old_pb > level_times.silver_time:
 		$MultiMedal.set_medals(1)
@@ -20,42 +23,42 @@ func appear(new_time, level_times):
 	$MultiMedal.modulate.a = 0.
 	$MultiTimes.modulate.a = 0.
 	get_tree().create_tween().tween_property($MultiMedal, "modulate:a", 1., APPEAR_TIME).set_trans(Tween.TRANS_CUBIC)
-	var is_pb = new_time < old_pb
+	var is_pb = new_time != 0 and old_pb == 0 or new_time < old_pb
 	get_tree().create_timer(0.).timeout.connect(func(): appear_medals(new_time, level_times, is_pb))
 
 func appear_medals(new_time, level_times, is_pb):
 	var medal_appear_time = 0.
-	if new_time > level_times.bronze_time:
+	if new_time > level_times.bronze_time or new_time == 0:
 		medal_appear_time = $MultiMedal.appear_multiple(0, is_pb)
 	elif new_time > level_times.silver_time:
 		medal_appear_time = $MultiMedal.appear_multiple(1, is_pb)
 	elif new_time > level_times.gold_time:
 		medal_appear_time = $MultiMedal.appear_multiple(2, is_pb)
-	if new_time > level_times.author_time:
+	elif new_time > level_times.author_time:
 		medal_appear_time = $MultiMedal.appear_multiple(3, is_pb)
 	else:
-		
 		medal_appear_time = $MultiMedal.appear_multiple(4, is_pb)
-	get_tree().create_timer(medal_appear_time + 0.5).timeout.connect(move_medals)
+	get_tree().create_timer(medal_appear_time + 0.25).timeout.connect(move_medals)
 
 func move_medals():
 	create_tween().tween_property($MultiMedal, "position:x", $MultiMedalFinalPosition.position.x, 0.5).set_trans(Tween.TRANS_SINE)
 	get_tree().create_timer(0.25).timeout.connect(
 		func(): create_tween().tween_property($MultiTimes, "modulate:a", 1., APPEAR_TIME))
+	get_tree().create_timer(0.25 + APPEAR_TIME).timeout.connect(appeared.emit)
 
 func set_everything(current, level_times):
 	visible = true
 	$MultiMedal.position = $MultiMedalFinalPosition.position
 	$MultiTimes/Logos.position.y = -5
 	var text = ""
-	if current != 0.0:
+	if current != 0:
 		text += format_time(current) + "\n"
 	else:
 		$MultiTimes/Logos/FinishL.visible = false
 		$MultiTimes/Logos/FinishR.visible = false
 		$MultiTimes/Logos.position.y -= 27
 	var medal_color = "bronze"
-	if level_times.pb_time == 0.0:
+	if level_times.pb_time == 0:
 		text += "------"
 	else:
 		text += format_time(level_times.pb_time)
