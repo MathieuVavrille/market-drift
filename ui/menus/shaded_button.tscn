@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cshjw5w1n760w"]
 
 [ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="1_0fbet"]
-[ext_resource type="Script" uid="uid://hal0dei8bhc3" path="res://ui/shaded_button.gd" id="1_4uj76"]
+[ext_resource type="Script" uid="uid://hal0dei8bhc3" path="res://ui/menus/shaded_button.gd" id="1_4uj76"]
 
 [node name="ShadedButton" type="TextureButton"]
 anchors_preset = 8

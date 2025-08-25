@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://object_area.tscn" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://register.tscn" id="7_272bh"]
-[ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/level_end.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="8_5vw27"]
 [ext_resource type="Script" uid="uid://brc0v2j0cx8ge" path="res://LevelTimes.gd" id="9_kek77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]

@@ -1,0 +1,142 @@
+[gd_scene load_steps=10 format=3 uid="uid://dd0mj8ehtdjbv"]
+
+[ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="1_j7w7g"]
+[ext_resource type="Script" uid="uid://bhlkrithhi3eu" path="res://ui/menus/level_select_menu.gd" id="1_s7x0m"]
+[ext_resource type="PackedScene" uid="uid://cshjw5w1n760w" path="res://ui/menus/shaded_button.tscn" id="2_fhobr"]
+[ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="3_s7x0m"]
+[ext_resource type="PackedScene" uid="uid://cvp1nbwd8imx" path="res://main.tscn" id="4_eww27"]
+[ext_resource type="PackedScene" uid="uid://b4ob6ydx3acs" path="res://ui/multi_medal.tscn" id="4_s7x0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukl6e"]
+size = Vector2(30, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vymvp"]
+size = Vector2(348.5, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovx2h"]
+size = Vector2(438, 26.5)
+
+[node name="LevelSelectionMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_s7x0m")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -260.0
+offset_right = 750.0
+offset_bottom = 760.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_j7w7g")
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -220.0
+offset_right = 1166.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 124
+text = "Level Selection"
+horizontal_alignment = 1
+
+[node name="Levels" type="Node2D" parent="Control"]
+position = Vector2(0, -72)
+
+[node name="MultiMedal" parent="Control" instance=ExtResource("4_s7x0m")]
+position = Vector2(0, 66)
+
+[node name="Back" type="Node2D" parent="Control"]
+position = Vector2(0, 169)
+
+[node name="Button" parent="Control/Back" instance=ExtResource("2_fhobr")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -90.0
+offset_top = -35.0
+offset_right = 910.0
+offset_bottom = 985.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.18, 0.07)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/Back"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -26.0
+offset_right = 342.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 100
+text = "Back"
+horizontal_alignment = 1
+
+[node name="DEBUG" type="Node2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DEBUG"]
+position = Vector2(576, 347)
+shape = SubResource("RectangleShape2D_ukl6e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DEBUG"]
+position = Vector2(779, 319)
+shape = SubResource("RectangleShape2D_ukl6e")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DEBUG"]
+position = Vector2(375, 348)
+shape = SubResource("RectangleShape2D_ukl6e")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DEBUG"]
+position = Vector2(581, 453)
+shape = SubResource("RectangleShape2D_vymvp")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="DEBUG"]
+position = Vector2(594, 366.75)
+shape = SubResource("RectangleShape2D_ovx2h")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="DEBUG"]
+position = Vector2(593, 180)
+shape = SubResource("RectangleShape2D_ovx2h")
+
+[node name="SceneChanger" parent="." instance=ExtResource("3_s7x0m")]
+next_scene = ExtResource("4_eww27")

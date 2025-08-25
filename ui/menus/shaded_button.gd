@@ -3,7 +3,6 @@ extends TextureButton
 @export var is_disabled = false
 
 func _ready():
-
 	self.modulate = Color(1, 1, 1) # Normal color
 	if is_disabled:
 		disabled = true

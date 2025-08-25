@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfdnaq48txqrv"]
+[gd_scene load_steps=8 format=3 uid="uid://berbnxowlj80"]
 
-[ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="2_8uxxo"]
-[ext_resource type="PackedScene" uid="uid://cshjw5w1n760w" path="res://ui/shaded_button.tscn" id="3_ei257"]
-[ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="3_rmr83"]
-[ext_resource type="PackedScene" uid="uid://cvp1nbwd8imx" path="res://main.tscn" id="4_8uxxo"]
+[ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="1_gd5yh"]
+[ext_resource type="PackedScene" uid="uid://cshjw5w1n760w" path="res://ui/menus/shaded_button.tscn" id="2_dpsb8"]
+[ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="3_e12od"]
+[ext_resource type="PackedScene" uid="uid://cvp1nbwd8imx" path="res://main.tscn" id="4_ca25q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukl6e"]
 size = Vector2(30, 300)
@@ -14,7 +14,7 @@ size = Vector2(348.5, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovx2h"]
 size = Vector2(438, 26.5)
 
-[node name="MainMenu" type="CanvasLayer"]
+[node name="SettingsMenu" type="CanvasLayer"]
 process_mode = 3
 
 [node name="Control" type="Control" parent="."]
@@ -41,7 +41,7 @@ offset_bottom = 760.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_8uxxo")
+texture = ExtResource("1_gd5yh")
 
 [node name="Title" type="Label" parent="Control"]
 layout_mode = 1
@@ -50,74 +50,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -216.0
-offset_top = -220.5
-offset_right = 1024.0
-offset_bottom = 25.5
+offset_left = -248.0
+offset_top = -220.0
+offset_right = 1166.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 180
-text = "Market Drift"
-horizontal_alignment = 1
-
-[node name="Levels" type="Node2D" parent="Control"]
-position = Vector2(-96, 91)
-
-[node name="Button" parent="Control/Levels" instance=ExtResource("3_ei257")]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -90.0
-offset_top = -35.0
-offset_right = 910.0
-offset_bottom = 985.0
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.18, 0.07)
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Control/Levels"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -27.0
-offset_right = 343.0
-offset_bottom = 110.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.35, 0.35)
-theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 17
-theme_override_font_sizes/font_size = 100
-text = "Levels"
+theme_override_font_sizes/font_size = 124
+text = "Settings"
 horizontal_alignment = 1
 
 [node name="Settings" type="Node2D" parent="Control"]
-position = Vector2(106, 91)
+position = Vector2(-130, -100)
 
-[node name="Button" parent="Control/Settings" instance=ExtResource("3_ei257")]
+[node name="Button" parent="Control/Settings" instance=ExtResource("2_dpsb8")]
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -90.0
-offset_top = -35.0
-offset_right = 910.0
-offset_bottom = 985.0
+offset_left = -60.0
+offset_top = -23.0
+offset_right = 940.0
+offset_bottom = 997.0
 grow_horizontal = 1
 grow_vertical = 1
-scale = Vector2(0.18, 0.07)
+scale = Vector2(0.12, 0.046)
 is_disabled = true
 metadata/_edit_use_anchors_ = true
 
@@ -127,24 +89,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -77.0
-offset_top = -27.0
-offset_right = 340.0
-offset_bottom = 110.0
+offset_left = -52.0
+offset_top = -20.0
+offset_right = 231.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 17
-theme_override_font_sizes/font_size = 100
-text = "Settings"
+theme_override_font_sizes/font_size = 80
+text = "Sound"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Quit" type="Node2D" parent="Control"]
+[node name="Back" type="Node2D" parent="Control"]
 position = Vector2(0, 169)
 
-[node name="Button" parent="Control/Quit" instance=ExtResource("3_ei257")]
+[node name="Button" parent="Control/Back" instance=ExtResource("2_dpsb8")]
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -157,10 +120,9 @@ offset_bottom = 985.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.18, 0.07)
-is_button = false
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control/Quit"]
+[node name="Label" type="Label" parent="Control/Back"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -177,7 +139,7 @@ theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 17
 theme_override_font_sizes/font_size = 100
-text = "Quit"
+text = "Back"
 horizontal_alignment = 1
 
 [node name="DEBUG" type="Node2D" parent="."]
@@ -207,5 +169,5 @@ shape = SubResource("RectangleShape2D_ovx2h")
 position = Vector2(593, 180)
 shape = SubResource("RectangleShape2D_ovx2h")
 
-[node name="SceneChanger" parent="." instance=ExtResource("3_rmr83")]
-next_scene = ExtResource("4_8uxxo")
+[node name="SceneChanger" parent="." instance=ExtResource("3_e12od")]
+next_scene = ExtResource("4_ca25q")
