@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="2_8uxxo"]
 [ext_resource type="PackedScene" uid="uid://cshjw5w1n760w" path="res://ui/menus/shaded_button.tscn" id="3_ei257"]
 [ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="3_rmr83"]
-[ext_resource type="PackedScene" uid="uid://cvp1nbwd8imx" path="res://main.tscn" id="4_8uxxo"]
+[ext_resource type="PackedScene" uid="uid://cvp1nbwd8imx" path="res://levels/level_0.tscn" id="4_8uxxo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukl6e"]
 size = Vector2(30, 300)
@@ -118,7 +118,6 @@ offset_bottom = 985.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.18, 0.07)
-is_disabled = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Control/Settings"]

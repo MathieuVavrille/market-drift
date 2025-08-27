@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhr1gp4k8fgpp"]
+[gd_scene load_steps=5 format=3 uid="uid://dhr1gp4k8fgpp"]
 
-[ext_resource type="Script" uid="uid://ddmeqjwsk64if" path="res://title_screen.gd" id="1_bor1v"]
+[ext_resource type="Script" uid="uid://ddmeqjwsk64if" path="res://ui/menus/title_screen.gd" id="1_bor1v"]
 [ext_resource type="PackedScene" uid="uid://cfdnaq48txqrv" path="res://ui/menus/main_menu.tscn" id="2_qer0c"]
+[ext_resource type="PackedScene" uid="uid://dd0mj8ehtdjbv" path="res://ui/menus/level_select_menu.tscn" id="3_j327e"]
+[ext_resource type="PackedScene" uid="uid://berbnxowlj80" path="res://ui/menus/settings_menu.tscn" id="4_gn1cq"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -15,3 +17,9 @@ grow_vertical = 2
 script = ExtResource("1_bor1v")
 
 [node name="MainMenu" parent="." instance=ExtResource("2_qer0c")]
+
+[node name="LevelSelectionMenu" parent="." instance=ExtResource("3_j327e")]
+visible = false
+
+[node name="SettingsMenu" parent="." instance=ExtResource("4_gn1cq")]
+visible = false

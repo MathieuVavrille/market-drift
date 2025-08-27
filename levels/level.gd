@@ -1,5 +1,7 @@
 extends Node2D
 
+@export_range(0, 9) var level_number: int = 0
+
 const goal_arrow_scene = preload("res://goal_arrow.tscn")
 
 var nb_objects = 0

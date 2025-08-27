@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Market Drift"
-run/main_scene="uid://cvp1nbwd8imx"
+run/main_scene="uid://dhr1gp4k8fgpp"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

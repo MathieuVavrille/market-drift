@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="1_j7w7g"]
 [ext_resource type="Script" uid="uid://bhlkrithhi3eu" path="res://ui/menus/level_select_menu.gd" id="1_s7x0m"]
 [ext_resource type="PackedScene" uid="uid://cshjw5w1n760w" path="res://ui/menus/shaded_button.tscn" id="2_fhobr"]
+[ext_resource type="PackedScene" uid="uid://dmdax8cqeil2n" path="res://ui/medal_times.tscn" id="3_eww27"]
 [ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="3_s7x0m"]
-[ext_resource type="PackedScene" uid="uid://cvp1nbwd8imx" path="res://main.tscn" id="4_eww27"]
-[ext_resource type="PackedScene" uid="uid://b4ob6ydx3acs" path="res://ui/multi_medal.tscn" id="4_s7x0m"]
+[ext_resource type="PackedScene" uid="uid://cvp1nbwd8imx" path="res://levels/level_0.tscn" id="4_eww27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukl6e"]
 size = Vector2(30, 300)
@@ -38,12 +38,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -250.0
-offset_top = -260.0
+offset_top = -280.0
 offset_right = 750.0
-offset_bottom = 760.0
+offset_bottom = 740.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.5, 0.55)
 texture = ExtResource("1_j7w7g")
 
 [node name="Title" type="Label" parent="Control"]
@@ -54,9 +54,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -248.0
-offset_top = -220.0
+offset_top = -235.0
 offset_right = 1166.0
-offset_bottom = -50.0
+offset_bottom = -65.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
@@ -68,13 +68,15 @@ text = "Level Selection"
 horizontal_alignment = 1
 
 [node name="Levels" type="Node2D" parent="Control"]
-position = Vector2(0, -72)
+position = Vector2(0, -90)
 
-[node name="MultiMedal" parent="Control" instance=ExtResource("4_s7x0m")]
-position = Vector2(0, 66)
+[node name="MedalTimes" parent="Control" instance=ExtResource("3_eww27")]
+visible = false
+position = Vector2(0, 67)
+scale = Vector2(0.9, 0.9)
 
 [node name="Back" type="Node2D" parent="Control"]
-position = Vector2(0, 169)
+position = Vector2(0, 190)
 
 [node name="Button" parent="Control/Back" instance=ExtResource("2_fhobr")]
 anchors_preset = 0

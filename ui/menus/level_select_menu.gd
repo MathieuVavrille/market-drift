@@ -11,6 +11,12 @@ func _ready():
 		var button = level_button_scene.instantiate()
 		$Control/Levels.add_child(button)
 		button.get_node("Label").text = str(level)
-		print(i - 0.5)
 		button.position = Vector2((j-2) * button_spacing, (i - 0.5) * button_spacing)
-		
+
+func get_ith_button(i):
+	print($Control/Levels.get_child(i))
+	return $Control/Levels.get_child(i)
+
+func show_medal_times(level_times: LevelTimes):
+	$Control/MedalTimes.visible = true
+	$Control/MedalTimes.set_everything(0, level_times)
