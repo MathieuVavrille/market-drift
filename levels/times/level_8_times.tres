@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelTimes" load_steps=2 format=3 uid="uid://d6g46gadjgq8"]
+
+[ext_resource type="Script" uid="uid://brc0v2j0cx8ge" path="res://levels/times/LevelTimes.gd" id="1_ct6w8"]
+
+[resource]
+script = ExtResource("1_ct6w8")
+pb_time = 0
+author_time = 108
+gold_time = 158
+silver_time = 208
+bronze_time = 308
+metadata/_custom_type_script = "uid://brc0v2j0cx8ge"

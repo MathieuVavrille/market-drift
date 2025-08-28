@@ -14,7 +14,6 @@ func _ready():
 		button.position = Vector2((j-2) * button_spacing, (i - 0.5) * button_spacing)
 
 func get_ith_button(i):
-	print($Control/Levels.get_child(i))
 	return $Control/Levels.get_child(i)
 
 func show_medal_times(level_times: LevelTimes):

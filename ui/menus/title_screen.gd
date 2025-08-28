@@ -17,11 +17,10 @@ func _ready():
 
 func set_all_level_times():
 	for i in range(10):
-		var level_path = "res://levels/level_%d.tscn" % 0  # TODO i
-		all_level_times.append(load(level_path).instantiate().get_node("LevelTimes"))
+		all_level_times.append(LevelTimes.load(i))
 		all_level_times[i].pb_time = save_data.best_hard_times[i]
 
-
+const ANIMATION_TIME = 1.
 func _on_levels_button_pressed() -> void:
 	# TODO nice animation
 	$MainMenu.visible = false
@@ -29,8 +28,13 @@ func _on_levels_button_pressed() -> void:
 
 func _on_settings_button_pressed() -> void:
 	# TODO nice animation
-	$MainMenu.visible = false
+	create_tween().tween_property($MainMenu/Control, "modulate:a", 0., ANIMATION_TIME)
+
 	$SettingsMenu.visible = true
+	$SettingsMenu/Control.modulate.a = 0.
+	create_tween().tween_property($SettingsMenu/Control, "modulate:a", 1., ANIMATION_TIME)
+	var width = 500
+
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
