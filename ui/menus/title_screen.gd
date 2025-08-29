@@ -3,6 +3,9 @@ extends Control
 var save_data: SaveData
 var all_level_times = []
 
+@onready var original_menu_posx = $MainMenu/Control.position.x
+@onready var original_settings_posx = $SettingsMenu/Control.position.x
+@onready var original_level_posx = $LevelSelectionMenu/Control.position.x
 func _ready():
 	$MainMenu/Control/Levels/Button.pressed.connect(_on_levels_button_pressed)
 	$MainMenu/Control/Settings/Button.pressed.connect(_on_settings_button_pressed)
@@ -28,12 +31,17 @@ func _on_levels_button_pressed() -> void:
 
 func _on_settings_button_pressed() -> void:
 	# TODO nice animation
+	var width = ($MainMenu/Control/TextureRect.size.x * $MainMenu/Control/TextureRect.scale.x / 2
+				+ $SettingsMenu/Control/TextureRect.size.x * $SettingsMenu/Control/TextureRect.scale.x / 2
+				+ 50)
 	create_tween().tween_property($MainMenu/Control, "modulate:a", 0., ANIMATION_TIME)
-
-	$SettingsMenu.visible = true
+	create_tween().tween_property($MainMenu/Control, "position:x", original_menu_posx - width, ANIMATION_TIME).set_trans(Tween.TRANS_SINE)
+	#get_tree().create_timer(ANIMATION_TIME).timeout.connect(func(): $MainMenu.visible = false)
 	$SettingsMenu/Control.modulate.a = 0.
+	$SettingsMenu.visible = true
 	create_tween().tween_property($SettingsMenu/Control, "modulate:a", 1., ANIMATION_TIME)
-	var width = 500
+	$SettingsMenu/Control.position.x = original_settings_posx + width
+	create_tween().tween_property($SettingsMenu/Control, "position:x", original_settings_posx, ANIMATION_TIME).set_trans(Tween.TRANS_SINE)
 
 
 func _on_quit_button_pressed() -> void:

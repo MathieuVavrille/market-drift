@@ -19,6 +19,7 @@ script = ExtResource("1_bor1v")
 [node name="MainMenu" parent="." instance=ExtResource("2_qer0c")]
 
 [node name="LevelSelectionMenu" parent="." instance=ExtResource("3_j327e")]
+visible = false
 
 [node name="SettingsMenu" parent="." instance=ExtResource("4_gn1cq")]
 visible = false
