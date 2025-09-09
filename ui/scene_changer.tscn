@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c0mp85a2iqirs" path="res://ui/scene_changer.gd" id="1_74y66"]
 
 [node name="SceneChanger" type="ColorRect"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

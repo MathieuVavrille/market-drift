@@ -16,45 +16,51 @@ func _ready():
 	set_all_level_times()
 	for i in range(10):
 		$LevelSelectionMenu.get_ith_button(i).get_node("Button").mouse_entered.connect(func(): $LevelSelectionMenu.show_medal_times(all_level_times[i]))
-		$LevelSelectionMenu.get_ith_button(i).get_node("Button").pressed.connect(func(): print("level ", i))
+		$LevelSelectionMenu.get_ith_button(i).get_node("Button").pressed.connect(func(): on_ith_level_pressed(i))
 
 func set_all_level_times():
 	for i in range(10):
 		all_level_times.append(LevelTimes.load(i))
 		all_level_times[i].pb_time = save_data.best_hard_times[i]
 
-const ANIMATION_TIME = 1.
+const ANIMATION_TIME = 0.5
+func change_menu(old_menu, new_menu, width_factor, original_pos):
+	var old_control = old_menu.get_node("Control")
+	var old_rect = old_control.get_node("TextureRect")
+	var new_control = new_menu.get_node("Control")
+	var new_rect = new_control.get_node("TextureRect")
+	var width = (old_rect.size.x * old_rect.scale.x / 2 + new_rect.size.x * new_rect.scale.x / 2 + 50)
+	create_tween().tween_property(old_control, "modulate:a", 0., ANIMATION_TIME)
+	get_tree().create_timer(ANIMATION_TIME).timeout.connect(func(): old_menu.visible = false)
+	create_tween().tween_property(old_control, "position:x", original_menu_posx - width * width_factor, ANIMATION_TIME).set_trans(Tween.TRANS_SINE)
+	new_control.modulate.a = 0.
+	new_menu.visible = true
+	create_tween().tween_property(new_control, "modulate:a", 1., ANIMATION_TIME)
+	new_control.position.x = original_settings_posx + width * width_factor
+	create_tween().tween_property(new_control, "position:x", original_pos, ANIMATION_TIME).set_trans(Tween.TRANS_SINE)
+
 func _on_levels_button_pressed() -> void:
-	# TODO nice animation
-	$MainMenu.visible = false
-	$LevelSelectionMenu.visible = true
-
+	if $MainMenu/Control.modulate.a == 1.:
+		change_menu($MainMenu, $LevelSelectionMenu, -1, original_level_posx)
+	
 func _on_settings_button_pressed() -> void:
-	# TODO nice animation
-	var width = ($MainMenu/Control/TextureRect.size.x * $MainMenu/Control/TextureRect.scale.x / 2
-				+ $SettingsMenu/Control/TextureRect.size.x * $SettingsMenu/Control/TextureRect.scale.x / 2
-				+ 50)
-	create_tween().tween_property($MainMenu/Control, "modulate:a", 0., ANIMATION_TIME)
-	create_tween().tween_property($MainMenu/Control, "position:x", original_menu_posx - width, ANIMATION_TIME).set_trans(Tween.TRANS_SINE)
-	#get_tree().create_timer(ANIMATION_TIME).timeout.connect(func(): $MainMenu.visible = false)
-	$SettingsMenu/Control.modulate.a = 0.
-	$SettingsMenu.visible = true
-	create_tween().tween_property($SettingsMenu/Control, "modulate:a", 1., ANIMATION_TIME)
-	$SettingsMenu/Control.position.x = original_settings_posx + width
-	create_tween().tween_property($SettingsMenu/Control, "position:x", original_settings_posx, ANIMATION_TIME).set_trans(Tween.TRANS_SINE)
-
+	if $MainMenu/Control.modulate.a == 1.:
+		change_menu($MainMenu, $SettingsMenu, 1, original_settings_posx)
 
 func _on_quit_button_pressed() -> void:
-	get_tree().quit()
+	if $MainMenu/Control.modulate.a == 1.:
+		get_tree().quit()
 	
 func _on_level_back_button() -> void:
-	# TODO nice animation
-	$LevelSelectionMenu.visible = false
-	$LevelSelectionMenu/Control/MedalTimes.visible = false
-	$MainMenu.visible = true
+	if $LevelSelectionMenu/Control.modulate.a == 1.:
+		change_menu($LevelSelectionMenu, $MainMenu, 1, original_menu_posx)
+		get_tree().create_timer(ANIMATION_TIME).timeout.connect(func(): $LevelSelectionMenu/Control/MedalTimes.visible = false)
 
 func _on_settings_back_button() -> void:
-	# TODO animation
-	$SettingsMenu.visible = false
-	$MainMenu.visible = true
+	if $SettingsMenu/Control.modulate.a == 1.:
+		change_menu($SettingsMenu, $MainMenu, -1, original_menu_posx)
+
+func on_ith_level_pressed(i: int):
+	$SceneChanger.next_scene = load("res://levels/layouts/level_0.tscn")
+	$SceneChanger.to_next_scene()
 	

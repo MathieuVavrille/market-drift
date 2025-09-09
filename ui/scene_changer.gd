@@ -5,7 +5,7 @@ extends ColorRect
 
 func to_next_scene():
 	visible = true
-	create_tween().tween_property(self, "modulate:a", 1., fade_time).set_trans(Tween.TRANS_SINE)
+	create_tween().tween_property(self, "modulate:a", 0.5, fade_time).set_trans(Tween.TRANS_SINE)
 	get_tree().create_timer(fade_time).timeout.connect(on_fade_out)
 
 func on_fade_out():
