@@ -49,7 +49,7 @@ func _on_settings_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	if $MainMenu/Control.modulate.a == 1.:
-		get_tree().quit()
+		$SceneChanger.to_next_scene()
 	
 func _on_level_back_button() -> void:
 	if $LevelSelectionMenu/Control.modulate.a == 1.:
@@ -60,7 +60,11 @@ func _on_settings_back_button() -> void:
 	if $SettingsMenu/Control.modulate.a == 1.:
 		change_menu($SettingsMenu, $MainMenu, -1, original_menu_posx)
 
+"""func on_ith_level_pressed(i: int):
+	var scene_changer = load("res://ui/scene_changer.tscn").instantiate()
+	scene_changer.next_scene = load("res://levels/layouts/level_0.tscn")
+	scene_changer.to_next_scene()"""
+
 func on_ith_level_pressed(i: int):
 	$SceneChanger.next_scene = load("res://levels/layouts/level_0.tscn")
 	$SceneChanger.to_next_scene()
-	
