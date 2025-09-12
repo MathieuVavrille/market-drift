@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbc4lxxqtvui1"]
+
+[ext_resource type="Script" uid="uid://smuyf348he4i" path="res://ui/countdown.gd" id="1_qh2dl"]
+[ext_resource type="AudioStream" uid="uid://bah4m8y7yoacc" path="res://assets/sfx/countdown_tick.mp3" id="2_dhgls"]
+[ext_resource type="AudioStream" uid="uid://n46wgm4ea5dj" path="res://assets/sfx/countdown_go.mp3" id="3_2ikdk"]
+
+[node name="Countdown" type="Label"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 300
+script = ExtResource("1_qh2dl")
+
+[node name="CountSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dhgls")
+
+[node name="GoSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2ikdk")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cvp1nbwd8imx"]
+[gd_scene load_steps=14 format=4 uid="uid://cvp1nbwd8imx"]
 
 [ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_jrji3"]
 [ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_dxwrf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://object_area.tscn" id="6_77mke"]
 [ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://player_cart.tscn" id="7_3swe2"]
 [ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="8_ydl4y"]
+[ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="9_dxwrf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("2_dxwrf")
@@ -93,5 +94,7 @@ mass = 50.0
 
 [node name="LevelEnd" parent="." instance=ExtResource("8_ydl4y")]
 visible = false
+
+[node name="SceneChanger" parent="." instance=ExtResource("9_dxwrf")]
 
 [connection signal="finished" from="Register" to="." method="_on_register_finished"]

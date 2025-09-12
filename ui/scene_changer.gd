@@ -3,7 +3,12 @@ extends CanvasLayer
 @export var fade_time = 0.5
 @export var next_scene: PackedScene
 
+func start_scene():
+	$ColorRect.modulate.a = 1.
+	create_tween().tween_property($ColorRect, "modulate:a", 0., fade_time).set_trans(Tween.TRANS_SINE)
+
 func to_next_scene():
+	$ColorRect.modulate.a = 0.
 	create_tween().tween_property($ColorRect, "modulate:a", 1., fade_time).set_trans(Tween.TRANS_SINE)
 	get_tree().create_timer(fade_time).timeout.connect(on_fade_out)
 
