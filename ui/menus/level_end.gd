@@ -2,9 +2,10 @@ extends CanvasLayer
 
 var level_times: LevelTimes
 var is_paused = false
+var is_started = false
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") and is_started:
 		if visible:
 			if is_paused:
 				visible = false
