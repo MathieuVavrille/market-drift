@@ -20,6 +20,6 @@ func on_fade_out():
 	if next_scene == null:
 		get_tree().quit()
 	else:
-		#get_tree().change_scene_to_packed(next_scene)
-		get_tree().root.add_child(next_scene.instantiate())
-		get_node("/root/Chapter1Outside").queue_free()
+		get_tree().change_scene_to_packed(next_scene)
+		#get_tree().root.add_child(next_scene.instantiate())
+		#get_node(root).queue_free()

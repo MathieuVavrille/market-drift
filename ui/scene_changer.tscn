@@ -4,6 +4,7 @@
 
 [node name="SceneChanger" type="CanvasLayer"]
 script = ExtResource("1_74y66")
+root = "Main"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

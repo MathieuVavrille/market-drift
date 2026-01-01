@@ -1,11 +1,20 @@
 extends CanvasLayer
 
+signal restart
+signal menu
+signal next
+
 var level_times: LevelTimes
 var is_paused = false
 var is_started = false
+var is_ended = false
+
+func deactivate_next():
+	$Control/Next/Button.modulate = $Control/Next/Button.DEACTIVATED_MODULATE
+	$Control/Next/Button.disabled = true
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_cancel") and is_started:
+	if Input.is_action_just_pressed("ui_cancel") and is_started and not is_ended:
 		if visible:
 			if is_paused:
 				visible = false
@@ -21,15 +30,15 @@ func pause_level():
 	$Control/MedalTimes.set_everything(0, level_times)
 
 func end_level(new_time: int):
-	visible = true
+	is_ended = true
 	$Control/Title.text="Level Completed"
 	$Control/Restart.modulate.a = 0.
 	$Control/Next.modulate.a = 0.
 	$Control/Menu.modulate.a = 0.
-	visible = true
 	$Control.modulate.a = 0.
 	create_tween().tween_property($Control, "modulate:a", 1., 0.5)
 	$Control/MedalTimes.appear(new_time, level_times)
+	visible = true
 
 const BUTTON_APPEAR_TIME = 0.5
 func _on_medal_times_appeared() -> void:
@@ -39,12 +48,10 @@ func _on_medal_times_appeared() -> void:
 
 
 func _on_restart_button_pressed() -> void:
-	print("restart")
-
+	restart.emit()
 
 func _on_next_button_pressed() -> void:
-	print("next")
-
+	next.emit()
 
 func _on_menu_button_pressed() -> void:
-	print("menu")
+	menu.emit()

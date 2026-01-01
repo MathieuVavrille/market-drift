@@ -84,9 +84,10 @@ func set_everything(current, level_times):
 			text += format_time(level_times.gold_time)
 	$MultiTimes/Times.text = text
 
-
 func format_time(tenths: int) -> String:
+	@warning_ignore("integer_division")
 	var total_seconds := tenths / 10
+	@warning_ignore("integer_division")
 	var minutes := total_seconds / 60
 	var seconds := total_seconds % 60
 	var tenth := tenths % 10

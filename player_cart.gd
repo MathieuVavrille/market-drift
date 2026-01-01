@@ -5,6 +5,9 @@ extends RigidBody2D
 
 var FRICTION_STRENGTH = move_force / max_speed * 10
 
+func _ready():
+	$Camera.position = Vector2(0, 0)
+
 func true_movement(cart_direction, input_vector):
 	var force_position = $PlayerMesh.global_position - global_position
 	var angle = cart_direction.angle_to(input_vector)

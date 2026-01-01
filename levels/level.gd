@@ -8,13 +8,18 @@ var nb_objects = 0
 var start_time = 0
 func _ready():
 	#$PlayerCart/Countdown.position = $PlayerCart/Countdown.size / 2
+	if level_number == 9:
+		$LevelEnd.deactivate_next()
 	$LevelEnd.level_times = LevelTimes.load(level_number)
 	nb_objects = len($Objects.get_children())
 	for object in $Objects.get_children():
 		object.is_achieved.connect(object_area_achieved)
 		instantiate_goal_arrow(object, object.get_texture())
-	get_tree().paused = true
+	get_tree().create_timer(0.01).timeout.connect(pause_at_the_start)
 	$SceneChanger.start_scene()
+
+func pause_at_the_start():
+	get_tree().paused = true
 
 const BEFORE_COUNTDOWN_TIME = 0.5
 func _on_scene_changer_scene_started() -> void:
@@ -23,7 +28,6 @@ func _on_scene_changer_scene_started() -> void:
 func _on_countdown_go() -> void:
 	get_tree().paused = false
 	$LevelEnd.is_started = true
-	print("started")
 	
 	
 func start():
@@ -54,3 +58,20 @@ func object_area_achieved():
 func _on_register_finished() -> void:
 	var total_time_ms = Time.get_ticks_msec() - start_time
 	print(total_time_ms)
+	@warning_ignore("integer_division")
+	$LevelEnd.end_level(total_time_ms / 100)
+
+
+func _on_restart() -> void:
+	$SceneChanger.next_scene = load("res://levels/layouts/level_" + str(level_number) + ".tscn")
+	$SceneChanger.to_next_scene()
+
+
+func _on_level_end_next() -> void:
+	$SceneChanger.next_scene = load("res://levels/layouts/level_" + str(level_number+1) + ".tscn")
+	$SceneChanger.to_next_scene()
+
+
+func _on_menu() -> void:
+	$SceneChanger.next_scene = load("res://ui/menus/title_screen.tscn")
+	$SceneChanger.to_next_scene()

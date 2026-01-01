@@ -60,11 +60,8 @@ func _on_settings_back_button() -> void:
 	if $SettingsMenu/Control.modulate.a == 1.:
 		change_menu($SettingsMenu, $MainMenu, -1, original_menu_posx)
 
-"""func on_ith_level_pressed(i: int):
-	var scene_changer = load("res://ui/scene_changer.tscn").instantiate()
-	scene_changer.next_scene = load("res://levels/layouts/level_0.tscn")
-	scene_changer.to_next_scene()"""
 
 func on_ith_level_pressed(i: int):
-	$SceneChanger.next_scene = load("res://levels/layouts/level_0.tscn")
+	$SceneChanger.next_scene = load("res://levels/layouts/level_" + str(i) + ".tscn")
+	#$SceneChanger.root = "/root/TitleScreen"
 	$SceneChanger.to_next_scene()
