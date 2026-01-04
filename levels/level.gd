@@ -2,7 +2,7 @@ extends Node2D
 
 @export_range(0, 9) var level_number: int = 0
 
-const goal_arrow_scene = preload("res://goal_arrow.tscn")
+const goal_arrow_scene = preload("res://base/goal_arrow.tscn")
 
 var nb_objects = 0
 var start_time = 0
@@ -57,7 +57,6 @@ func object_area_achieved():
 
 func _on_register_finished() -> void:
 	var total_time_ms = Time.get_ticks_msec() - start_time
-	print(total_time_ms)
 	@warning_ignore("integer_division")
 	$LevelEnd.end_level(total_time_ms / 100)
 
