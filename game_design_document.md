@@ -62,23 +62,42 @@ The game will feature multiple levels, and performing a certain time awards meda
 
 ### TODO
 
-- [] Start countdown
+- [x] Start countdown
 - [x] Objectives
 - [x] End of level
 - [] Switch between two modes (easy-hard)
+- [] Switch between modes after level 2 is finished
+- [] Make objects heavy (and change center of gravity)
+- [] Stop on register
 
 - [] Goal arrow actual sprite
 - [] Cart wheels
 
-- [] Main menu
+- [x] Main menu
 - [x] Pause menu
-- [] Level menu
+- [x] Level menu
 - [] Settings
 
-- [] Tutorial level
-- [] Create 10 levels (0/10)
+- [x] Tutorial levels
+- [] Create 10 levels (1/10)
+- [] More objects
+    - [] Orange
+    - [] Strawberries
+    - [] Leek
+    - [] Salad
+    - [] Lemon
+    - [] Tomato
+    - [] Apple
+    - [] Grape
+    - [] Chicken wing
+    - [] Pineapple
+    - [] Cheese
+    - [] Cherry
+    - [] Toilet Paper
+    - [] Milk
+    - [] Eggs ?
 
 ### TO FIX
 
 - [] goal arrow not pointing well
-
+- 3-2-1-GO depends on the rotation

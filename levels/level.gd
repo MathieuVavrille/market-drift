@@ -23,7 +23,7 @@ func pause_at_the_start():
 
 const BEFORE_COUNTDOWN_TIME = 0.5
 func _on_scene_changer_scene_started() -> void:
-	$PlayerCart/Countdown.start()
+	$Countdown.start()
 
 func _on_countdown_go() -> void:
 	get_tree().paused = false

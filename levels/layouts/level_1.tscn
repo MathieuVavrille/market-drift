@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://bacqovgnp2hk8"]
+[gd_scene load_steps=14 format=4 uid="uid://bacqovgnp2hk8"]
 
 [ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_qinr8"]
 [ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_w6vfs"]
 [ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="3_wybgk"]
 [ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://register.tscn" id="4_iufdc"]
-[ext_resource type="Texture2D" uid="uid://cetg1mrx32spm" path="res://assets/market_tiles/banana.png" id="5_0b0w7"]
 [ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://object_area.tscn" id="6_u7lvn"]
 [ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://player_cart.tscn" id="7_tp4nw"]
 [ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="8_5g3y1"]
@@ -43,65 +42,33 @@ tile_set = SubResource("TileSet_kek77")
 
 [node name="Market" type="TileMapLayer" parent="."]
 scale = Vector2(0.05, 0.05)
-tile_map_data = PackedByteArray("AAABAP//AQAAAAAAAAABAAAAAQAAAAAAAAABAP7/AQAAAAAAAAABAPz/AQAAAAAAAAABAP3/AQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAP//AQAAAAAAAAABAAAAAQAAAAAAAAABAP7/AQAAAAAAAAABAPz/AQAAAAAAAAABAP3/AQAAAAAAAAAAAAAAAQAAAAAAAAD//wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD9/wAAAQAAAAAAAAD9////AQAAAAAAAAD9//7/AQAAAAAAAAD9//3/AQAAAAAAAAD9//z/AQAAAAAAAAD9//v/AQAAAAAAAAD9//r/AQAAAAAAAAD9//n/AQAAAAAAAAD9//j/AQAAAAAAAAD+//j/AQAAAAAAAAD///j/AQAAAAAAAAAAAPj/AQAAAAAAAAABAPj/AQAAAAAAAAACAPj/AQAAAAAAAAADAPj/AQAAAAAAAAAEAPj/AQAAAAAAAAAFAPj/AQAAAAAAAAACAPz/AQAAAAAAAAADAPz/AQAAAAAAAAAEAPz/AQAAAAAAAAAFAPz/AQAAAAAAAAAGAPz/AQAAAAAAAAAHAPz/AQAAAAAAAAAIAPz/AQAAAAAAAAAJAPz/AQAAAAAAAAAJAPv/AQAAAAAAAAAJAPr/AQAAAAAAAAAJAPn/AQAAAAAAAAAJAPj/AQAAAAAAAAAJAPf/AQAAAAAAAAAJAPb/AQAAAAAAAAAJAPX/AQAAAAAAAAAJAPT/AQAAAAAAAAAFAPf/AQAAAAAAAAAFAPb/AQAAAAAAAAAFAPX/AQAAAAAAAAAFAPT/AQAAAAAAAAAFAPP/AQAAAAAAAAAFAPL/AQAAAAAAAAAFAPH/AQAAAAAAAAAFAPD/AQAAAAAAAAAGAPD/AQAAAAAAAAAHAPD/AQAAAAAAAAAIAPD/AQAAAAAAAAAJAPD/AQAAAAAAAAAKAPD/AQAAAAAAAAAMAPD/AQAAAAAAAAANAPD/AQAAAAAAAAAOAPD/AQAAAAAAAAAKAPT/AQAAAAAAAAALAPT/AQAAAAAAAAAMAPT/AQAAAAAAAAAPAPD/AQAAAAAAAAAQAPD/AQAAAAAAAAANAPT/AQAAAAAAAAAKAO//AQAAAAAAAAAKAO7/AQAAAAAAAAAKAO3/AQAAAAAAAAAKAOz/AQAAAAAAAAALAOz/AQAAAAAAAAAMAOz/AQAAAAAAAAAMAO3/AQAAAAAAAAAMAO7/AQAAAAAAAAAMAO//AQAAAAAAAAARAPD/AQAAAAAAAAARAPH/AQAAAAAAAAARAPL/AQAAAAAAAAARAPP/AQAAAAAAAAARAPT/AQAAAAAAAAARAPX/AQAAAAAAAAARAPb/AQAAAAAAAAARAPf/AQAAAAAAAAANAPX/AQAAAAAAAAANAPb/AQAAAAAAAAANAPf/AQAAAAAAAAANAPj/AQAAAAAAAAANAPn/AQAAAAAAAAANAPr/AQAAAAAAAAAOAPr/AQAAAAAAAAAPAPr/AQAAAAAAAAAQAPr/AQAAAAAAAAAQAPf/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_4c57u")
 
 [node name="Register" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_iufdc")]
-position = Vector2(13, 27)
+position = Vector2(164, -70)
 player = NodePath("../PlayerCart")
-
-[node name="Banana" type="Sprite2D" parent="."]
-position = Vector2(14, 6)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_0b0w7")
-
-[node name="Banana2" type="Sprite2D" parent="."]
-position = Vector2(17, 3)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_0b0w7")
-
-[node name="Banana3" type="Sprite2D" parent="."]
-position = Vector2(17, 6)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_0b0w7")
-
-[node name="Banana4" type="Sprite2D" parent="."]
-position = Vector2(14, 3)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_0b0w7")
 
 [node name="Objects" type="Node2D" parent="."]
 
+[node name="Object" parent="Objects" instance=ExtResource("6_u7lvn")]
+position = Vector2(35, -65)
+rotation = -1.5707964
+
 [node name="Object2" parent="Objects" instance=ExtResource("6_u7lvn")]
-position = Vector2(5, -3)
+position = Vector2(115, -185)
+rotation = -1.5707964
 
 [node name="Object3" parent="Objects" instance=ExtResource("6_u7lvn")]
-position = Vector2(5, -3)
+position = Vector2(85, -96)
 
 [node name="Object4" parent="Objects" instance=ExtResource("6_u7lvn")]
-position = Vector2(5, -3)
-
-[node name="Object5" parent="Objects" instance=ExtResource("6_u7lvn")]
-position = Vector2(5, -3)
-
-[node name="Object6" parent="Objects" instance=ExtResource("6_u7lvn")]
-position = Vector2(5, -3)
+position = Vector2(165, -116)
 
 [node name="PlayerCart" parent="." instance=ExtResource("7_tp4nw")]
-position = Vector2(-2, -7)
+position = Vector2(-5, -7)
+rotation = -1.5707964
 mass = 50.0
-
-[node name="Countdown" parent="PlayerCart" instance=ExtResource("8_5g3y1")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -57.0
-offset_top = -32.0
-offset_right = 1083.0
-offset_bottom = 608.0
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.1, 0.1)
 
 [node name="LevelEnd" parent="." instance=ExtResource("9_1mf75")]
 visible = false
@@ -111,8 +78,74 @@ process_mode = 3
 fade_time = 1.0
 root = "/root/Level"
 
+[node name="Label" type="Label" parent="."]
+offset_left = -47.0
+offset_top = 8.0
+offset_right = 804.0
+offset_bottom = 285.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 75
+text = "Time to turn"
+horizontal_alignment = 1
+
+[node name="Countdown" parent="." instance=ExtResource("8_5g3y1")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -62.0
+offset_top = -39.0
+offset_right = 1078.0
+offset_bottom = 601.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.1, 0.1)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -33.0
+offset_top = -102.0
+offset_right = 818.0
+offset_bottom = 175.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 75
+text = "Go around the cart
+to make a turn"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 13.000002
+offset_top = -204.0
+offset_right = 864.0
+offset_bottom = 217.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 75
+text = "It is easier to
+go backward
+but slower:
+avoid doing it"
+horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 131.0
+offset_top = -203.0
+offset_right = 1123.0
+offset_bottom = 218.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 75
+text = "The more
+objects you
+have, the 
+heavier the cart"
+
 [connection signal="finished" from="Register" to="." method="_on_register_finished"]
-[connection signal="go" from="PlayerCart/Countdown" to="." method="_on_countdown_go"]
 [connection signal="next" from="LevelEnd" to="." method="_on_level_end_next"]
 [connection signal="restart" from="LevelEnd" to="." method="_on_restart"]
 [connection signal="scene_started" from="SceneChanger" to="." method="_on_scene_changer_scene_started"]
+[connection signal="go" from="Countdown" to="." method="_on_countdown_go"]
