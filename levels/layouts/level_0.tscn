@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_jrji3"]
 [ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_dxwrf"]
 [ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="3_57nda"]
-[ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://register.tscn" id="4_lxuw7"]
+[ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://base/register.tscn" id="4_lxuw7"]
 [ext_resource type="Texture2D" uid="uid://cetg1mrx32spm" path="res://assets/market_tiles/banana.png" id="5_fmofd"]
-[ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://object_area.tscn" id="6_77mke"]
-[ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://player_cart.tscn" id="7_3swe2"]
+[ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://base/object_area.tscn" id="6_77mke"]
+[ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://base/player_cart.tscn" id="7_3swe2"]
 [ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="8_ydl4y"]
 [ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="9_dxwrf"]
 [ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="10_57nda"]
@@ -87,7 +87,7 @@ rotation = -1.5707964
 [node name="PlayerCart" parent="." instance=ExtResource("7_3swe2")]
 mass = 50.0
 
-[node name="Countdown" parent="PlayerCart" instance=ExtResource("10_57nda")]
+[node name="Countdown" parent="." instance=ExtResource("10_57nda")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -194,7 +194,7 @@ text = "And then go to the cashier to pay"
 horizontal_alignment = 1
 
 [connection signal="finished" from="Register" to="." method="_on_register_finished"]
-[connection signal="go" from="PlayerCart/Countdown" to="." method="_on_countdown_go"]
+[connection signal="go" from="Countdown" to="." method="_on_countdown_go"]
 [connection signal="menu" from="LevelEnd" to="." method="_on_menu"]
 [connection signal="next" from="LevelEnd" to="." method="_on_level_end_next"]
 [connection signal="restart" from="LevelEnd" to="." method="_on_restart"]

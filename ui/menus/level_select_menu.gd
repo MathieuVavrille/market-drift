@@ -6,6 +6,7 @@ const button_spacing = 80
 
 func _ready():
 	for level in range(10):
+		@warning_ignore("integer_division")
 		var i = level / 5
 		var j = level % 5
 		var button = level_button_scene.instantiate()

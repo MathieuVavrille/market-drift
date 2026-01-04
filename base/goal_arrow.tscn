@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://8jf0meo3fdmo"]
 
-[ext_resource type="Script" uid="uid://d0ajrcb3cirky" path="res://goal_arrow.gd" id="1_jdt12"]
+[ext_resource type="Script" uid="uid://d0ajrcb3cirky" path="res://base/goal_arrow.gd" id="1_jdt12"]
 [ext_resource type="Texture2D" uid="uid://pvlwigo25qmr" path="res://assets/cart.png" id="1_ud5o2"]
 
 [node name="GoalArrow" type="Sprite2D"]

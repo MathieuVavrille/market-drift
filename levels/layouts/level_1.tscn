@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_qinr8"]
 [ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_w6vfs"]
 [ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="3_wybgk"]
-[ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://register.tscn" id="4_iufdc"]
-[ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://object_area.tscn" id="6_u7lvn"]
-[ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://player_cart.tscn" id="7_tp4nw"]
+[ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://base/register.tscn" id="4_iufdc"]
+[ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://base/object_area.tscn" id="6_u7lvn"]
+[ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://base/player_cart.tscn" id="7_tp4nw"]
 [ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="8_5g3y1"]
 [ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="9_1mf75"]
 [ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="10_um3bb"]
@@ -31,6 +31,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_kek77")
 
 [node name="Level" type="Node2D"]
+position = Vector2(1, 0)
 script = ExtResource("1_qinr8")
 level_number = 1
 
@@ -116,33 +117,31 @@ to make a turn"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 13.000002
-offset_top = -204.0
-offset_right = 864.0
-offset_bottom = 217.0
+offset_left = 14.999999
+offset_top = -193.0
+offset_right = 866.0
+offset_bottom = 228.0
 scale = Vector2(0.1, 0.1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 75
-text = "It is easier to
-go backward
-but slower:
-avoid doing it"
+text = "Avoid going
+backwards,
+it is slower"
 horizontal_alignment = 2
 
 [node name="Label4" type="Label" parent="."]
 offset_left = 131.0
-offset_top = -203.0
+offset_top = -192.0
 offset_right = 1123.0
-offset_bottom = 218.0
+offset_bottom = 229.0
 scale = Vector2(0.1, 0.1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 75
-text = "The more
-objects you
-have, the 
-heavier the cart"
+text = "Objects make
+the cart
+heavy"
 
 [connection signal="finished" from="Register" to="." method="_on_register_finished"]
 [connection signal="next" from="LevelEnd" to="." method="_on_level_end_next"]
