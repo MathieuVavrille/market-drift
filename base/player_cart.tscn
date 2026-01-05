@@ -28,6 +28,7 @@ size = Vector2(5, 4)
 mass = 100.0
 physics_material_override = SubResource("PhysicsMaterial_s7862")
 gravity_scale = 0.0
+center_of_mass_mode = 1
 script = ExtResource("1_s7862")
 
 [node name="CartMesh" type="MeshInstance2D" parent="."]
@@ -53,6 +54,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_28ymo")
 
 [node name="ObjectDetector" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -70,6 +72,12 @@ zoom = Vector2(10, 10)
 position_smoothing_enabled = true
 
 [node name="Objects" type="Node2D" parent="."]
+
+[node name="PlayerCenter" type="Marker2D" parent="."]
+position = Vector2(-3, 0)
+
+[node name="CartCenter" type="Marker2D" parent="."]
+position = Vector2(4.5, 0)
 
 [connection signal="area_entered" from="ObjectDetector" to="." method="entered_object"]
 [connection signal="area_exited" from="ObjectDetector" to="." method="object_exited"]

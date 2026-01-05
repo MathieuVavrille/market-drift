@@ -7,7 +7,6 @@ const goal_arrow_scene = preload("res://base/goal_arrow.tscn")
 var nb_objects = 0
 var start_time = 0
 func _ready():
-	#$PlayerCart/Countdown.position = $PlayerCart/Countdown.size / 2
 	if level_number == 9:
 		$LevelEnd.deactivate_next()
 	$LevelEnd.level_times = LevelTimes.load(level_number)
@@ -17,6 +16,7 @@ func _ready():
 		instantiate_goal_arrow(object, object.get_texture())
 	get_tree().create_timer(0.01).timeout.connect(pause_at_the_start)
 	$SceneChanger.start_scene()
+	_on_countdown_go()
 
 func pause_at_the_start():
 	get_tree().paused = true

@@ -7,6 +7,7 @@ var all_level_times = []
 @onready var original_settings_posx = $SettingsMenu/Control.position.x
 @onready var original_level_posx = $LevelSelectionMenu/Control.position.x
 func _ready():
+	get_tree().paused = false
 	$MainMenu/Control/Levels/Button.pressed.connect(_on_levels_button_pressed)
 	$MainMenu/Control/Settings/Button.pressed.connect(_on_settings_button_pressed)
 	$MainMenu/Control/Quit/Button.pressed.connect(_on_quit_button_pressed)
@@ -30,17 +31,18 @@ func change_menu(old_menu, new_menu, width_factor, original_pos):
 	var new_control = new_menu.get_node("Control")
 	var new_rect = new_control.get_node("TextureRect")
 	var width = (old_rect.size.x * old_rect.scale.x / 2 + new_rect.size.x * new_rect.scale.x / 2 + 50)
-	create_tween().tween_property(old_control, "modulate:a", 0., ANIMATION_TIME)
+	get_tree().create_tween().tween_property(old_control, "modulate:a", 0., ANIMATION_TIME)
 	get_tree().create_timer(ANIMATION_TIME).timeout.connect(func(): old_menu.visible = false)
-	create_tween().tween_property(old_control, "position:x", original_menu_posx - width * width_factor, ANIMATION_TIME).set_trans(Tween.TRANS_SINE)
+	get_tree().create_tween().tween_property(old_control, "position:x", original_menu_posx - width * width_factor, ANIMATION_TIME).set_trans(Tween.TRANS_SINE)
 	new_control.modulate.a = 0.
 	new_menu.visible = true
-	create_tween().tween_property(new_control, "modulate:a", 1., ANIMATION_TIME)
+	get_tree().create_tween().tween_property(new_control, "modulate:a", 1., ANIMATION_TIME)
 	new_control.position.x = original_settings_posx + width * width_factor
-	create_tween().tween_property(new_control, "position:x", original_pos, ANIMATION_TIME).set_trans(Tween.TRANS_SINE)
+	get_tree().create_tween().tween_property(new_control, "position:x", original_pos, ANIMATION_TIME).set_trans(Tween.TRANS_SINE)
 
 func _on_levels_button_pressed() -> void:
 	if $MainMenu/Control.modulate.a == 1.:
+		print("levels")
 		change_menu($MainMenu, $LevelSelectionMenu, -1, original_level_posx)
 	
 func _on_settings_button_pressed() -> void:
@@ -63,5 +65,4 @@ func _on_settings_back_button() -> void:
 
 func on_ith_level_pressed(i: int):
 	$SceneChanger.next_scene = load("res://levels/layouts/level_" + str(i) + ".tscn")
-	#$SceneChanger.root = "/root/TitleScreen"
 	$SceneChanger.to_next_scene()

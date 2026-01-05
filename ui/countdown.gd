@@ -2,7 +2,7 @@ extends Label
 
 signal go
 
-const SECOND_TIME = 1.
+const SECOND_TIME = 0.1#1.
 
 func start():
 	visible = true
