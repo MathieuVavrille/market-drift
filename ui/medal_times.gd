@@ -5,18 +5,18 @@ signal appeared
 const APPEAR_TIME = 0.5
 func appear(new_time, level_times):
 	# Old level times: the pb is not yet updated
-	var old_pb = level_times.pb_time
-	if level_times.pb_time == 0 or level_times.pb_time > new_time:
-		level_times.pb_time = new_time
+	var old_pb = level_times.pb_time[Settings.difficulty]
+	if level_times.pb_time[Settings.difficulty] == 0 or level_times.pb_time [Settings.difficulty]> new_time:
+		level_times.pb_time[Settings.difficulty] = new_time
 	set_everything(new_time, level_times)
 	$MultiMedal.position = Vector2(0, 0)
-	if old_pb > level_times.bronze_time or old_pb == 0:
+	if old_pb > level_times.bronze_time[Settings.difficulty] or old_pb == 0:
 		$MultiMedal.set_medals(0)
-	elif old_pb > level_times.silver_time:
+	elif old_pb > level_times.silver_time[Settings.difficulty]:
 		$MultiMedal.set_medals(1)
-	elif old_pb > level_times.gold_time:
+	elif old_pb > level_times.gold_time[Settings.difficulty]:
 		$MultiMedal.set_medals(2)
-	elif old_pb > level_times.author_time:
+	elif old_pb > level_times.author_time[Settings.difficulty]:
 		$MultiMedal.set_medals(3)
 	else:
 		$MultiMedal.set_medals(4)
@@ -28,13 +28,13 @@ func appear(new_time, level_times):
 
 func appear_medals(new_time, level_times, is_pb):
 	var medal_appear_time = 0.
-	if new_time > level_times.bronze_time or new_time == 0:
+	if new_time > level_times.bronze_time[Settings.difficulty] or new_time == 0:
 		medal_appear_time = $MultiMedal.appear_multiple(0, is_pb)
-	elif new_time > level_times.silver_time:
+	elif new_time > level_times.silver_time[Settings.difficulty]:
 		medal_appear_time = $MultiMedal.appear_multiple(1, is_pb)
-	elif new_time > level_times.gold_time:
+	elif new_time > level_times.gold_time[Settings.difficulty]:
 		medal_appear_time = $MultiMedal.appear_multiple(2, is_pb)
-	elif new_time > level_times.author_time:
+	elif new_time > level_times.author_time[Settings.difficulty]:
 		medal_appear_time = $MultiMedal.appear_multiple(3, is_pb)
 	else:
 		medal_appear_time = $MultiMedal.appear_multiple(4, is_pb)
@@ -58,15 +58,15 @@ func set_everything(current, level_times):
 		$MultiTimes/Logos/FinishR.visible = false
 		$MultiTimes/Logos.position.y -= 27
 	var medal_color = "bronze"
-	if level_times.pb_time == 0:
+	if level_times.pb_time[Settings.difficulty] == 0:
 		text += "------"
 	else:
-		text += format_time(level_times.pb_time)
-		if level_times.pb_time <= level_times.bronze_time:
+		text += format_time(level_times.pb_time[Settings.difficulty])
+		if level_times.pb_time <= level_times.bronze_time[Settings.difficulty]:
 			medal_color = "silver"
-		if level_times.pb_time <= level_times.silver_time:
+		if level_times.pb_time <= level_times.silver_time[Settings.difficulty]:
 			medal_color = "gold"
-		if level_times.pb_time <= level_times.gold_time:
+		if level_times.pb_time <= level_times.gold_time[Settings.difficulty]:
 			medal_color = "author"
 	$MultiTimes/Logos/MedalL.set_color(medal_color)
 	$MultiTimes/Logos/MedalR.set_color(medal_color)
@@ -77,11 +77,11 @@ func set_everything(current, level_times):
 	else:
 		text += "\n"
 		if medal_color == "bronze":
-			text += format_time(level_times.bronze_time)
+			text += format_time(level_times.bronze_time[Settings.difficulty])
 		elif medal_color == "silver":
-			text += format_time(level_times.silver_time)
+			text += format_time(level_times.silver_time[Settings.difficulty])
 		elif medal_color == "gold":
-			text += format_time(level_times.gold_time)
+			text += format_time(level_times.gold_time[Settings.difficulty])
 	$MultiTimes/Times.text = text
 
 func format_time(tenths: int) -> String:
@@ -98,7 +98,7 @@ func format_time(tenths: int) -> String:
 		
 		
 
-func set_times(current, level_times):
-	if current > level_times.gold_time:
+"""func set_times(current, level_times):
+	if current > level_times.gold_time[Settings.difficulty]:
 		$Control/Times/MedalL.visible = false
-		$Control/Times/MedalR.visible = false
+		$Control/Times/MedalR.visible = false"""

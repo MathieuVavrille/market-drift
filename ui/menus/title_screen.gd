@@ -22,7 +22,11 @@ func _ready():
 func set_all_level_times():
 	for i in range(10):
 		all_level_times.append(LevelTimes.load(i))
-		all_level_times[i].pb_time = save_data.best_hard_times[i]
+		print(all_level_times[i].pb_time)
+		var sn = save_data.best_normal_times[i]
+		all_level_times[i].pb_time[0] = save_data.best_normal_times[i]
+		var sh = save_data.best_hard_times[i]
+		all_level_times[i].pb_time[1] = save_data.best_hard_times[i]
 
 const ANIMATION_TIME = 0.5
 func change_menu(old_menu, new_menu, width_factor, original_pos):

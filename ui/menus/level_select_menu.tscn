@@ -31,47 +31,71 @@ grow_vertical = 2
 [node name="Mode" type="Node2D" parent="Control"]
 position = Vector2(-352, -95)
 
-[node name="ModeButtonRect" type="TextureRect" parent="Control/Mode"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = -81.0
-offset_right = 4002.0
-offset_bottom = 2973.5454
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.05, 0.055)
-texture = ExtResource("1_j7w7g")
-metadata/_edit_use_anchors_ = true
+[node name="DifficultyButton" parent="Control/Mode" instance=ExtResource("2_fhobr")]
+offset_left = -82.0
+offset_top = -107.00001
+offset_right = 868.0
+offset_bottom = 862.0
+scale = Vector2(0.2, 0.2)
 
-[node name="Button" parent="Control/Mode" instance=ExtResource("2_fhobr")]
+[node name="HardPosition" parent="Control/Mode" instance=ExtResource("2_fhobr")]
+visible = false
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -81.0
-offset_top = -1.0
-offset_right = 919.0
-offset_bottom = 1019.0
+offset_left = -67.0
+offset_top = -7.0
+offset_right = 933.0
+offset_bottom = 1013.0
 grow_horizontal = 1
 grow_vertical = 1
-scale = Vector2(0.18, 0.07)
+scale = Vector2(0.17, 0.08)
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control/Mode"]
+[node name="NormalPosition" parent="Control/Mode" instance=ExtResource("2_fhobr")]
+visible = false
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -68.0
+offset_top = -89.0
+offset_right = 932.0
+offset_bottom = 931.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.17, 0.08)
+metadata/_edit_use_anchors_ = true
+
+[node name="DifficultyBackground" parent="Control/Mode" instance=ExtResource("2_fhobr")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -67.0
+offset_top = -89.0
+offset_right = 933.0
+offset_bottom = 931.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.17, 0.08)
+is_disabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="HardLabel" type="Label" parent="Control/Mode"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = 7.999939
-offset_right = 417.0
-offset_bottom = 144.99994
+offset_left = -73.0
+offset_top = 6.0
+offset_right = 427.0
+offset_bottom = 143.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
@@ -83,16 +107,16 @@ text = "Hard"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="Control/Mode"]
+[node name="NormalLabel" type="Label" parent="Control/Mode"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -56.00006
-offset_right = 419.85718
-offset_bottom = 80.99994
+offset_left = -75.0
+offset_top = -76.0
+offset_right = 427.85718
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
@@ -213,3 +237,5 @@ shape = SubResource("RectangleShape2D_ovx2h")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="DEBUG"]
 position = Vector2(593, 180)
 shape = SubResource("RectangleShape2D_ovx2h")
+
+[connection signal="pressed" from="Control/Mode/DifficultyButton" to="." method="_on_difficulty_button_pressed"]

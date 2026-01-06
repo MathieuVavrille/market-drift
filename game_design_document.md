@@ -69,6 +69,7 @@ The game will feature multiple levels, and performing a certain time awards meda
 - [] Switch between modes after level 2 is finished
 - [] Make objects heavy (and change center of gravity)
 - [] Stop on register
+- [] Mustn't go backward
 
 - [] Goal arrow actual sprite
 - [] Cart wheels
@@ -99,5 +100,4 @@ The game will feature multiple levels, and performing a certain time awards meda
 
 ### TO FIX
 
-- [] goal arrow not pointing well
-- 3-2-1-GO depends on the rotation
+- [] goal arrow not pointing well ? What ?

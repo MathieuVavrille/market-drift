@@ -11,6 +11,7 @@ func _ready():
 	$Camera.position = Vector2(0, 0)
 
 func true_movement(cart_direction, input_vector):
+	"""The person has to go around the cart"""
 	var force_position = $PlayerMesh.global_position - global_position
 	var angle = cart_direction.angle_to(input_vector)
 	if angle < -PI:
@@ -25,6 +26,7 @@ func true_movement(cart_direction, input_vector):
 		apply_force(input_vector * move_force / 1, force_position)
 
 func turn_movement(cart_direction, input_vector):
+	"""The person turns the cart with their shoulders"""
 	var proj = (input_vector.dot(cart_direction) / cart_direction.length_squared()) * cart_direction
 	var cross = input_vector.cross(cart_direction)
 	apply_torque(-cross * 2500)
@@ -46,7 +48,7 @@ func _physics_process(_delta):
 	apply_torque(-angular_velocity * 20)
 	
 	if input_vector != Vector2.ZERO:
-		if Input.is_action_pressed("turn"):
+		if Input.is_action_pressed("turn") == (Settings.difficulty == 1):
 			turn_movement(cart_direction, input_vector)
 		else:
 			true_movement(cart_direction, input_vector)

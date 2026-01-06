@@ -4,9 +4,5 @@
 
 [resource]
 script = ExtResource("1_kgctp")
-pb_time = 0
-author_time = 103
-gold_time = 153
-silver_time = 203
-bronze_time = 303
+author_time = Array[int]([33, 103])
 metadata/_custom_type_script = "uid://brc0v2j0cx8ge"

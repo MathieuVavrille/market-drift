@@ -4,9 +4,5 @@
 
 [resource]
 script = ExtResource("1_ct6w8")
-pb_time = 0
-author_time = 108
-gold_time = 158
-silver_time = 208
-bronze_time = 308
+author_time = Array[int]([38, 108])
 metadata/_custom_type_script = "uid://brc0v2j0cx8ge"
