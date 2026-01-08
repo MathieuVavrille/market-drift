@@ -58,6 +58,8 @@ func object_area_achieved():
 func _on_register_finished() -> void:
 	var total_time_ms = Time.get_ticks_msec() - start_time
 	@warning_ignore("integer_division")
+	SaveData.set_level_pb(level_number, total_time_ms / 100)
+	@warning_ignore("integer_division")
 	$LevelEnd.end_level(total_time_ms / 100)
 
 

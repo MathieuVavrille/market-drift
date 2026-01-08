@@ -48,7 +48,7 @@ func _physics_process(_delta):
 	apply_torque(-angular_velocity * 20)
 	
 	if input_vector != Vector2.ZERO:
-		if Input.is_action_pressed("turn") == (Settings.difficulty == 1):
+		if Input.is_action_pressed("turn") != (Settings.difficulty == 1):
 			turn_movement(cart_direction, input_vector)
 		else:
 			true_movement(cart_direction, input_vector)

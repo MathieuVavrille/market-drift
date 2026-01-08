@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_5xelb")
-author_time = Array[int]([31, 101])
+author_time = Array[int]([310, 1010])
 metadata/_custom_type_script = "uid://brc0v2j0cx8ge"

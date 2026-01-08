@@ -16,17 +16,16 @@ func _ready():
 	save_data = SaveData.load()
 	set_all_level_times()
 	for i in range(10):
-		$LevelSelectionMenu.get_ith_button(i).get_node("Button").mouse_entered.connect(func(): $LevelSelectionMenu.show_medal_times(all_level_times[i]))
+		$LevelSelectionMenu.get_ith_button(i).get_node("Button").mouse_entered.connect(func(): $LevelSelectionMenu.show_medal_times(i))
 		$LevelSelectionMenu.get_ith_button(i).get_node("Button").pressed.connect(func(): on_ith_level_pressed(i))
 
 func set_all_level_times():
 	for i in range(10):
 		all_level_times.append(LevelTimes.load(i))
-		print(all_level_times[i].pb_time)
-		var sn = save_data.best_normal_times[i]
 		all_level_times[i].pb_time[0] = save_data.best_normal_times[i]
-		var sh = save_data.best_hard_times[i]
 		all_level_times[i].pb_time[1] = save_data.best_hard_times[i]
+	$LevelSelectionMenu.all_level_times = all_level_times
+	$LevelSelectionMenu.set_all_buttons()
 
 const ANIMATION_TIME = 0.5
 func change_menu(old_menu, new_menu, width_factor, original_pos):
@@ -46,7 +45,6 @@ func change_menu(old_menu, new_menu, width_factor, original_pos):
 
 func _on_levels_button_pressed() -> void:
 	if $MainMenu/Control.modulate.a == 1.:
-		print("levels")
 		change_menu($MainMenu, $LevelSelectionMenu, -1, original_level_posx)
 	
 func _on_settings_button_pressed() -> void:

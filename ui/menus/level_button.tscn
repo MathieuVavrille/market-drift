@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0p5vasiwhal"]
+[gd_scene load_steps=7 format=3 uid="uid://d0p5vasiwhal"]
 
+[ext_resource type="Script" uid="uid://bw3pym8qn771e" path="res://ui/menus/level_button.gd" id="1_h3mij"]
+[ext_resource type="Texture2D" uid="uid://bm2jkym6efv80" path="res://assets/medals/author.png" id="1_i4pld"]
 [ext_resource type="PackedScene" uid="uid://cshjw5w1n760w" path="res://ui/menus/shaded_button.tscn" id="1_rhmyj"]
+[ext_resource type="Texture2D" uid="uid://b3kuhktel34kl" path="res://assets/medals/gold.png" id="3_uidd4"]
+[ext_resource type="Texture2D" uid="uid://b0i0eqxe2jgvd" path="res://assets/medals/silver.png" id="4_h3mij"]
+[ext_resource type="Texture2D" uid="uid://2ff2a0aght5w" path="res://assets/medals/bronze.png" id="5_d7txg"]
 
 [node name="Zero" type="Node2D"]
 scale = Vector2(0.675, 0.675)
+script = ExtResource("1_h3mij")
 
 [node name="Button" parent="." instance=ExtResource("1_rhmyj")]
 anchors_preset = 0
@@ -12,13 +18,37 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = -47.0
-offset_top = -51.0
+offset_top = -49.518524
 offset_right = 953.0
-offset_bottom = 969.0
+offset_bottom = 970.48145
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.1, 0.1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Bronze" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -1.4814814)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("5_d7txg")
+
+[node name="Silver" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -1.4814814)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("4_h3mij")
+
+[node name="Gold" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -1.4814814)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("3_uidd4")
+
+[node name="Author" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -1.4814806)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("1_i4pld")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8

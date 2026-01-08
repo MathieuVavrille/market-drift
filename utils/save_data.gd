@@ -30,9 +30,9 @@ func get_level_pb(level_number: int, easy_mode: bool = false):
 	else:
 		return save_data.best_hard_times[level_number]
 
-func set_level_pb(level_number: int, new_time: int, easy_mode: bool = false):
+static func set_level_pb(level_number: int, new_time: int):
 	var save_data = SaveData.load()
-	var times = save_data.best_easy_times if easy_mode else save_data.best_hard_times
+	var times = save_data.best_normal_times if Settings.difficulty == 0 else save_data.best_hard_times
 	if times[level_number] == 0 or new_time < times[level_number]:
 		times[level_number] = new_time
 	save_data.save()

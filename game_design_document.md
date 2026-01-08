@@ -65,11 +65,12 @@ The game will feature multiple levels, and performing a certain time awards meda
 - [x] Start countdown
 - [x] Objectives
 - [x] End of level
-- [] Switch between two modes (easy-hard)
+- [x] Switch between two modes (easy-hard)
 - [] Switch between modes after level 2 is finished
 - [] Make objects heavy (and change center of gravity)
 - [] Stop on register
 - [] Mustn't go backward
+- [] Unlock levels
 
 - [] Goal arrow actual sprite
 - [] Cart wheels
@@ -78,9 +79,11 @@ The game will feature multiple levels, and performing a certain time awards meda
 - [x] Pause menu
 - [x] Level menu
 - [] Settings
+  - [] Sound
+  - [] Other ?
 
 - [x] Tutorial levels
-- [] Create 10 levels (1/10)
+- [] Create 10 levels (2/10)
 - [] More objects
     - [] Orange
     - [] Strawberries
@@ -100,4 +103,4 @@ The game will feature multiple levels, and performing a certain time awards meda
 
 ### TO FIX
 
-- [] goal arrow not pointing well ? What ?
+- [] goal arrow not pointing well ?

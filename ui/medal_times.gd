@@ -49,25 +49,35 @@ func move_medals():
 func set_everything(current, level_times):
 	visible = true
 	$MultiMedal.position = $MultiMedalFinalPosition.position
+	#var best_time = max(current, level_times.pb_time[Settings.difficulty])
 	$MultiTimes/Logos.position.y = -5
 	var text = ""
 	if current != 0:
 		text += format_time(current) + "\n"
+		$MultiTimes/Logos/FinishL.visible = true
+		$MultiTimes/Logos/FinishR.visible = true
 	else:
 		$MultiTimes/Logos/FinishL.visible = false
 		$MultiTimes/Logos/FinishR.visible = false
 		$MultiTimes/Logos.position.y -= 27
 	var medal_color = "bronze"
+	var medal_to_set = 0
 	if level_times.pb_time[Settings.difficulty] == 0:
 		text += "------"
 	else:
 		text += format_time(level_times.pb_time[Settings.difficulty])
-		if level_times.pb_time <= level_times.bronze_time[Settings.difficulty]:
+		if level_times.pb_time[Settings.difficulty] <= level_times.bronze_time[Settings.difficulty]:
 			medal_color = "silver"
-		if level_times.pb_time <= level_times.silver_time[Settings.difficulty]:
+			medal_to_set = 1
+		if level_times.pb_time[Settings.difficulty] <= level_times.silver_time[Settings.difficulty]:
 			medal_color = "gold"
-		if level_times.pb_time <= level_times.gold_time[Settings.difficulty]:
+			medal_to_set = 2
+		if level_times.pb_time[Settings.difficulty] <= level_times.gold_time[Settings.difficulty]:
 			medal_color = "author"
+			medal_to_set = 3
+		if level_times.pb_time[Settings.difficulty] <= level_times.author_time[Settings.difficulty]:
+			medal_to_set = 4
+	$MultiMedal.set_medals(medal_to_set)
 	$MultiTimes/Logos/MedalL.set_color(medal_color)
 	$MultiTimes/Logos/MedalR.set_color(medal_color)
 	$MultiTimes/Logos/MedalL.visible = medal_color != "author"
@@ -95,10 +105,3 @@ func format_time(tenths: int) -> String:
 		return "%d:%02d.%d" % [minutes, seconds, tenth]
 	else:
 		return "%d.%d" % [seconds, tenth]
-		
-		
-
-"""func set_times(current, level_times):
-	if current > level_times.gold_time[Settings.difficulty]:
-		$Control/Times/MedalL.visible = false
-		$Control/Times/MedalR.visible = false"""
