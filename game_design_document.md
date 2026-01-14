@@ -66,11 +66,11 @@ The game will feature multiple levels, and performing a certain time awards meda
 - [x] Objectives
 - [x] End of level
 - [x] Switch between two modes (easy-hard)
-- [] Switch between modes after level 2 is finished
+- [x] Switch between modes after level 2 is finished
 - [] Make objects heavy (and change center of gravity)
 - [] Stop on register
 - [] Mustn't go backward
-- [] Unlock levels
+- [x] Unlock levels
 
 - [] Goal arrow actual sprite
 - [] Cart wheels
@@ -80,6 +80,7 @@ The game will feature multiple levels, and performing a certain time awards meda
 - [x] Level menu
 - [] Settings
   - [] Sound
+  - [x] Reset
   - [] Other ?
 
 - [x] Tutorial levels

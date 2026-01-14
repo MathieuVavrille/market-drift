@@ -7,6 +7,7 @@ const button_spacing = 80
 
 var buttons = []
 func _ready():
+	$Control/Mode.visible = SaveData.load().best_normal_times[1] != 0
 	for level in range(10):
 		@warning_ignore("integer_division")
 		var i = level / 5
@@ -56,3 +57,13 @@ func _on_difficulty_button_pressed() -> void:
 		if latest_level_selected != -1:
 			show_medal_times(latest_level_selected)
 		set_all_buttons()
+
+const FADE_TIME = 1.
+const FOCUS_TIME = 4.
+func show_mode_change():
+	$Focus.modulate.a = 0.
+	create_tween().tween_property($Focus, "modulate:a", 1., FADE_TIME).set_trans(Tween.TRANS_CUBIC)
+	get_tree().create_timer(FOCUS_TIME).timeout.connect(finish_mode_change)
+	
+func finish_mode_change():
+	create_tween().tween_property($Focus, "modulate:a", 0., FADE_TIME).set_trans(Tween.TRANS_CUBIC)

@@ -9,16 +9,23 @@ const SAVE_PATH = "user://save.tres"
 @export var best_normal_times := []
 @export var best_hard_times := []
 
+@export var mode_change_shown := false
+
+
 static func load() -> SaveData:
 	if FileAccess.file_exists(SAVE_PATH):
 		return ResourceLoader.load(SAVE_PATH) as SaveData
 	else:
-		var save_data = SaveData.new()
-		for i in range(10):
-			save_data.best_normal_times.append(0)
-			save_data.best_hard_times.append(0)
+		var save_data = SaveData.empty_save()
 		save_data.save()
 		return save_data
+
+static func empty_save() -> SaveData:
+	var save_data = SaveData.new()
+	for i in range(10):
+		save_data.best_normal_times.append(0)
+		save_data.best_hard_times.append(0)
+	return save_data
 
 func save():
 	ResourceSaver.save(self, SAVE_PATH)

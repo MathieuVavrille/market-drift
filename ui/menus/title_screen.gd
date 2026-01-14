@@ -13,11 +13,13 @@ func _ready():
 	$MainMenu/Control/Quit/Button.pressed.connect(_on_quit_button_pressed)
 	$LevelSelectionMenu/Control/Back/Button.pressed.connect(_on_level_back_button)
 	$SettingsMenu/Control/Back/Button.pressed.connect(_on_settings_back_button)
-	save_data = SaveData.load()
-	set_all_level_times()
 	for i in range(10):
 		$LevelSelectionMenu.get_ith_button(i).get_node("Button").mouse_entered.connect(func(): $LevelSelectionMenu.show_medal_times(i))
 		$LevelSelectionMenu.get_ith_button(i).get_node("Button").pressed.connect(func(): on_ith_level_pressed(i))
+
+func load():
+	save_data = SaveData.load()
+	set_all_level_times()
 
 func set_all_level_times():
 	for i in range(10):
@@ -44,19 +46,23 @@ func change_menu(old_menu, new_menu, width_factor, original_pos):
 	get_tree().create_tween().tween_property(new_control, "position:x", original_pos, ANIMATION_TIME).set_trans(Tween.TRANS_SINE)
 
 func _on_levels_button_pressed() -> void:
-	if $MainMenu/Control.modulate.a == 1.:
+	if $MainMenu/Control.modulate.a == 1.0 and $LevelSelectionMenu/Focus.modulate.a == 0.:
+		if not SaveData.load().mode_change_shown and all_level_times[1].pb_time[0] != 0:
+			get_tree().create_timer(ANIMATION_TIME).timeout.connect($LevelSelectionMenu.show_mode_change)
+			save_data.mode_change_shown = true
+			save_data.save()
 		change_menu($MainMenu, $LevelSelectionMenu, -1, original_level_posx)
 	
 func _on_settings_button_pressed() -> void:
-	if $MainMenu/Control.modulate.a == 1.:
+	if $MainMenu/Control.modulate.a == 1.0 and $LevelSelectionMenu/Focus.modulate.a == 0.:
 		change_menu($MainMenu, $SettingsMenu, 1, original_settings_posx)
 
 func _on_quit_button_pressed() -> void:
-	if $MainMenu/Control.modulate.a == 1.:
+	if $MainMenu/Control.modulate.a == 1.0 and $LevelSelectionMenu/Focus.modulate.a == 0.:
 		$SceneChanger.to_next_scene()
 	
 func _on_level_back_button() -> void:
-	if $LevelSelectionMenu/Control.modulate.a == 1.:
+	if $LevelSelectionMenu/Control.modulate.a == 1.0 and $LevelSelectionMenu/Focus.modulate.a == 0.:
 		change_menu($LevelSelectionMenu, $MainMenu, 1, original_menu_posx)
 		get_tree().create_timer(ANIMATION_TIME).timeout.connect(func(): $LevelSelectionMenu/Control/MedalTimes.visible = false)
 
@@ -66,5 +72,6 @@ func _on_settings_back_button() -> void:
 
 
 func on_ith_level_pressed(i: int):
-	$SceneChanger.next_scene = load("res://levels/layouts/level_" + str(i) + ".tscn")
-	$SceneChanger.to_next_scene()
+	if $LevelSelectionMenu/Focus.modulate.a == 0.:
+		$SceneChanger.next_scene = load("res://levels/layouts/level_" + str(i) + ".tscn")
+		$SceneChanger.to_next_scene()
