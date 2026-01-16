@@ -25,4 +25,4 @@ visible = false
 
 [node name="SceneChanger" parent="." instance=ExtResource("5_gn1cq")]
 
-[connection signal="resetted" from="SettingsMenu" to="." method="load"]
+[connection signal="resetted" from="SettingsMenu" to="." method="load_save"]

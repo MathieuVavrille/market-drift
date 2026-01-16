@@ -16,8 +16,9 @@ func _ready():
 	for i in range(10):
 		$LevelSelectionMenu.get_ith_button(i).get_node("Button").mouse_entered.connect(func(): $LevelSelectionMenu.show_medal_times(i))
 		$LevelSelectionMenu.get_ith_button(i).get_node("Button").pressed.connect(func(): on_ith_level_pressed(i))
+	load_save()
 
-func load():
+func load_save():
 	save_data = SaveData.load()
 	set_all_level_times()
 
