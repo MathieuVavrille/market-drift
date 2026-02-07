@@ -7,6 +7,12 @@ var all_level_times = []
 @onready var original_settings_posx = $SettingsMenu/Control.position.x
 @onready var original_level_posx = $LevelSelectionMenu/Control.position.x
 func _ready():
+	var dir := DirAccess.open("res://assets/market_tiles/food")
+	#dir.list_dir_begin()
+	for file: String in dir.get_files():
+		if file.ends_with(".png"):
+			var resource := dir.get_current_dir() + "/" + file
+			print(resource)
 	get_tree().paused = false
 	$MainMenu/Control/Levels/Button.pressed.connect(_on_levels_button_pressed)
 	$MainMenu/Control/Settings/Button.pressed.connect(_on_settings_button_pressed)

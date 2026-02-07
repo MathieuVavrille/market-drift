@@ -52,22 +52,22 @@ rotation = -1.5707964
 player = NodePath("../PlayerCart")
 
 [node name="Banana" type="Sprite2D" parent="."]
-position = Vector2(16, 21.67)
+position = Vector2(14, 15.67)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("5_fmofd")
 
 [node name="Banana2" type="Sprite2D" parent="."]
-position = Vector2(19, 18.67)
+position = Vector2(17, 12.67)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("5_fmofd")
 
 [node name="Banana3" type="Sprite2D" parent="."]
-position = Vector2(19, 21.67)
+position = Vector2(17, 15.67)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("5_fmofd")
 
 [node name="Banana4" type="Sprite2D" parent="."]
-position = Vector2(16, 18.67)
+position = Vector2(14, 12.67)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("5_fmofd")
 
