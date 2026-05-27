@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bodl01b2cwaws"]
+
+[ext_resource type="Script" uid="uid://c8mraiifvyvcu" path="res://base/object_stack.gd" id="1_fvwob"]
+[ext_resource type="Texture2D" uid="uid://dv6rneeh6wkou" path="res://assets/market_tiles/food/orange.png" id="2_ts06h"]
+
+[node name="ObjectStack" type="Node2D"]
+script = ExtResource("1_fvwob")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(-3, -81)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ts06h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-32, -28)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ts06h")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-53, 19)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ts06h")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(36, -35)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ts06h")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-3, 26)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ts06h")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(45, 15)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ts06h")

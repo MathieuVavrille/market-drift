@@ -10,7 +10,7 @@ extends Node2D
 const ELLIPSIS_PROPORTION = 0.33
 
 func _process(_delta):
-	if target == null:
+	if target.is_done:
 		queue_free()
 		return
 	visible = not target_visibility.is_on_screen()

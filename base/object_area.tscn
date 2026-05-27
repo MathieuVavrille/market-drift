@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbggpxj780byp"]
+[gd_scene load_steps=6 format=3 uid="uid://cbggpxj780byp"]
 
 [ext_resource type="Script" uid="uid://cyoy1ecojacg6" path="res://base/object_area.gd" id="1_1h7id"]
 [ext_resource type="Texture2D" uid="uid://gkg6uvnelk50" path="res://assets/object_area.png" id="2_1h7id"]
+[ext_resource type="PackedScene" uid="uid://bodl01b2cwaws" path="res://base/object_stack.tscn" id="2_mlca7"]
 [ext_resource type="Texture2D" uid="uid://cpts8ofxrjq3r" path="res://assets/market_tiles/food/cherry.png" id="3_bag5h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_er367"]
@@ -11,6 +12,10 @@ radius = 1.0
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_1h7id")
+
+[node name="ObjectStack" parent="." instance=ExtResource("2_mlca7")]
+position = Vector2(11.000009, 0.99999994)
+scale = Vector2(0.05, 0.05)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_er367")

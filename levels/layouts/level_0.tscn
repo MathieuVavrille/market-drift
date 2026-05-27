@@ -1,10 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://cvp1nbwd8imx"]
+[gd_scene load_steps=16 format=4 uid="uid://cvp1nbwd8imx"]
 
 [ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_jrji3"]
 [ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_dxwrf"]
 [ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="3_57nda"]
+[ext_resource type="PackedScene" uid="uid://bodl01b2cwaws" path="res://base/object_stack.tscn" id="3_lxuw7"]
 [ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://base/register.tscn" id="4_lxuw7"]
-[ext_resource type="Texture2D" uid="uid://cetg1mrx32spm" path="res://assets/market_tiles/banana.png" id="5_fmofd"]
 [ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://base/object_area.tscn" id="6_77mke"]
 [ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://base/player_cart.tscn" id="7_3swe2"]
 [ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="8_ydl4y"]
@@ -20,7 +20,10 @@ texture_region_size = Vector2i(200, 200)
 tile_size = Vector2i(200, 200)
 sources/0 = SubResource("TileSetAtlasSource_5vw27")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kek77"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_57nda"]
+scenes/1/scene = ExtResource("3_lxuw7")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lxuw7"]
 texture = ExtResource("3_57nda")
 texture_region_size = Vector2i(200, 250)
 0:0/0 = 0
@@ -29,7 +32,8 @@ texture_region_size = Vector2i(200, 250)
 [sub_resource type="TileSet" id="TileSet_4c57u"]
 tile_size = Vector2i(200, 200)
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_kek77")
+sources/1 = SubResource("TileSetAtlasSource_lxuw7")
+sources/0 = SubResource("TileSetScenesCollectionSource_57nda")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_jrji3")
@@ -46,30 +50,15 @@ scale = Vector2(0.05, 0.05)
 tile_map_data = PackedByteArray("AAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD+//7/AQAAAAAAAAD///7/AQAAAAAAAAAAAP7/AQAAAAAAAAABAP7/AQAAAAAAAAACAP7/AQAAAAAAAAADAP7/AQAAAAAAAAAEAP7/AQAAAAAAAAAFAP7/AQAAAAAAAAAGAP7/AQAAAAAAAAAHAP7/AQAAAAAAAAD+/wEAAQAAAAAAAAAGAAEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAIAP7/AQAAAAAAAAAJAP7/AQAAAAAAAAAKAP7/AQAAAAAAAAALAP7/AQAAAAAAAAAMAP7/AQAAAAAAAAANAP7/AQAAAAAAAAAOAP7/AQAAAAAAAAAPAP7/AQAAAAAAAAAHAAEAAQAAAAAAAAAPAAEAAQAAAAAAAAAOAAEAAQAAAAAAAAANAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAALAAEAAQAAAAAAAAAKAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAQAP7/AQAAAAAAAAAQAAEAAQAAAAAAAAARAP7/AQAAAAAAAAARAAEAAQAAAAAAAAASAP7/AQAAAAAAAAASAAEAAQAAAAAAAAATAP7/AQAAAAAAAAATAAEAAQAAAAAAAAAUAP7/AQAAAAAAAAAUAAEAAQAAAAAAAAAVAP7/AQAAAAAAAAAVAAEAAQAAAAAAAAAWAP7/AQAAAAAAAAAWAAEAAQAAAAAAAAAXAP7/AQAAAAAAAAAXAAEAAQAAAAAAAAAYAP7/AQAAAAAAAAAYAAEAAQAAAAAAAAAZAP7/AQAAAAAAAAAZAAEAAQAAAAAAAAAaAP7/AQAAAAAAAAAaAAEAAQAAAAAAAAAbAP7/AQAAAAAAAAAbAAEAAQAAAAAAAAAcAP7/AQAAAAAAAAAcAAEAAQAAAAAAAAAdAP7/AQAAAAAAAAAdAAEAAQAAAAAAAAAeAP7/AQAAAAAAAAAeAAEAAQAAAAAAAAAfAP7/AQAAAAAAAAAfAAEAAQAAAAAAAAAgAAEAAQAAAAAAAAAhAAEAAQAAAAAAAAAiAAEAAQAAAAAAAAAiAAAAAQAAAAAAAAAiAP//AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_4c57u")
 
+[node name="Market2" type="TileMapLayer" parent="."]
+scale = Vector2(0.05, 0.05)
+tile_map_data = PackedByteArray("AAD+////AAAAAAAAAQD+/wAAAAAAAAAAAQD+//7/AAAAAAAAAQD///7/AAAAAAAAAQAAAP7/AAAAAAAAAQABAP7/AAAAAAAAAQACAP7/AAAAAAAAAQADAP7/AAAAAAAAAQAEAP7/AAAAAAAAAQAFAP7/AAAAAAAAAQAHAP7/AAAAAAAAAQD+/wEAAAAAAAAAAQAGAAEAAAAAAAAAAQD//wEAAAAAAAAAAQAAAAEAAAAAAAAAAQABAAEAAAAAAAAAAQACAAEAAAAAAAAAAQADAAEAAAAAAAAAAQAEAAEAAAAAAAAAAQAFAAEAAAAAAAAAAQAIAP7/AAAAAAAAAQAKAP7/AAAAAAAAAQALAP7/AAAAAAAAAQAMAP7/AAAAAAAAAQANAP7/AAAAAAAAAQAOAP7/AAAAAAAAAQAPAP7/AAAAAAAAAQAHAAEAAAAAAAAAAQAPAAEAAAAAAAAAAQAOAAEAAAAAAAAAAQANAAEAAAAAAAAAAQAMAAEAAAAAAAAAAQALAAEAAAAAAAAAAQAKAAEAAAAAAAAAAQAJAAEAAAAAAAAAAQAIAAEAAAAAAAAAAQAQAP7/AAAAAAAAAQARAP7/AAAAAAAAAQARAAEAAAAAAAAAAQASAP7/AAAAAAAAAQASAAEAAAAAAAAAAQATAP7/AAAAAAAAAQATAAEAAAAAAAAAAQAUAP7/AAAAAAAAAQAUAAEAAAAAAAAAAQAVAP7/AAAAAAAAAQAVAAEAAAAAAAAAAQAWAP7/AAAAAAAAAQAWAAEAAAAAAAAAAQAXAP7/AAAAAAAAAQAXAAEAAAAAAAAAAQAYAP7/AAAAAAAAAQAYAAEAAAAAAAAAAQAZAAEAAAAAAAAAAQAaAP7/AAAAAAAAAQAaAAEAAAAAAAAAAQAbAP7/AAAAAAAAAQAbAAEAAAAAAAAAAQAcAP7/AAAAAAAAAQAcAAEAAAAAAAAAAQAdAP7/AAAAAAAAAQAdAAEAAAAAAAAAAQAeAP7/AAAAAAAAAQAeAAEAAAAAAAAAAQAfAP7/AAAAAAAAAQAfAAEAAAAAAAAAAQAgAAEAAAAAAAAAAQAhAAEAAAAAAAAAAQAiAAEAAAAAAAAAAQAiAAAAAAAAAAAAAQAiAP//AAAAAAAAAQAGAP7/AAAAAAAAAQA=")
+tile_set = SubResource("TileSet_4c57u")
+
 [node name="Register" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_lxuw7")]
 position = Vector2(331, -14)
 rotation = -1.5707964
 player = NodePath("../PlayerCart")
-
-[node name="Banana" type="Sprite2D" parent="."]
-position = Vector2(14, 15.67)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_fmofd")
-
-[node name="Banana2" type="Sprite2D" parent="."]
-position = Vector2(17, 12.67)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_fmofd")
-
-[node name="Banana3" type="Sprite2D" parent="."]
-position = Vector2(17, 15.67)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_fmofd")
-
-[node name="Banana4" type="Sprite2D" parent="."]
-position = Vector2(14, 12.67)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_fmofd")
 
 [node name="Objects" type="Node2D" parent="."]
 

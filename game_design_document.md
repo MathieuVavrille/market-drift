@@ -86,8 +86,8 @@ The game will feature multiple levels, and performing a certain time awards meda
 - [x] Tutorial levels
 - [] Create 10 levels (2/10)
 - [] More objects
-    - [] Orange
-    - [] Strawberries
+    - [x] Orange
+    - [x] Strawberry
     - [] Leek
     - [] Salad
     - [] Lemon
@@ -97,7 +97,7 @@ The game will feature multiple levels, and performing a certain time awards meda
     - [] Chicken wing
     - [] Pineapple
     - [] Cheese
-    - [] Cherry
+    - [x] Cherry
     - [] Toilet Paper
     - [] Milk
     - [] Eggs ?

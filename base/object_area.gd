@@ -2,6 +2,8 @@ extends Area2D
 
 signal is_achieved
 
+var is_done = false
+
 @export var is_end = false
 
 var player: Node2D
@@ -9,6 +11,10 @@ var player: Node2D
 
 var enabled = true
 func _ready():
+	
+	$ObjectStack.set_texture($Object.texture)
+	$ObjectStack.rotation = -rotation
+	$ObjectStack.visible = not is_end
 	$Object.rotation = -rotation
 	$Object.visible = not is_end
 
@@ -39,7 +45,10 @@ func achieved():
 	tween.tween_property($Vortex, "scale", Vector2(0, 0), ACHIEVED_DURATION).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	if not is_end:
 		player.get_object($Object)
-	get_tree().create_timer(ACHIEVED_DURATION).timeout.connect(queue_free)
+	get_tree().create_timer(ACHIEVED_DURATION).timeout.connect(done)
+
+func done():
+	is_done = true
 
 func get_texture():
 	return $Object.texture
