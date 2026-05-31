@@ -1,5 +1,28 @@
 extends RigidBody2D
 
+@export_group("Camera Limits")
+@export var left: float:
+	get:
+		return $Camera.limit_left
+	set(value):
+		$Camera.limit_left = value
+@export var right: float:
+	get:
+		return $Camera.limit_right
+	set(value):
+		$Camera.limit_right = value
+@export var top: float:
+	get:
+		return $Camera.limit_top
+	set(value):
+		$Camera.limit_top = value
+@export var bottom: float:
+	get:
+		return $Camera.limit_bottom
+	set(value):
+		$Camera.limit_bottom = value
+
+@export_group("")
 @export var move_force := 1000.0
 @export var max_speed := 200.0
 
@@ -90,7 +113,7 @@ func get_object(object: Node2D):
 	var goal_position = get_random_point_in_placeholder()
 	tween.tween_property(object, "position", goal_position, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
-func get_camera() -> Camera2D:
+func get_camera():
 	return $Camera
 	
 	

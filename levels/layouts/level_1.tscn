@@ -62,11 +62,11 @@ player = NodePath("../PlayerCart")
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="Object" parent="Objects" instance=ExtResource("6_u7lvn")]
-position = Vector2(35, -65)
+position = Vector2(35, -66)
 rotation = -1.5707964
 
 [node name="Object2" parent="Objects" instance=ExtResource("6_u7lvn")]
-position = Vector2(115, -185)
+position = Vector2(115, -186)
 rotation = -1.5707964
 
 [node name="Object3" parent="Objects" instance=ExtResource("6_u7lvn")]
@@ -79,6 +79,10 @@ position = Vector2(165, -116)
 position = Vector2(-5, -7)
 rotation = -1.5707964
 mass = 50.0
+left = -63.0
+right = 200.0
+top = -210.0
+bottom = 25.0
 
 [node name="LevelEnd" parent="." instance=ExtResource("9_1mf75")]
 visible = false

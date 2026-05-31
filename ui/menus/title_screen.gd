@@ -24,6 +24,10 @@ func _ready():
 		$LevelSelectionMenu.get_ith_button(i).get_node("Button").pressed.connect(func(): on_ith_level_pressed(i))
 	load_save()
 
+func resetted():
+	save_data = SaveData.empty_save()
+	set_all_level_times()
+
 func load_save():
 	save_data = SaveData.load()
 	set_all_level_times()
