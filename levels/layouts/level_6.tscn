@@ -1,18 +1,18 @@
-[gd_scene load_steps=16 format=4 uid="uid://bacqovgnp2hk8"]
+[gd_scene load_steps=16 format=4 uid="uid://yvfjgtokpuej"]
 
-[ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_qinr8"]
-[ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_w6vfs"]
-[ext_resource type="PackedScene" uid="uid://bodl01b2cwaws" path="res://base/object_stack.tscn" id="3_qinr8"]
-[ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="3_wybgk"]
-[ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://base/register.tscn" id="4_iufdc"]
-[ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://base/object_area.tscn" id="6_u7lvn"]
-[ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://base/player_cart.tscn" id="7_tp4nw"]
-[ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="8_5g3y1"]
-[ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="9_1mf75"]
-[ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="10_um3bb"]
+[ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_qj8o3"]
+[ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_ad3im"]
+[ext_resource type="PackedScene" uid="uid://bodl01b2cwaws" path="res://base/object_stack.tscn" id="3_nuoe2"]
+[ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="4_126ke"]
+[ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://base/register.tscn" id="5_ctngl"]
+[ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://base/object_area.tscn" id="6_1jt51"]
+[ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://base/player_cart.tscn" id="7_lmf1h"]
+[ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="8_qyndj"]
+[ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="9_6ius5"]
+[ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="10_ub173"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
-texture = ExtResource("2_w6vfs")
+texture = ExtResource("2_ad3im")
 texture_region_size = Vector2i(200, 200)
 0:0/0 = 0
 
@@ -20,11 +20,11 @@ texture_region_size = Vector2i(200, 200)
 tile_size = Vector2i(200, 200)
 sources/0 = SubResource("TileSetAtlasSource_5vw27")
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qinr8"]
-scenes/1/scene = ExtResource("3_qinr8")
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_w6vfs"]
+scenes/1/scene = ExtResource("3_nuoe2")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6vfs"]
-texture = ExtResource("3_wybgk")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kek77"]
+texture = ExtResource("4_126ke")
 texture_region_size = Vector2i(200, 250)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
@@ -32,11 +32,11 @@ texture_region_size = Vector2i(200, 250)
 [sub_resource type="TileSet" id="TileSet_4c57u"]
 tile_size = Vector2i(200, 200)
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_w6vfs")
-sources/0 = SubResource("TileSetScenesCollectionSource_qinr8")
+sources/1 = SubResource("TileSetAtlasSource_kek77")
+sources/0 = SubResource("TileSetScenesCollectionSource_w6vfs")
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_qinr8")
+script = ExtResource("1_qj8o3")
 level_number = 1
 
 [node name="Ground" type="TileMapLayer" parent="."]
@@ -47,66 +47,68 @@ tile_set = SubResource("TileSet_kek77")
 
 [node name="Market" type="TileMapLayer" parent="."]
 scale = Vector2(0.05, 0.05)
-tile_map_data = PackedByteArray("AAABAP//AQAAAAAAAAABAAAAAQAAAAAAAAABAP7/AQAAAAAAAAABAPz/AQAAAAAAAAABAP3/AQAAAAAAAAAAAAAAAQAAAAAAAAD//wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD9/wAAAQAAAAAAAAD9////AQAAAAAAAAD9//7/AQAAAAAAAAD9//3/AQAAAAAAAAD9//z/AQAAAAAAAAD9//v/AQAAAAAAAAD9//r/AQAAAAAAAAD9//n/AQAAAAAAAAD9//j/AQAAAAAAAAD+//j/AQAAAAAAAAD///j/AQAAAAAAAAAAAPj/AQAAAAAAAAABAPj/AQAAAAAAAAACAPj/AQAAAAAAAAADAPj/AQAAAAAAAAAEAPj/AQAAAAAAAAAFAPj/AQAAAAAAAAACAPz/AQAAAAAAAAADAPz/AQAAAAAAAAAEAPz/AQAAAAAAAAAFAPz/AQAAAAAAAAAGAPz/AQAAAAAAAAAHAPz/AQAAAAAAAAAIAPz/AQAAAAAAAAAJAPz/AQAAAAAAAAAJAPv/AQAAAAAAAAAJAPr/AQAAAAAAAAAJAPn/AQAAAAAAAAAJAPj/AQAAAAAAAAAJAPf/AQAAAAAAAAAJAPb/AQAAAAAAAAAJAPX/AQAAAAAAAAAJAPT/AQAAAAAAAAAFAPf/AQAAAAAAAAAFAPb/AQAAAAAAAAAFAPX/AQAAAAAAAAAFAPT/AQAAAAAAAAAFAPP/AQAAAAAAAAAFAPL/AQAAAAAAAAAFAPH/AQAAAAAAAAAFAPD/AQAAAAAAAAAGAPD/AQAAAAAAAAAHAPD/AQAAAAAAAAAIAPD/AQAAAAAAAAAJAPD/AQAAAAAAAAAKAPD/AQAAAAAAAAAMAPD/AQAAAAAAAAANAPD/AQAAAAAAAAAOAPD/AQAAAAAAAAAKAPT/AQAAAAAAAAALAPT/AQAAAAAAAAAMAPT/AQAAAAAAAAAPAPD/AQAAAAAAAAAQAPD/AQAAAAAAAAANAPT/AQAAAAAAAAAKAO//AQAAAAAAAAAKAO7/AQAAAAAAAAAKAO3/AQAAAAAAAAAKAOz/AQAAAAAAAAALAOz/AQAAAAAAAAAMAOz/AQAAAAAAAAAMAO3/AQAAAAAAAAAMAO7/AQAAAAAAAAAMAO//AQAAAAAAAAARAPD/AQAAAAAAAAARAPH/AQAAAAAAAAARAPL/AQAAAAAAAAARAPP/AQAAAAAAAAARAPT/AQAAAAAAAAARAPX/AQAAAAAAAAARAPb/AQAAAAAAAAARAPf/AQAAAAAAAAANAPX/AQAAAAAAAAANAPb/AQAAAAAAAAANAPf/AQAAAAAAAAANAPj/AQAAAAAAAAANAPn/AQAAAAAAAAANAPr/AQAAAAAAAAAOAPr/AQAAAAAAAAAPAPr/AQAAAAAAAAAQAPr/AQAAAAAAAAAQAPf/AQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD6/wAAAQAAAAAAAAD7/wAAAQAAAAAAAAD8/wAAAQAAAAAAAAD6//7/AQAAAAAAAAD7//7/AQAAAAAAAAD8//7/AQAAAAAAAAD+/wIAAQAAAAAAAAD+/wMAAQAAAAAAAAD+/wQAAQAAAAAAAAD+/wUAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAACAP7/AQAAAAAAAAADAP7/AQAAAAAAAAAEAP7/AQAAAAAAAAD+//z/AQAAAAAAAAD+//v/AQAAAAAAAAAAAPz/AQAAAAAAAAD+//r/AQAAAAAAAAD+//n/AQAAAAAAAAD+//j/AQAAAAAAAAD+//f/AQAAAAAAAAAAAPv/AQAAAAAAAAAAAPr/AQAAAAAAAAAAAPn/AQAAAAAAAAAAAPj/AQAAAAAAAAAAAPf/AQAAAAAAAAD9//f/AQAAAAAAAAD8//b/AQAAAAAAAAD8//X/AQAAAAAAAAD7//X/AQAAAAAAAAD7//P/AQAAAAAAAAD8//P/AQAAAAAAAAD8//L/AQAAAAAAAAD9//H/AQAAAAAAAAD+//H/AQAAAAAAAAD///H/AQAAAAAAAAAAAPH/AQAAAAAAAAABAPH/AQAAAAAAAAACAPL/AQAAAAAAAAABAPf/AQAAAAAAAAACAPb/AQAAAAAAAAD6//X/AQAAAAAAAAD5//X/AQAAAAAAAAD4//X/AQAAAAAAAAD3//X/AQAAAAAAAAD2//X/AQAAAAAAAAD6//P/AQAAAAAAAAD5//P/AQAAAAAAAAD4//P/AQAAAAAAAAD3//P/AQAAAAAAAAD2//P/AQAAAAAAAAD1//L/AQAAAAAAAAD0//L/AQAAAAAAAADz//P/AQAAAAAAAADz//T/AQAAAAAAAAD0//X/AQAAAAAAAAD0//b/AQAAAAAAAAD0//f/AQAAAAAAAAD0//j/AQAAAAAAAAD0//n/AQAAAAAAAAD0//r/AQAAAAAAAAD0//v/AQAAAAAAAAD2//b/AQAAAAAAAAD2//f/AQAAAAAAAAD2//j/AQAAAAAAAAD2//n/AQAAAAAAAAD2//r/AQAAAAAAAAD2//v/AQAAAAAAAAADAPb/AQAAAAAAAAADAPL/AQAAAAAAAAAGAPL/AQAAAAAAAAAFAPL/AQAAAAAAAAAEAPL/AQAAAAAAAAAHAPL/AQAAAAAAAAAMAPf/AQAAAAAAAAAMAPj/AQAAAAAAAAAMAPn/AQAAAAAAAAAMAPr/AQAAAAAAAAAMAPv/AQAAAAAAAAAMAPz/AQAAAAAAAAAJAPP/AQAAAAAAAAAKAPT/AQAAAAAAAAALAPX/AQAAAAAAAAAIAPP/AQAAAAAAAAALAPb/AQAAAAAAAAAIAPz/AQAAAAAAAAAIAPv/AQAAAAAAAAAIAPr/AQAAAAAAAAAEAPb/AQAAAAAAAAAFAPf/AQAAAAAAAAAGAPf/AQAAAAAAAAAHAPj/AQAAAAAAAAAHAPn/AQAAAAAAAAD0//z/AQAAAAAAAAD0//3/AQAAAAAAAAD2//z/AQAAAAAAAAD2//3/AQAAAAAAAAD5//7/AQAAAAAAAAD4//7/AQAAAAAAAAD3//7/AQAAAAAAAAD5/wAAAQAAAAAAAAD4/wAAAQAAAAAAAAD3/wAAAQAAAAAAAADz//7/AQAAAAAAAADz////AQAAAAAAAADz/wAAAQAAAAAAAAD+/wcAAQAAAAAAAAD+/wYAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAD3/wEAAQAAAAAAAAD3/wIAAQAAAAAAAAD0/wkAAQAAAAAAAAD1/woAAQAAAAAAAAD1/wgAAQAAAAAAAAD1/wcAAQAAAAAAAAD2/wUAAQAAAAAAAAD2/wQAAQAAAAAAAAD2/wYAAQAAAAAAAAD3/wMAAQAAAAAAAADz/woAAQAAAAAAAADz/wsAAQAAAAAAAAD0/wsAAQAAAAAAAADz/wEAAQAAAAAAAADy/wIAAQAAAAAAAADy/wMAAQAAAAAAAADx/wUAAQAAAAAAAADy/wQAAQAAAAAAAADx/wYAAQAAAAAAAADw/wgAAQAAAAAAAADv/wsAAQAAAAAAAADu/w8AAQAAAAAAAADu/w4AAQAAAAAAAADu/w0AAQAAAAAAAADv/xAAAQAAAAAAAADw/xAAAQAAAAAAAADx/xAAAQAAAAAAAADz/w8AAQAAAAAAAAD0/w8AAQAAAAAAAAD2/w4AAQAAAAAAAAD3/w4AAQAAAAAAAAD5/w0AAQAAAAAAAAAFAP7/AQAAAAAAAAAGAP7/AQAAAAAAAAAHAP7/AQAAAAAAAAAIAP3/AQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAMAP3/AQAAAAAAAAAMAP7/AQAAAAAAAAAMAP//AQAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAQAAAAAAAAABAAcAAQAAAAAAAAABAAYAAQAAAAAAAAABAAUAAQAAAAAAAAACAAQAAQAAAAAAAAACAAMAAQAAAAAAAAADAAIAAQAAAAAAAAAEAAIAAQAAAAAAAAAFAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAFAAkAAQAAAAAAAAAFAAgAAQAAAAAAAAAJAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAD//wwAAQAAAAAAAAAAAAwAAQAAAAAAAAABAAwAAQAAAAAAAAACAAwAAQAAAAAAAAADAAwAAQAAAAAAAAAAAAgAAQAAAAAAAAAIAAAAAQAAAAAAAAAMAAMAAQAAAAAAAAALAAQAAQAAAAAAAAAEAAsAAQAAAAAAAAAKAAQAAQAAAAAAAAAEAAoAAQAAAAAAAAAFAAcAAQAAAAAAAAAGAAYAAQAAAAAAAAAHAAUAAQAAAAAAAAD+/wgAAQAAAAAAAAD9/wgAAQAAAAAAAAD8/wgAAQAAAAAAAAD7/wgAAQAAAAAAAAD6/wkAAQAAAAAAAAD5/wkAAQAAAAAAAAD4/wkAAQAAAAAAAAD3/woAAQAAAAAAAAD2/woAAQAAAAAAAAD1/w4AAQAAAAAAAAD4/w0AAQAAAAAAAAD6/w0AAQAAAAAAAAD7/w0AAQAAAAAAAAD8/wwAAQAAAAAAAAD9/wwAAQAAAAAAAAD+/wwAAQAAAAAAAADy/w8AAQAAAAAAAADx/wcAAQAAAAAAAADw/wkAAQAAAAAAAADw/woAAQAAAAAAAADv/wwAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_4c57u")
 
-[node name="MarketObjects" type="TileMapLayer" parent="."]
+[node name="Market2" type="TileMapLayer" parent="."]
 scale = Vector2(0.05, 0.05)
-tile_map_data = PackedByteArray("AAABAP//AAAAAAAAAQABAAAAAAAAAAAAAQABAP7/AAAAAAAAAQABAPz/AAAAAAAAAQABAP3/AAAAAAAAAQAAAAAAAAAAAAAAAQD//wAAAAAAAAAAAQD+/wAAAAAAAAAAAQD9/wAAAAAAAAAAAQD9////AAAAAAAAAQD9//7/AAAAAAAAAQD9//3/AAAAAAAAAQD9//z/AAAAAAAAAQD9//v/AAAAAAAAAQD9//r/AAAAAAAAAQD9//n/AAAAAAAAAQD9//j/AAAAAAAAAQD+//j/AAAAAAAAAQD///j/AAAAAAAAAQAAAPj/AAAAAAAAAQABAPj/AAAAAAAAAQACAPj/AAAAAAAAAQADAPj/AQAAAAAAAAAEAPj/AAAAAAAAAQAFAPj/AAAAAAAAAQACAPz/AAAAAAAAAQADAPz/AAAAAAAAAQAEAPz/AAAAAAAAAQAFAPz/AAAAAAAAAQAGAPz/AAAAAAAAAQAHAPz/AAAAAAAAAQAIAPz/AAAAAAAAAQAJAPz/AAAAAAAAAQAJAPv/AAAAAAAAAQAJAPr/AAAAAAAAAQAJAPn/AAAAAAAAAQAJAPj/AAAAAAAAAQAJAPf/AAAAAAAAAQAJAPb/AQAAAAAAAAAJAPX/AAAAAAAAAQAJAPT/AAAAAAAAAQAFAPf/AAAAAAAAAQAFAPb/AAAAAAAAAQAFAPX/AAAAAAAAAQAFAPT/AAAAAAAAAQAFAPP/AAAAAAAAAQAFAPL/AAAAAAAAAQAFAPH/AAAAAAAAAQAFAPD/AAAAAAAAAQAGAPD/AAAAAAAAAQAHAPD/AAAAAAAAAQAIAPD/AAAAAAAAAQAJAPD/AAAAAAAAAQAKAPD/AAAAAAAAAQAMAPD/AAAAAAAAAQANAPD/AAAAAAAAAQAOAPD/AAAAAAAAAQAKAPT/AAAAAAAAAQALAPT/AAAAAAAAAQAMAPT/AAAAAAAAAQAPAPD/AAAAAAAAAQAQAPD/AAAAAAAAAQANAPT/AAAAAAAAAQAKAO//AAAAAAAAAQAKAO7/AAAAAAAAAQAKAO3/AAAAAAAAAQAKAOz/AAAAAAAAAQALAOz/AQAAAAAAAAAMAOz/AAAAAAAAAQAMAO3/AAAAAAAAAQAMAO7/AAAAAAAAAQAMAO//AAAAAAAAAQARAPD/AAAAAAAAAQARAPH/AAAAAAAAAQARAPL/AAAAAAAAAQARAPP/AAAAAAAAAQARAPT/AAAAAAAAAQARAPX/AAAAAAAAAQARAPb/AAAAAAAAAQARAPf/AAAAAAAAAQANAPX/AAAAAAAAAQANAPb/AAAAAAAAAQANAPf/AAAAAAAAAQANAPj/AAAAAAAAAQANAPn/AAAAAAAAAQANAPr/AAAAAAAAAQAOAPr/AAAAAAAAAQAPAPr/AAAAAAAAAQAQAPr/AAAAAAAAAQAQAPf/AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_4c57u")
 
 [node name="Registers" type="Node2D" parent="."]
 
-[node name="Register" parent="Registers" node_paths=PackedStringArray("player") instance=ExtResource("4_iufdc")]
-position = Vector2(164, -70)
+[node name="Register" parent="Registers" node_paths=PackedStringArray("player") instance=ExtResource("5_ctngl")]
+position = Vector2(-25, 9)
+rotation = -3.1415925
+player = NodePath("../../PlayerCart")
+
+[node name="Register2" parent="Registers" node_paths=PackedStringArray("player") instance=ExtResource("5_ctngl")]
+position = Vector2(-20, -25)
+rotation = -1.5707964
+player = NodePath("../../PlayerCart")
+
+[node name="Register3" parent="Registers" node_paths=PackedStringArray("player") instance=ExtResource("5_ctngl")]
+position = Vector2(10, 13)
+rotation = 1.5707964
+player = NodePath("../../PlayerCart")
+
+[node name="Register4" parent="Registers" node_paths=PackedStringArray("player") instance=ExtResource("5_ctngl")]
+position = Vector2(14, -21)
 player = NodePath("../../PlayerCart")
 
 [node name="Objects" type="Node2D" parent="."]
 
-[node name="Object" parent="Objects" instance=ExtResource("6_u7lvn")]
-position = Vector2(35, -66)
+[node name="Object" parent="Objects" instance=ExtResource("6_1jt51")]
+position = Vector2(-5, -56)
+
+[node name="Object2" parent="Objects" instance=ExtResource("6_1jt51")]
+position = Vector2(35, -6)
 rotation = -1.5707964
 
-[node name="Object2" parent="Objects" instance=ExtResource("6_u7lvn")]
-position = Vector2(115, -186)
-rotation = -1.5707964
+[node name="Object3" parent="Objects" instance=ExtResource("6_1jt51")]
+position = Vector2(15, -5)
 
-[node name="Object3" parent="Objects" instance=ExtResource("6_u7lvn")]
-position = Vector2(85, -96)
+[node name="Object4" parent="Objects" instance=ExtResource("6_1jt51")]
+position = Vector2(-5, -45)
+rotation = 3.1415927
 
-[node name="Object4" parent="Objects" instance=ExtResource("6_u7lvn")]
-position = Vector2(165, -116)
-
-[node name="PlayerCart" parent="." instance=ExtResource("7_tp4nw")]
+[node name="PlayerCart" parent="." instance=ExtResource("7_lmf1h")]
 position = Vector2(-5, -7)
 rotation = -1.5707964
 mass = 50.0
-left = -63.0
-right = 200.0
-top = -210.0
-bottom = 25.0
+left = -190.0
+right = 140.0
+top = -160.0
+bottom = 180.0
 
-[node name="LevelEnd" parent="." instance=ExtResource("9_1mf75")]
+[node name="LevelEnd" parent="." instance=ExtResource("8_qyndj")]
 visible = false
 
-[node name="SceneChanger" parent="." instance=ExtResource("10_um3bb")]
+[node name="SceneChanger" parent="." instance=ExtResource("9_6ius5")]
 process_mode = 3
 fade_time = 1.0
 root = "/root/Level"
 
-[node name="Label" type="Label" parent="."]
-offset_left = -47.0
-offset_top = 8.0
-offset_right = 804.0
-offset_bottom = 285.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 75
-text = "Time to turn"
-horizontal_alignment = 1
-
-[node name="Countdown" parent="." instance=ExtResource("8_5g3y1")]
+[node name="Countdown" parent="." instance=ExtResource("10_ub173")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -117,46 +119,6 @@ offset_bottom = 601.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.1, 0.1)
-
-[node name="Label2" type="Label" parent="."]
-offset_left = -33.0
-offset_top = -102.0
-offset_right = 818.0
-offset_bottom = 175.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 75
-text = "Go around the cart
-to make a turn"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="."]
-offset_left = 14.999999
-offset_top = -193.0
-offset_right = 866.0
-offset_bottom = 228.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 75
-text = "Avoid going
-backwards,
-it is slower"
-horizontal_alignment = 2
-
-[node name="Label4" type="Label" parent="."]
-offset_left = 131.0
-offset_top = -192.0
-offset_right = 1123.0
-offset_bottom = 229.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 75
-text = "Objects make
-the cart
-heavy"
 
 [connection signal="finished" from="Registers/Register" to="." method="_on_register_finished"]
 [connection signal="next" from="LevelEnd" to="." method="_on_level_end_next"]

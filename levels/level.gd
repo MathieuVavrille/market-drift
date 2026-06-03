@@ -51,8 +51,9 @@ var nb_achieved = 0
 func object_area_achieved():
 	nb_achieved += 1
 	if nb_achieved == nb_objects:
-		$Register.activate()
-		instantiate_goal_arrow($Register/Area, null)
+		for register in $Registers.get_children():
+			register.activate()
+			instantiate_goal_arrow(register.get_node("Area"), null)
 
 
 func _on_register_finished() -> void:

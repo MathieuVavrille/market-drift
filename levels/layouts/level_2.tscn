@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://26mavmcq6t4e"]
+[gd_scene load_steps=14 format=4 uid="uid://26mavmcq6t4e"]
 
 [ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_fb68j"]
 [ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_fismi"]
 [ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="3_qnwrt"]
 [ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://base/register.tscn" id="4_3defq"]
-[ext_resource type="Texture2D" uid="uid://cetg1mrx32spm" path="res://assets/market_tiles/banana.png" id="5_k8r61"]
 [ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://base/object_area.tscn" id="6_0hmg6"]
 [ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://base/player_cart.tscn" id="7_fv2i5"]
 [ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="8_74qj5"]
@@ -45,30 +44,16 @@ scale = Vector2(0.05, 0.05)
 tile_map_data = PackedByteArray("AAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD+//7/AQAAAAAAAAD///7/AQAAAAAAAAAAAP7/AQAAAAAAAAABAP7/AQAAAAAAAAACAP7/AQAAAAAAAAADAP7/AQAAAAAAAAAEAP7/AQAAAAAAAAAFAP7/AQAAAAAAAAAGAP7/AQAAAAAAAAAHAP7/AQAAAAAAAAD+/wEAAQAAAAAAAAAGAAEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAIAP7/AQAAAAAAAAAJAP7/AQAAAAAAAAAKAP7/AQAAAAAAAAALAP7/AQAAAAAAAAAMAP7/AQAAAAAAAAANAP7/AQAAAAAAAAAOAP7/AQAAAAAAAAAPAP7/AQAAAAAAAAAHAAEAAQAAAAAAAAAPAAEAAQAAAAAAAAAOAAEAAQAAAAAAAAANAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAALAAEAAQAAAAAAAAAKAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAQAP7/AQAAAAAAAAAQAAEAAQAAAAAAAAARAP7/AQAAAAAAAAARAAEAAQAAAAAAAAASAP7/AQAAAAAAAAASAAEAAQAAAAAAAAATAP7/AQAAAAAAAAATAAEAAQAAAAAAAAAUAP7/AQAAAAAAAAAUAAEAAQAAAAAAAAAVAP7/AQAAAAAAAAAVAAEAAQAAAAAAAAAWAP7/AQAAAAAAAAAWAAEAAQAAAAAAAAAXAP7/AQAAAAAAAAAXAAEAAQAAAAAAAAAYAP7/AQAAAAAAAAAYAAEAAQAAAAAAAAAZAP7/AQAAAAAAAAAZAAEAAQAAAAAAAAAaAP7/AQAAAAAAAAAaAAEAAQAAAAAAAAAbAP7/AQAAAAAAAAAbAAEAAQAAAAAAAAAcAP7/AQAAAAAAAAAcAAEAAQAAAAAAAAAdAP7/AQAAAAAAAAAdAAEAAQAAAAAAAAAeAP7/AQAAAAAAAAAeAAEAAQAAAAAAAAAfAP7/AQAAAAAAAAAfAAEAAQAAAAAAAAAgAAEAAQAAAAAAAAAhAAEAAQAAAAAAAAAiAAEAAQAAAAAAAAAiAAAAAQAAAAAAAAAiAP//AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_4c57u")
 
-[node name="Register" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_3defq")]
+[node name="MarketObjects" type="TileMapLayer" parent="."]
+scale = Vector2(0.05, 0.05)
+tile_set = SubResource("TileSet_4c57u")
+
+[node name="Registers" type="Node2D" parent="."]
+
+[node name="Register" parent="Registers" node_paths=PackedStringArray("player") instance=ExtResource("4_3defq")]
 position = Vector2(34, -8)
 rotation = -1.5707964
-player = NodePath("../PlayerCart")
-
-[node name="Banana" type="Sprite2D" parent="."]
-position = Vector2(16, 21.67)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_k8r61")
-
-[node name="Banana2" type="Sprite2D" parent="."]
-position = Vector2(19, 18.67)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_k8r61")
-
-[node name="Banana3" type="Sprite2D" parent="."]
-position = Vector2(19, 21.67)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_k8r61")
-
-[node name="Banana4" type="Sprite2D" parent="."]
-position = Vector2(16, 18.67)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("5_k8r61")
+player = NodePath("../../PlayerCart")
 
 [node name="Objects" type="Node2D" parent="."]
 
@@ -99,93 +84,7 @@ process_mode = 3
 fade_time = 1.0
 root = "/root/Level"
 
-[node name="Label" type="Label" parent="."]
-offset_left = -43.0
-offset_top = -30.0
-offset_right = 808.0
-offset_bottom = 247.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 75
-text = "Welcome to the market"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="."]
-offset_left = -52.0
-offset_top = 19.0
-offset_right = 997.9999
-offset_bottom = 296.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Use the Arrow keys to move"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="."]
-offset_left = 61.0
-offset_top = -28.0
-offset_right = 740.0
-offset_bottom = 41.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Your goal is to buy groceries"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="."]
-offset_left = 42.000004
-offset_top = 19.000002
-offset_right = 1103.0
-offset_bottom = 88.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Stay and wait on the circle
-to get the banana"
-horizontal_alignment = 1
-
-[node name="Label5" type="Label" parent="."]
-offset_left = 151.0
-offset_top = -28.0
-offset_right = 830.0
-offset_bottom = 41.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Take all the objects marked"
-horizontal_alignment = 1
-
-[node name="Label6" type="Label" parent="."]
-offset_left = 182.0
-offset_top = 20.999996
-offset_right = 861.0
-offset_bottom = 90.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Arrows are pointing at them
-when you are far"
-horizontal_alignment = 1
-
-[node name="Label7" type="Label" parent="."]
-offset_left = 255.0
-offset_top = -29.000004
-offset_right = 1053.0
-offset_bottom = 39.999996
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "And then go to the cashier to pay"
-horizontal_alignment = 1
-
-[connection signal="finished" from="Register" to="." method="_on_register_finished"]
+[connection signal="finished" from="Registers/Register" to="." method="_on_register_finished"]
 [connection signal="go" from="Countdown" to="." method="_on_countdown_go"]
 [connection signal="menu" from="LevelEnd" to="." method="_on_menu"]
 [connection signal="next" from="LevelEnd" to="." method="_on_level_end_next"]
