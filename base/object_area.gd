@@ -11,8 +11,9 @@ var player: Node2D
 
 var enabled = true
 func _ready():
-	
-	$ObjectStack.set_texture($Object.texture)
+	$ObjectStack.set_random_texture()
+	$Object.texture = $ObjectStack.texture
+	print($ObjectStack.texture)
 	$ObjectStack.rotation = -rotation
 	$ObjectStack.visible = not is_end
 	$Object.rotation = -rotation

@@ -1,18 +1,18 @@
-[gd_scene load_steps=16 format=4 uid="uid://26mavmcq6t4e"]
+[gd_scene load_steps=16 format=4 uid="uid://dxyq07janqrx1"]
 
-[ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_fb68j"]
-[ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_fismi"]
-[ext_resource type="PackedScene" uid="uid://bodl01b2cwaws" path="res://base/object_stack.tscn" id="3_dr1yx"]
-[ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="3_qnwrt"]
-[ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://base/register.tscn" id="4_3defq"]
-[ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://base/object_area.tscn" id="6_0hmg6"]
-[ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://base/player_cart.tscn" id="7_fv2i5"]
-[ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="8_74qj5"]
-[ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="9_eahgo"]
-[ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="10_jb08i"]
+[ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_tajv7"]
+[ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_ijake"]
+[ext_resource type="PackedScene" uid="uid://bodl01b2cwaws" path="res://base/object_stack.tscn" id="3_2ewm5"]
+[ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="4_w4ypg"]
+[ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://base/register.tscn" id="5_075m1"]
+[ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://base/object_area.tscn" id="6_4aspk"]
+[ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://base/player_cart.tscn" id="7_qy27w"]
+[ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="8_tynif"]
+[ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="9_wen83"]
+[ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="10_7obw3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
-texture = ExtResource("2_fismi")
+texture = ExtResource("2_ijake")
 texture_region_size = Vector2i(200, 200)
 0:0/0 = 0
 
@@ -21,10 +21,10 @@ tile_size = Vector2i(200, 200)
 sources/0 = SubResource("TileSetAtlasSource_5vw27")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_38dwl"]
-scenes/1/scene = ExtResource("3_dr1yx")
+scenes/1/scene = ExtResource("3_2ewm5")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kek77"]
-texture = ExtResource("3_qnwrt")
+texture = ExtResource("4_w4ypg")
 texture_region_size = Vector2i(200, 250)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
@@ -36,7 +36,7 @@ sources/1 = SubResource("TileSetAtlasSource_kek77")
 sources/0 = SubResource("TileSetScenesCollectionSource_38dwl")
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_fb68j")
+script = ExtResource("1_tajv7")
 
 [node name="Ground" type="TileMapLayer" parent="."]
 rotation = -0.340339
@@ -46,50 +46,49 @@ tile_set = SubResource("TileSet_kek77")
 
 [node name="Market" type="TileMapLayer" parent="."]
 scale = Vector2(0.05, 0.05)
-tile_map_data = PackedByteArray("AAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAABAP7/AQAAAAAAAAD9////AQAAAAAAAAD8////AQAAAAAAAAD7////AQAAAAAAAAD6////AQAAAAAAAAD5////AQAAAAAAAAD4////AQAAAAAAAAD3////AQAAAAAAAAD2////AQAAAAAAAAD1////AQAAAAAAAAD0////AQAAAAAAAADz////AQAAAAAAAADy////AQAAAAAAAADx////AQAAAAAAAADw////AQAAAAAAAAD5//v/AQAAAAAAAAD6//v/AQAAAAAAAAD7//v/AQAAAAAAAAD8//v/AQAAAAAAAAD9//v/AQAAAAAAAAD9//r/AQAAAAAAAAD8//r/AQAAAAAAAAD7//r/AQAAAAAAAAD6//r/AQAAAAAAAAD5//r/AQAAAAAAAAD4//r/AQAAAAAAAAD4//v/AQAAAAAAAAD4//b/AQAAAAAAAAD4//X/AQAAAAAAAAD5//X/AQAAAAAAAAD6//X/AQAAAAAAAAD7//X/AQAAAAAAAAD8//X/AQAAAAAAAAD9//X/AQAAAAAAAAD9//b/AQAAAAAAAAD8//b/AQAAAAAAAAD7//b/AQAAAAAAAAD6//b/AQAAAAAAAAD5//b/AQAAAAAAAAD0//z/AQAAAAAAAADz//z/AQAAAAAAAADy//z/AQAAAAAAAADx//z/AQAAAAAAAADw//z/AQAAAAAAAADw//v/AQAAAAAAAADx//v/AQAAAAAAAADy//v/AQAAAAAAAADz//v/AQAAAAAAAAD0//v/AQAAAAAAAADv//z/AQAAAAAAAADv//v/AQAAAAAAAAD0//j/AQAAAAAAAADz//j/AQAAAAAAAADy//j/AQAAAAAAAADx//j/AQAAAAAAAADw//j/AQAAAAAAAADv//j/AQAAAAAAAADv//f/AQAAAAAAAADw//f/AQAAAAAAAADx//f/AQAAAAAAAADy//f/AQAAAAAAAADz//f/AQAAAAAAAAD0//f/AQAAAAAAAADv//T/AQAAAAAAAADw//T/AQAAAAAAAADx//T/AQAAAAAAAADy//T/AQAAAAAAAADz//T/AQAAAAAAAAD0//T/AQAAAAAAAAD0//P/AQAAAAAAAADz//P/AQAAAAAAAADy//P/AQAAAAAAAADx//P/AQAAAAAAAADw//P/AQAAAAAAAADv//P/AQAAAAAAAADv//D/AQAAAAAAAADw//D/AQAAAAAAAADx//D/AQAAAAAAAADy//D/AQAAAAAAAADz//D/AQAAAAAAAAD0//D/AQAAAAAAAAD1//D/AQAAAAAAAAD2//D/AQAAAAAAAAD3//D/AQAAAAAAAAD3//H/AQAAAAAAAAABAPL/AQAAAAAAAAABAPP/AQAAAAAAAAABAPT/AQAAAAAAAAABAPX/AQAAAAAAAAABAPb/AQAAAAAAAAABAPf/AQAAAAAAAAABAPj/AQAAAAAAAAABAPn/AQAAAAAAAAABAPr/AQAAAAAAAAABAPv/AQAAAAAAAAABAPz/AQAAAAAAAAABAP3/AQAAAAAAAAD+//r/AQAAAAAAAAD+//v/AQAAAAAAAAD+//b/AQAAAAAAAAD+//X/AQAAAAAAAAD4//H/AQAAAAAAAAD5//H/AQAAAAAAAAD6//H/AQAAAAAAAAD7//H/AQAAAAAAAAD8//H/AQAAAAAAAAD9//H/AQAAAAAAAAD+//H/AQAAAAAAAAD///H/AQAAAAAAAAAAAPH/AQAAAAAAAAABAPH/AQAAAAAAAADv////AQAAAAAAAADu////AQAAAAAAAADt////AQAAAAAAAADs////AQAAAAAAAADr////AQAAAAAAAADq////AQAAAAAAAADp////AQAAAAAAAADo////AQAAAAAAAADr//z/AQAAAAAAAADr//v/AQAAAAAAAADr//r/AQAAAAAAAADr//n/AQAAAAAAAADu//D/AQAAAAAAAADo//D/AQAAAAAAAADp//D/AQAAAAAAAADq//D/AQAAAAAAAADr//D/AQAAAAAAAADs//D/AQAAAAAAAADt//D/AQAAAAAAAADr//P/AQAAAAAAAADr//T/AQAAAAAAAADr//X/AQAAAAAAAADr//b/AQAAAAAAAADs//P/AQAAAAAAAADs//T/AQAAAAAAAADs//X/AQAAAAAAAADs//b/AQAAAAAAAADs//n/AQAAAAAAAADs//r/AQAAAAAAAADs//v/AQAAAAAAAADs//z/AQAAAAAAAADo//H/AQAAAAAAAADo//L/AQAAAAAAAADo//P/AQAAAAAAAADo//T/AQAAAAAAAADo//X/AQAAAAAAAADo//b/AQAAAAAAAADo//f/AQAAAAAAAADo//j/AQAAAAAAAADo//n/AQAAAAAAAADo//r/AQAAAAAAAADo//v/AQAAAAAAAADo//z/AQAAAAAAAADo//3/AQAAAAAAAADo//7/AQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+//7/AQAAAAAAAAABAAEAAQAAAAAAAAABAP7/AQAAAAAAAAD+/wEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_4c57u")
 
 [node name="MarketObjects" type="TileMapLayer" parent="."]
 scale = Vector2(0.05, 0.05)
-tile_map_data = PackedByteArray("AAD+////AAAAAAAAAQD9////AAAAAAAAAQD8////AAAAAAAAAQD7////AAAAAAAAAQD6////AAAAAAAAAQD5////AAAAAAAAAQD4////AAAAAAAAAQD3////AAAAAAAAAQD2////AAAAAAAAAQD1////AAAAAAAAAQD0////AAAAAAAAAQDz////AAAAAAAAAQDy////AAAAAAAAAQDx////AAAAAAAAAQDw////AAAAAAAAAQDv////AAAAAAAAAQDu////AAAAAAAAAQDt////AAAAAAAAAQDs////AAAAAAAAAQDr////AAAAAAAAAQDq////AAAAAAAAAQDp////AAAAAAAAAQDo////AAAAAAAAAQDo//7/AAAAAAAAAQDo//3/AAAAAAAAAQDo//v/AAAAAAAAAQDo//r/AAAAAAAAAQDo//n/AAAAAAAAAQDo//j/AAAAAAAAAQDo//f/AAAAAAAAAQDo//b/AAAAAAAAAQDo//X/AAAAAAAAAQDo//T/AAAAAAAAAQDo//P/AAAAAAAAAQDo//L/AAAAAAAAAQDo//H/AAAAAAAAAQDo//D/AAAAAAAAAQDp//D/AAAAAAAAAQDq//D/AAAAAAAAAQDr//D/AAAAAAAAAQDs//D/AAAAAAAAAQDt//D/AAAAAAAAAQDu//D/AAAAAAAAAQDv//D/AAAAAAAAAQDw//D/AAAAAAAAAQDx//D/AAAAAAAAAQDy//D/AAAAAAAAAQDz//D/AAAAAAAAAQD0//D/AAAAAAAAAQD1//D/AAAAAAAAAQD2//D/AAAAAAAAAQD3//D/AAAAAAAAAQD3//H/AAAAAAAAAQD4//H/AAAAAAAAAQD5//H/AAAAAAAAAQD7//H/AAAAAAAAAQD8//H/AAAAAAAAAQD9//H/AAAAAAAAAQD+//H/AAAAAAAAAQD///H/AAAAAAAAAQAAAPH/AAAAAAAAAQABAPH/AAAAAAAAAQABAPL/AAAAAAAAAQABAPP/AAAAAAAAAQABAPT/AAAAAAAAAQABAPX/AAAAAAAAAQABAPb/AAAAAAAAAQABAPf/AAAAAAAAAQABAPn/AAAAAAAAAQABAPr/AAAAAAAAAQABAPv/AAAAAAAAAQABAPz/AAAAAAAAAQABAP3/AAAAAAAAAQABAP7/AAAAAAAAAQDr//n/AAAAAAAAAQDr//r/AAAAAAAAAQDr//v/AAAAAAAAAQDr//z/AAAAAAAAAQDs//n/AAAAAAAAAQDs//r/AAAAAAAAAQDs//v/AAAAAAAAAQDs//z/AAAAAAAAAQDr//b/AAAAAAAAAQDs//b/AAAAAAAAAQDs//P/AAAAAAAAAQDs//T/AAAAAAAAAQDs//X/AAAAAAAAAQDr//P/AAAAAAAAAQDr//T/AAAAAAAAAQDv//P/AAAAAAAAAQDv//T/AAAAAAAAAQDw//P/AAAAAAAAAQDw//T/AAAAAAAAAQDx//P/AAAAAAAAAQDx//T/AAAAAAAAAQDz//P/AAAAAAAAAQDz//T/AAAAAAAAAQD0//P/AAAAAAAAAQD0//T/AAAAAAAAAQDy//P/AAAAAAAAAQDv//f/AAAAAAAAAQDv//j/AAAAAAAAAQDw//f/AAAAAAAAAQDw//j/AAAAAAAAAQDx//f/AAAAAAAAAQDx//j/AAAAAAAAAQDy//f/AAAAAAAAAQDy//j/AAAAAAAAAQDz//f/AAAAAAAAAQDz//j/AAAAAAAAAQD0//f/AAAAAAAAAQD0//j/AAAAAAAAAQDv//v/AAAAAAAAAQDv//z/AAAAAAAAAQDw//v/AAAAAAAAAQDw//z/AAAAAAAAAQDx//v/AAAAAAAAAQDx//z/AAAAAAAAAQDy//v/AAAAAAAAAQDy//z/AAAAAAAAAQDz//v/AAAAAAAAAQD0//v/AAAAAAAAAQD0//z/AAAAAAAAAQD4//X/AAAAAAAAAQD4//b/AAAAAAAAAQD5//X/AAAAAAAAAQD5//b/AAAAAAAAAQD6//X/AAAAAAAAAQD6//b/AAAAAAAAAQD7//X/AAAAAAAAAQD7//b/AAAAAAAAAQD8//X/AAAAAAAAAQD8//b/AAAAAAAAAQD9//X/AAAAAAAAAQD9//b/AAAAAAAAAQD+//X/AAAAAAAAAQD+//b/AAAAAAAAAQD7//r/AAAAAAAAAQD7//v/AAAAAAAAAQD8//r/AAAAAAAAAQD8//v/AAAAAAAAAQD9//r/AAAAAAAAAQD9//v/AAAAAAAAAQD+//r/AAAAAAAAAQD+//v/AAAAAAAAAQD4//r/AAAAAAAAAQD4//v/AAAAAAAAAQD5//r/AAAAAAAAAQD5//v/AAAAAAAAAQD6//v/AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_4c57u")
 
 [node name="Registers" type="Node2D" parent="."]
 
-[node name="Register" parent="Registers" node_paths=PackedStringArray("player") instance=ExtResource("4_3defq")]
+[node name="Register" parent="Registers" node_paths=PackedStringArray("player") instance=ExtResource("5_075m1")]
 position = Vector2(15, -1)
 player = NodePath("../../PlayerCart")
 
 [node name="Objects" type="Node2D" parent="."]
 
-[node name="Object2" parent="Objects" instance=ExtResource("6_0hmg6")]
+[node name="Object2" parent="Objects" instance=ExtResource("6_4aspk")]
 position = Vector2(-125, -26)
 rotation = -1.5707964
 
-[node name="Object3" parent="Objects" instance=ExtResource("6_0hmg6")]
+[node name="Object3" parent="Objects" instance=ExtResource("6_4aspk")]
 position = Vector2(-55, -136)
 rotation = -1.5707964
 
-[node name="Object4" parent="Objects" instance=ExtResource("6_0hmg6")]
+[node name="Object4" parent="Objects" instance=ExtResource("6_4aspk")]
 position = Vector2(5, -76)
 
-[node name="Object5" parent="Objects" instance=ExtResource("6_0hmg6")]
+[node name="Object5" parent="Objects" instance=ExtResource("6_4aspk")]
 position = Vector2(-55, -66)
 rotation = 1.5707964
 
-[node name="Object6" parent="Objects" instance=ExtResource("6_0hmg6")]
+[node name="Object6" parent="Objects" instance=ExtResource("6_4aspk")]
 position = Vector2(-225, -36)
 rotation = 3.1415927
 
-[node name="Object7" parent="Objects" instance=ExtResource("6_0hmg6")]
+[node name="Object7" parent="Objects" instance=ExtResource("6_4aspk")]
 position = Vector2(-215, -106)
 
-[node name="Object8" parent="Objects" instance=ExtResource("6_0hmg6")]
+[node name="Object8" parent="Objects" instance=ExtResource("6_4aspk")]
 position = Vector2(-135, -106)
 rotation = -1.5707964
 
-[node name="PlayerCart" parent="." instance=ExtResource("7_fv2i5")]
-position = Vector2(-36, -25)
+[node name="PlayerCart" parent="." instance=ExtResource("7_qy27w")]
+position = Vector2(2, 0)
 rotation = -3.1415927
 mass = 50.0
 left = -245.0
@@ -97,7 +96,7 @@ right = 25.0
 top = -165.0
 bottom = 15.0
 
-[node name="Countdown" parent="." instance=ExtResource("8_74qj5")]
+[node name="Countdown" parent="." instance=ExtResource("8_tynif")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -109,10 +108,10 @@ grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.1, 0.1)
 
-[node name="LevelEnd" parent="." instance=ExtResource("9_eahgo")]
+[node name="LevelEnd" parent="." instance=ExtResource("9_wen83")]
 visible = false
 
-[node name="SceneChanger" parent="." instance=ExtResource("10_jb08i")]
+[node name="SceneChanger" parent="." instance=ExtResource("10_7obw3")]
 process_mode = 3
 fade_time = 1.0
 root = "/root/Level"

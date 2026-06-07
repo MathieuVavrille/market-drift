@@ -7,31 +7,31 @@
 script = ExtResource("1_fvwob")
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
-position = Vector2(-3, -81)
+position = Vector2(4, -64)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_ts06h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-32, -28)
+position = Vector2(-25, -11)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_ts06h")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-53, 19)
+position = Vector2(-46, 36)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_ts06h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(36, -35)
+position = Vector2(43, -18)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_ts06h")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(-3, 26)
+position = Vector2(4, 43)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_ts06h")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
-position = Vector2(45, 15)
+position = Vector2(52, 32)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_ts06h")

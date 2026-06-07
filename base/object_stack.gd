@@ -1,19 +1,20 @@
 extends Node2D
 
 const OBJECT_NAMES = ["banana", "cherry", "orange", "strawberry"]
+var texture = null:
+	set(value):
+		texture = value
+		for child in get_children():
+			child.texture = texture
 
 func _ready():
-	var random_value = randi() % (len(OBJECT_NAMES) + 1)
+	set_random_texture(true)
+
+func set_random_texture(can_be_null = false):
+	var random_value = randi() % (len(OBJECT_NAMES) + (1 if can_be_null else 0))
+	print(random_value)
 	if random_value == len(OBJECT_NAMES):
-		set_texture(null)
+		texture = null
 	else:
 		var object_name = OBJECT_NAMES[random_value]
-		set_texture_string(object_name)
-
-func set_texture_string(object_name: String):
-	var texture = load("res://assets/market_tiles/food/" + object_name + ".png")
-	set_texture(texture)
-
-func set_texture(texture):
-	for child in get_children():
-		child.texture = texture
+		texture = load("res://assets/market_tiles/food/" + object_name + ".png")
