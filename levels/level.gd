@@ -4,9 +4,13 @@ extends Node2D
 
 const goal_arrow_scene = preload("res://base/goal_arrow.tscn")
 
+@export var maze_size = 0
+
 var nb_objects = 0
 var start_time = 0
 func _ready():
+	if maze_size != 0:
+		generate_maze()
 	if level_number == 9:
 		$LevelEnd.deactivate_next()
 	$LevelEnd.level_times = LevelTimes.load(level_number)
@@ -17,6 +21,73 @@ func _ready():
 	get_tree().create_timer(0.01).timeout.connect(pause_at_the_start)
 	$SceneChanger.start_scene()
 	_on_countdown_go()
+
+func random_list(n: int):
+	var result = {}
+	var positions = {}
+	positions[0] = 0
+	result[0] = 3
+	for i in range(1, n+1):
+		result[i] = randi_range(1, 3)
+		result[-i] = randi_range(1, 3)
+		positions[i] = positions[i-1] + result[i-1] + 1
+		positions[-i] = positions[-i+1] - result[-i] - 1
+	result[0] = 3
+	positions[n+1] = positions[n] + result[n] + 1
+	return [result, positions]
+
+func delete_edge(startx, endx, starty, width, is_horizontal):
+	for x in range(startx, endx):
+		for y in range(starty, starty+width):
+			if is_horizontal:
+				$Market.erase_cell(Vector2i(x, y))
+				$MarketObjects.erase_cell(Vector2i(x, y))
+			else:
+				$MarketObjects.erase_cell(Vector2i(y, x))
+
+func generate_maze():
+	var mst = MST.new(maze_size)
+	var vertical_data = random_list(maze_size)
+	var vertical_columns = vertical_data[0]
+	var vertical_positions = vertical_data[1]
+	var horizontal_data = random_list(maze_size)
+	var horizontal_columns = horizontal_data[0]
+	var horizontal_positions = horizontal_data[1]
+	for vpi in range(-maze_size, maze_size+2):
+		var vp = vertical_positions[vpi] - 1
+		for hp in range(horizontal_positions[-maze_size]-1, horizontal_positions[maze_size+1]):
+			$Market.set_cell(Vector2i(hp, vp), 1, Vector2i(0, 0))
+			$MarketObjects.set_cell(Vector2i(hp, vp), 0, Vector2i(0, 0))
+	for hpi in range(-maze_size, maze_size+2):
+		var hp = horizontal_positions[hpi] - 1
+		for vp in range(vertical_positions[-maze_size]-1, vertical_positions[maze_size+1]):
+			$Market.set_cell(Vector2i(hp, vp), 1, Vector2i(0, 0))
+			$MarketObjects.set_cell(Vector2i(hp, vp), 0, Vector2i(0, 0))
+	for edge in mst.edges:
+		var start_i = edge[0]
+		var end = edge[1]
+		if start_i[0] == end[0]:
+			delete_edge(horizontal_positions[start_i[1]], horizontal_positions[end[1]], vertical_positions[start_i[0]], vertical_columns[start_i[0]], true)
+		else:
+			delete_edge(vertical_positions[start_i[0]], vertical_positions[end[0]], horizontal_positions[start_i[1]], horizontal_columns[start_i[1]], false)
+	var factor = 10
+	var start_position = Vector2(15, 14)
+	$Objects/ObjectTopLeft.position = Vector2(horizontal_positions[-maze_size]-1, vertical_positions[-maze_size]-1) * factor + start_position
+	$Objects/ObjectTopRight.position = Vector2(horizontal_positions[maze_size+1]-3, vertical_positions[-maze_size]-1) * factor + start_position
+	$Objects/ObjectBotLeft.position = Vector2(horizontal_positions[-maze_size]-1, vertical_positions[maze_size+1]-3) * factor + start_position
+	$Objects/ObjectBotRight.position = Vector2(horizontal_positions[maze_size+1]-3, vertical_positions[maze_size+1]-3) * factor + start_position
+	$Registers/RegisterTop.position = Vector2(0, vertical_positions[-maze_size]-2) * factor + start_position + Vector2(5, 0)
+	$Registers/RegisterBot.position = Vector2(0, vertical_positions[maze_size+1]-2) * factor + start_position + Vector2(-5, 0)
+	$Registers/RegisterLeft.position = Vector2(horizontal_positions[-maze_size]-2, 0) * factor + start_position + Vector2(0, -5)
+	$Registers/RegisterRight.position = Vector2(horizontal_positions[maze_size+1]-2, 0) * factor + start_position + Vector2(0, 5)
+	$PlayerCart.top = $Registers/RegisterTop.position.y - 10
+	$PlayerCart.bottom = $Registers/RegisterBot.position.y + 10
+	$PlayerCart.left = $Registers/RegisterLeft.position.x - 10
+	$PlayerCart.right = $Registers/RegisterRight.position.x + 10
+	delete_edge(horizontal_positions[-maze_size]-2, horizontal_positions[-maze_size], vertical_positions[0], 2, true)
+	delete_edge(horizontal_positions[maze_size], horizontal_positions[maze_size+1], vertical_positions[0]+1, 2, true)
+	delete_edge(vertical_positions[-maze_size]-2, vertical_positions[-maze_size], horizontal_positions[0]+1, 2, false)
+	delete_edge(vertical_positions[maze_size], vertical_positions[maze_size+1], horizontal_positions[0], 2, false)
 
 func pause_at_the_start():
 	get_tree().paused = true

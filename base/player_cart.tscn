@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwsyt8rgai472"]
+[gd_scene format=3 uid="uid://cwsyt8rgai472"]
 
 [ext_resource type="Script" uid="uid://dbkfhv6k6nr0n" path="res://base/player_cart.gd" id="1_s7862"]
 [ext_resource type="Texture2D" uid="uid://bw5xu5315xjxx" path="res://assets/player.png" id="2_s7862"]
@@ -24,60 +24,60 @@ height = 8.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7862"]
 size = Vector2(5, 4)
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="RigidBody2D" unique_id=2059939659]
 mass = 100.0
 physics_material_override = SubResource("PhysicsMaterial_s7862")
 gravity_scale = 0.0
 center_of_mass_mode = 1
 script = ExtResource("1_s7862")
 
-[node name="CartMesh" type="MeshInstance2D" parent="."]
+[node name="CartMesh" type="MeshInstance2D" parent="." unique_id=1761813573]
 visible = false
 position = Vector2(5, 0)
 mesh = SubResource("BoxMesh_s7862")
 
-[node name="PlayerMesh" type="MeshInstance2D" parent="."]
+[node name="PlayerMesh" type="MeshInstance2D" parent="." unique_id=1302121410]
 visible = false
 position = Vector2(-2, 0)
 mesh = SubResource("SphereMesh_7vr3x")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2081997302]
 position = Vector2(3, 0)
 rotation = 1.5708
 scale = Vector2(0.035, 0.032)
 texture = ExtResource("2_s7862")
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1007982193]
 visible = false
 position = Vector2(3, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_28ymo")
 
-[node name="ObjectDetector" type="Area2D" parent="."]
+[node name="ObjectDetector" type="Area2D" parent="." unique_id=14179641]
 visible = false
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectDetector" unique_id=819662855]
 position = Vector2(3, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_s7862")
 
-[node name="PlaceholderRectangle" type="CollisionShape2D" parent="."]
+[node name="PlaceholderRectangle" type="CollisionShape2D" parent="." unique_id=1648853444]
 position = Vector2(4.5, 0)
 shape = SubResource("RectangleShape2D_s7862")
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=1345557401]
 zoom = Vector2(10, 10)
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="Objects" type="Node2D" parent="." unique_id=1024107268]
 
-[node name="PlayerCenter" type="Marker2D" parent="."]
+[node name="PlayerCenter" type="Marker2D" parent="." unique_id=1600062591]
 position = Vector2(-3, 0)
 
-[node name="CartCenter" type="Marker2D" parent="."]
+[node name="CartCenter" type="Marker2D" parent="." unique_id=1704522621]
 position = Vector2(4.5, 0)
 
 [connection signal="area_entered" from="ObjectDetector" to="." method="entered_object"]
