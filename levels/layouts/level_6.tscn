@@ -140,10 +140,6 @@ grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.1, 0.1)
 
-[connection signal="finished" from="Registers/Register" to="." method="_on_register_finished"]
-[connection signal="finished" from="Registers/Register2" to="." method="_on_register_finished"]
-[connection signal="finished" from="Registers/Register3" to="." method="_on_register_finished"]
-[connection signal="finished" from="Registers/Register4" to="." method="_on_register_finished"]
 [connection signal="next" from="LevelEnd" to="." method="_on_level_end_next"]
 [connection signal="restart" from="LevelEnd" to="." method="_on_restart"]
 [connection signal="scene_started" from="SceneChanger" to="." method="_on_scene_changer_scene_started"]

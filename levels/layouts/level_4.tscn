@@ -129,10 +129,6 @@ at every attempt
 Good Luck"
 horizontal_alignment = 1
 
-[connection signal="finished" from="Registers/RegisterTop" to="." method="_on_register_finished"]
-[connection signal="finished" from="Registers/RegisterBot" to="." method="_on_register_finished"]
-[connection signal="finished" from="Registers/RegisterLeft" to="." method="_on_register_finished"]
-[connection signal="finished" from="Registers/RegisterRight" to="." method="_on_register_finished"]
 [connection signal="go" from="Countdown" to="." method="_on_countdown_go"]
 [connection signal="menu" from="LevelEnd" to="." method="_on_menu"]
 [connection signal="next" from="LevelEnd" to="." method="_on_level_end_next"]

@@ -18,6 +18,8 @@ func _ready():
 	for object in $Objects.get_children():
 		object.is_achieved.connect(object_area_achieved)
 		instantiate_goal_arrow(object, object.get_texture())
+	for register in $Registers.get_children():
+		register.finished.connect(_on_register_finished)
 	get_tree().create_timer(0.01).timeout.connect(pause_at_the_start)
 	$SceneChanger.start_scene()
 	_on_countdown_go()

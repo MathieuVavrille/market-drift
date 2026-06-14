@@ -189,7 +189,6 @@ theme_override_font_sizes/font_size = 50
 text = "And then go to the cashier to pay"
 horizontal_alignment = 1
 
-[connection signal="finished" from="Registers/Register" to="." method="_on_register_finished"]
 [connection signal="go" from="Countdown" to="." method="_on_countdown_go"]
 [connection signal="menu" from="LevelEnd" to="." method="_on_menu"]
 [connection signal="next" from="LevelEnd" to="." method="_on_level_end_next"]

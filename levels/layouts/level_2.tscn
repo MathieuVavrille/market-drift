@@ -1,18 +1,18 @@
-[gd_scene format=4 uid="uid://26mavmcq6t4e"]
+[gd_scene format=4 uid="uid://b7h6mrgien3hr"]
 
-[ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_fb68j"]
-[ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_fismi"]
-[ext_resource type="PackedScene" uid="uid://bodl01b2cwaws" path="res://base/object_stack.tscn" id="3_dr1yx"]
-[ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="3_qnwrt"]
-[ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://base/register.tscn" id="4_3defq"]
-[ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://base/object_area.tscn" id="6_0hmg6"]
-[ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://base/player_cart.tscn" id="7_fv2i5"]
-[ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="8_74qj5"]
-[ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="9_eahgo"]
-[ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="10_jb08i"]
+[ext_resource type="Script" uid="uid://djdlxhnw3btly" path="res://levels/level.gd" id="1_frt45"]
+[ext_resource type="Texture2D" uid="uid://7k72tprm23gm" path="res://assets/market_tiles/ground_tile.png" id="2_fvkgn"]
+[ext_resource type="PackedScene" uid="uid://bodl01b2cwaws" path="res://base/object_stack.tscn" id="3_61v7x"]
+[ext_resource type="Texture2D" uid="uid://dabjcw8mkfdmy" path="res://assets/market_tiles/pallet.png" id="4_sfbqv"]
+[ext_resource type="PackedScene" uid="uid://by2awiggnmed3" path="res://base/register.tscn" id="5_ouoq1"]
+[ext_resource type="PackedScene" uid="uid://cbggpxj780byp" path="res://base/object_area.tscn" id="6_e13os"]
+[ext_resource type="PackedScene" uid="uid://cwsyt8rgai472" path="res://base/player_cart.tscn" id="7_dt7xf"]
+[ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="8_l46dt"]
+[ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="9_7d66l"]
+[ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="10_ywhs3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
-texture = ExtResource("2_fismi")
+texture = ExtResource("2_fvkgn")
 texture_region_size = Vector2i(200, 200)
 0:0/0 = 0
 
@@ -21,10 +21,10 @@ tile_size = Vector2i(200, 200)
 sources/0 = SubResource("TileSetAtlasSource_5vw27")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_38dwl"]
-scenes/1/scene = ExtResource("3_dr1yx")
+scenes/1/scene = ExtResource("3_61v7x")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kek77"]
-texture = ExtResource("3_qnwrt")
+texture = ExtResource("4_sfbqv")
 texture_region_size = Vector2i(200, 250)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
@@ -36,7 +36,7 @@ sources/1 = SubResource("TileSetAtlasSource_kek77")
 sources/0 = SubResource("TileSetScenesCollectionSource_38dwl")
 
 [node name="Level" type="Node2D" unique_id=1660382167]
-script = ExtResource("1_fb68j")
+script = ExtResource("1_frt45")
 level_number = 2
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1112350459]
@@ -57,39 +57,39 @@ tile_set = SubResource("TileSet_4c57u")
 
 [node name="Registers" type="Node2D" parent="." unique_id=331105653]
 
-[node name="Register" parent="Registers" unique_id=182468435 node_paths=PackedStringArray("player") instance=ExtResource("4_3defq")]
+[node name="Register" parent="Registers" unique_id=182468435 node_paths=PackedStringArray("player") instance=ExtResource("5_ouoq1")]
 position = Vector2(15, -1)
 player = NodePath("../../PlayerCart")
 
 [node name="Objects" type="Node2D" parent="." unique_id=443542550]
 
-[node name="Object2" parent="Objects" unique_id=1991428853 instance=ExtResource("6_0hmg6")]
+[node name="Object2" parent="Objects" unique_id=1991428853 instance=ExtResource("6_e13os")]
 position = Vector2(-125, -26)
 rotation = -1.5707964
 
-[node name="Object3" parent="Objects" unique_id=283702115 instance=ExtResource("6_0hmg6")]
+[node name="Object3" parent="Objects" unique_id=283702115 instance=ExtResource("6_e13os")]
 position = Vector2(-55, -136)
 rotation = -1.5707964
 
-[node name="Object4" parent="Objects" unique_id=3386224 instance=ExtResource("6_0hmg6")]
+[node name="Object4" parent="Objects" unique_id=3386224 instance=ExtResource("6_e13os")]
 position = Vector2(5, -76)
 
-[node name="Object5" parent="Objects" unique_id=2022091550 instance=ExtResource("6_0hmg6")]
+[node name="Object5" parent="Objects" unique_id=2022091550 instance=ExtResource("6_e13os")]
 position = Vector2(-55, -66)
 rotation = 1.5707964
 
-[node name="Object6" parent="Objects" unique_id=349381934 instance=ExtResource("6_0hmg6")]
+[node name="Object6" parent="Objects" unique_id=349381934 instance=ExtResource("6_e13os")]
 position = Vector2(-225, -36)
 rotation = 3.1415927
 
-[node name="Object7" parent="Objects" unique_id=1627276089 instance=ExtResource("6_0hmg6")]
+[node name="Object7" parent="Objects" unique_id=1627276089 instance=ExtResource("6_e13os")]
 position = Vector2(-215, -106)
 
-[node name="Object8" parent="Objects" unique_id=1264784752 instance=ExtResource("6_0hmg6")]
+[node name="Object8" parent="Objects" unique_id=1264784752 instance=ExtResource("6_e13os")]
 position = Vector2(-135, -106)
 rotation = -1.5707964
 
-[node name="PlayerCart" parent="." unique_id=1441973488 instance=ExtResource("7_fv2i5")]
+[node name="PlayerCart" parent="." unique_id=1441973488 instance=ExtResource("7_dt7xf")]
 position = Vector2(-36, -25)
 rotation = -3.1415927
 mass = 50.0
@@ -98,7 +98,7 @@ right = 25.0
 top = -165.0
 bottom = 15.0
 
-[node name="Countdown" parent="." unique_id=965277943 instance=ExtResource("8_74qj5")]
+[node name="Countdown" parent="." unique_id=965277943 instance=ExtResource("8_l46dt")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -110,15 +110,14 @@ grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.1, 0.1)
 
-[node name="LevelEnd" parent="." unique_id=89634919 instance=ExtResource("9_eahgo")]
+[node name="LevelEnd" parent="." unique_id=89634919 instance=ExtResource("9_7d66l")]
 visible = false
 
-[node name="SceneChanger" parent="." unique_id=1148579324 instance=ExtResource("10_jb08i")]
+[node name="SceneChanger" parent="." unique_id=1148579324 instance=ExtResource("10_ywhs3")]
 process_mode = 3
 fade_time = 1.0
 root = "/root/Level"
 
-[connection signal="finished" from="Registers/Register" to="." method="_on_register_finished"]
 [connection signal="go" from="Countdown" to="." method="_on_countdown_go"]
 [connection signal="menu" from="LevelEnd" to="." method="_on_menu"]
 [connection signal="next" from="LevelEnd" to="." method="_on_level_end_next"]
