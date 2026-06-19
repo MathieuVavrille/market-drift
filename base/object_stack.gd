@@ -1,6 +1,6 @@
 extends Node2D
 
-const OBJECT_NAMES = ["banana", "cherry", "orange", "strawberry"]
+const OBJECT_NAMES = ["banana", "cherry", "orange", "strawberry", "cheese", "egg", "milk", "leek", "lemon", "toilet_paper"]
 var texture = null:
 	set(value):
 		texture = value

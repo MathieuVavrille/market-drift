@@ -146,17 +146,19 @@ it is slower"
 horizontal_alignment = 2
 
 [node name="Label4" type="Label" parent="." unique_id=1416152744]
-offset_left = 131.0
-offset_top = -192.0
+offset_left = 131.00002
+offset_top = -203.00002
 offset_right = 1123.0
-offset_bottom = 229.0
+offset_bottom = 324.0
 scale = Vector2(0.1, 0.1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 75
-text = "Objects make
+text = "Objects 
+make
 the cart
-heavy"
+heavy
+"
 
 [connection signal="next" from="LevelEnd" to="." method="_on_level_end_next"]
 [connection signal="restart" from="LevelEnd" to="." method="_on_restart"]
