@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://b7n4lwunagqkw"]
+
+[ext_resource type="Texture2D" uid="uid://bx2bkvhf8evdm" path="res://assets/ui/logo_back.png" id="1_cpk4b"]
+[ext_resource type="Texture2D" uid="uid://b5k33gs5vtsr4" path="res://assets/market_tiles/food/milk.png" id="2_3g24b"]
+[ext_resource type="Texture2D" uid="uid://cetg1mrx32spm" path="res://assets/market_tiles/food/banana.png" id="2_4sdkk"]
+[ext_resource type="Texture2D" uid="uid://n0jik10inra1" path="res://assets/ui/logo_front.png" id="2_wgkrr"]
+[ext_resource type="Texture2D" uid="uid://g35u41taeai1" path="res://assets/market_tiles/food/cheese.png" id="3_rlc36"]
+[ext_resource type="Texture2D" uid="uid://cpts8ofxrjq3r" path="res://assets/market_tiles/food/cherry.png" id="4_k4raa"]
+[ext_resource type="Texture2D" uid="uid://cco32tjt8vxy6" path="res://assets/market_tiles/food/egg.png" id="6_imxkv"]
+[ext_resource type="Texture2D" uid="uid://cap6nffxa7a1v" path="res://assets/market_tiles/food/leek.png" id="7_1ofqh"]
+[ext_resource type="Texture2D" uid="uid://bontqsbyht4s" path="res://assets/market_tiles/food/lemon.png" id="8_vp2st"]
+[ext_resource type="Texture2D" uid="uid://dv6rneeh6wkou" path="res://assets/market_tiles/food/orange.png" id="9_q1p77"]
+[ext_resource type="Texture2D" uid="uid://cqeld87uy0qdi" path="res://assets/market_tiles/food/strawberry.png" id="10_wpr5l"]
+[ext_resource type="Texture2D" uid="uid://djrffg0f2oawj" path="res://assets/market_tiles/food/toilet_paper.png" id="11_ywhrc"]
+
+[node name="Logo" type="Node2D" unique_id=480793160]
+
+[node name="Back" type="Sprite2D" parent="." unique_id=974180563]
+texture = ExtResource("1_cpk4b")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=954700815]
+
+[node name="Milk" type="Sprite2D" parent="Node2D" unique_id=141607290]
+position = Vector2(368, 170)
+texture = ExtResource("2_3g24b")
+
+[node name="Banana" type="Sprite2D" parent="Node2D" unique_id=1478108090]
+position = Vector2(365, 239.99998)
+scale = Vector2(0.8575, 0.885)
+texture = ExtResource("2_4sdkk")
+
+[node name="Cheese" type="Sprite2D" parent="Node2D" unique_id=1976220526]
+position = Vector2(635, 251)
+scale = Vector2(0.7925, 0.75)
+texture = ExtResource("3_rlc36")
+
+[node name="Cherry" type="Sprite2D" parent="Node2D" unique_id=739213158]
+position = Vector2(525, 326)
+scale = Vector2(0.69, 0.68)
+texture = ExtResource("4_k4raa")
+
+[node name="Egg" type="Sprite2D" parent="Node2D" unique_id=799710899]
+position = Vector2(681, 93.00003)
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("6_imxkv")
+
+[node name="Leek" type="Sprite2D" parent="Node2D" unique_id=714414504]
+position = Vector2(524, 373.99997)
+scale = Vector2(0.7525, 0.6875)
+texture = ExtResource("7_1ofqh")
+
+[node name="Lemon" type="Sprite2D" parent="Node2D" unique_id=683089739]
+position = Vector2(357, 378)
+scale = Vector2(0.52500004, 0.5925)
+texture = ExtResource("8_vp2st")
+
+[node name="Orange" type="Sprite2D" parent="Node2D" unique_id=1405576163]
+position = Vector2(179, 363.00003)
+scale = Vector2(0.6775, 0.655)
+texture = ExtResource("9_q1p77")
+
+[node name="Strawberry" type="Sprite2D" parent="Node2D" unique_id=1987755114]
+position = Vector2(259, 216)
+scale = Vector2(0.62, 0.655)
+texture = ExtResource("10_wpr5l")
+
+[node name="Toilet" type="Sprite2D" parent="Node2D" unique_id=1682697603]
+position = Vector2(487, 94)
+scale = Vector2(0.6775, 0.69)
+texture = ExtResource("11_ywhrc")
+
+[node name="Front" type="Sprite2D" parent="." unique_id=1820777]
+texture = ExtResource("2_wgkrr")

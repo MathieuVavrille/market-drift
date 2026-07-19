@@ -88,19 +88,19 @@ The game will feature multiple levels, and performing a certain time awards meda
 - [] More objects
     - [x] Orange
     - [x] Strawberry
-    - [] Leek
+    - [x] Leek
     - [] Salad
-    - [] Lemon
+    - [x] Lemon
     - [] Tomato
     - [] Apple
     - [] Grape
     - [] Chicken wing
     - [] Pineapple
-    - [] Cheese
+    - [x] Cheese
     - [x] Cherry
-    - [] Toilet Paper
-    - [] Milk
-    - [] Eggs ?
+    - [x] Toilet Paper
+    - [x] Milk
+    - [x] Eggs ?
 
 ### TO FIX
 

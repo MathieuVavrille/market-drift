@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfdnaq48txqrv"]
+[gd_scene format=3 uid="uid://cfdnaq48txqrv"]
 
 [ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="2_8uxxo"]
+[ext_resource type="PackedScene" uid="uid://b7n4lwunagqkw" path="res://ui/logo.tscn" id="3_5ssi0"]
 [ext_resource type="PackedScene" uid="uid://cshjw5w1n760w" path="res://ui/menus/shaded_button.tscn" id="3_ei257"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukl6e"]
@@ -12,10 +13,10 @@ size = Vector2(348.5, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovx2h"]
 size = Vector2(438, 26.5)
 
-[node name="MainMenu" type="CanvasLayer"]
+[node name="MainMenu" type="CanvasLayer" unique_id=296982404]
 process_mode = 3
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1291962627]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,7 +26,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=866763464]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -41,7 +42,7 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_8uxxo")
 
-[node name="Title" type="Label" parent="Control"]
+[node name="Title" type="Label" parent="Control" unique_id=1498527726]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -62,10 +63,10 @@ theme_override_font_sizes/font_size = 180
 text = "Market Drift"
 horizontal_alignment = 1
 
-[node name="Levels" type="Node2D" parent="Control"]
+[node name="Levels" type="Node2D" parent="Control" unique_id=2078586409]
 position = Vector2(-96, 91)
 
-[node name="Button" parent="Control/Levels" instance=ExtResource("3_ei257")]
+[node name="Button" parent="Control/Levels" unique_id=1136649809 instance=ExtResource("3_ei257")]
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -80,7 +81,7 @@ grow_vertical = 1
 scale = Vector2(0.18, 0.07)
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control/Levels"]
+[node name="Label" type="Label" parent="Control/Levels" unique_id=756889609]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -100,10 +101,10 @@ theme_override_font_sizes/font_size = 100
 text = "Levels"
 horizontal_alignment = 1
 
-[node name="Settings" type="Node2D" parent="Control"]
+[node name="Settings" type="Node2D" parent="Control" unique_id=837793006]
 position = Vector2(106, 91)
 
-[node name="Button" parent="Control/Settings" instance=ExtResource("3_ei257")]
+[node name="Button" parent="Control/Settings" unique_id=2142337543 instance=ExtResource("3_ei257")]
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -118,7 +119,7 @@ grow_vertical = 1
 scale = Vector2(0.18, 0.07)
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control/Settings"]
+[node name="Label" type="Label" parent="Control/Settings" unique_id=342683502]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -138,10 +139,10 @@ theme_override_font_sizes/font_size = 100
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="Quit" type="Node2D" parent="Control"]
+[node name="Quit" type="Node2D" parent="Control" unique_id=472287857]
 position = Vector2(0, 169)
 
-[node name="Button" parent="Control/Quit" instance=ExtResource("3_ei257")]
+[node name="Button" parent="Control/Quit" unique_id=1369107733 instance=ExtResource("3_ei257")]
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -156,7 +157,7 @@ grow_vertical = 1
 scale = Vector2(0.18, 0.07)
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control/Quit"]
+[node name="Label" type="Label" parent="Control/Quit" unique_id=1191565570]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -176,29 +177,33 @@ theme_override_font_sizes/font_size = 100
 text = "Quit"
 horizontal_alignment = 1
 
-[node name="DEBUG" type="Node2D" parent="."]
+[node name="DEBUG" type="Node2D" parent="." unique_id=121383303]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DEBUG" unique_id=1770773436]
 position = Vector2(576, 347)
 shape = SubResource("RectangleShape2D_ukl6e")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DEBUG" unique_id=1637580138]
 position = Vector2(779, 319)
 shape = SubResource("RectangleShape2D_ukl6e")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DEBUG" unique_id=2132228144]
 position = Vector2(375, 348)
 shape = SubResource("RectangleShape2D_ukl6e")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DEBUG" unique_id=2048644993]
 position = Vector2(581, 453)
 shape = SubResource("RectangleShape2D_vymvp")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="DEBUG" unique_id=899739484]
 position = Vector2(594, 366.75)
 shape = SubResource("RectangleShape2D_ovx2h")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="DEBUG" unique_id=1951452514]
 position = Vector2(593, 180)
 shape = SubResource("RectangleShape2D_ovx2h")
+
+[node name="Logo" parent="." unique_id=480793160 instance=ExtResource("3_5ssi0")]
+position = Vector2(576, 279.00003)
+scale = Vector2(0.11, 0.11)
