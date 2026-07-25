@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dd0mj8ehtdjbv"]
+[gd_scene format=3 uid="uid://dd0mj8ehtdjbv"]
 
 [ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="1_j7w7g"]
 [ext_resource type="Script" uid="uid://bhlkrithhi3eu" path="res://ui/menus/level_select_menu.gd" id="1_s7x0m"]
@@ -15,11 +15,11 @@ size = Vector2(348.5, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovx2h"]
 size = Vector2(438, 26.5)
 
-[node name="LevelSelectionMenu" type="CanvasLayer"]
+[node name="LevelSelectionMenu" type="CanvasLayer" unique_id=1350186162]
 process_mode = 3
 script = ExtResource("1_s7x0m")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1315747980]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,17 +29,17 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Mode" type="Node2D" parent="Control"]
+[node name="Mode" type="Node2D" parent="Control" unique_id=2111159822]
 position = Vector2(-352, -95)
 
-[node name="DifficultyButton" parent="Control/Mode" instance=ExtResource("2_fhobr")]
+[node name="DifficultyButton" parent="Control/Mode" unique_id=1608471864 instance=ExtResource("2_fhobr")]
 offset_left = -82.0
 offset_top = -107.00001
 offset_right = 868.0
 offset_bottom = 862.0
 scale = Vector2(0.2, 0.2)
 
-[node name="HardPosition" parent="Control/Mode" instance=ExtResource("2_fhobr")]
+[node name="HardPosition" parent="Control/Mode" unique_id=209447006 instance=ExtResource("2_fhobr")]
 visible = false
 anchors_preset = 0
 anchor_left = 0.0
@@ -55,7 +55,7 @@ grow_vertical = 1
 scale = Vector2(0.17, 0.08)
 metadata/_edit_use_anchors_ = true
 
-[node name="NormalPosition" parent="Control/Mode" instance=ExtResource("2_fhobr")]
+[node name="NormalPosition" parent="Control/Mode" unique_id=1882247031 instance=ExtResource("2_fhobr")]
 visible = false
 anchors_preset = 0
 anchor_left = 0.0
@@ -71,7 +71,7 @@ grow_vertical = 1
 scale = Vector2(0.17, 0.08)
 metadata/_edit_use_anchors_ = true
 
-[node name="DifficultyBackground" parent="Control/Mode" instance=ExtResource("2_fhobr")]
+[node name="DifficultyBackground" parent="Control/Mode" unique_id=644870472 instance=ExtResource("2_fhobr")]
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -87,7 +87,7 @@ scale = Vector2(0.17, 0.08)
 is_disabled = true
 metadata/_edit_use_anchors_ = true
 
-[node name="HardLabel" type="Label" parent="Control/Mode"]
+[node name="HardLabel" type="Label" parent="Control/Mode" unique_id=969510971]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -108,7 +108,7 @@ text = "Hard"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="NormalLabel" type="Label" parent="Control/Mode"]
+[node name="NormalLabel" type="Label" parent="Control/Mode" unique_id=556056940]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -129,7 +129,7 @@ text = "Normal"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=818037766]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -145,7 +145,7 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.55)
 texture = ExtResource("1_j7w7g")
 
-[node name="Title" type="Label" parent="Control"]
+[node name="Title" type="Label" parent="Control" unique_id=1312823609]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -166,18 +166,18 @@ theme_override_font_sizes/font_size = 124
 text = "Level Selection"
 horizontal_alignment = 1
 
-[node name="Levels" type="Node2D" parent="Control"]
+[node name="Levels" type="Node2D" parent="Control" unique_id=1047912793]
 position = Vector2(0, -90)
 
-[node name="MedalTimes" parent="Control" instance=ExtResource("3_eww27")]
+[node name="MedalTimes" parent="Control" unique_id=667695830 instance=ExtResource("3_eww27")]
 visible = false
 position = Vector2(0, 67)
 scale = Vector2(0.9, 0.9)
 
-[node name="Back" type="Node2D" parent="Control"]
+[node name="Back" type="Node2D" parent="Control" unique_id=1523264968]
 position = Vector2(0, 190)
 
-[node name="Button" parent="Control/Back" instance=ExtResource("2_fhobr")]
+[node name="Button" parent="Control/Back" unique_id=1120462040 instance=ExtResource("2_fhobr")]
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -192,7 +192,7 @@ grow_vertical = 1
 scale = Vector2(0.18, 0.07)
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control/Back"]
+[node name="Label" type="Label" parent="Control/Back" unique_id=1057263701]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -212,39 +212,39 @@ theme_override_font_sizes/font_size = 100
 text = "Back"
 horizontal_alignment = 1
 
-[node name="DEBUG" type="Node2D" parent="."]
+[node name="DEBUG" type="Node2D" parent="." unique_id=20066585]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DEBUG" unique_id=1439335823]
 position = Vector2(576, 347)
 shape = SubResource("RectangleShape2D_ukl6e")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DEBUG" unique_id=2076707399]
 position = Vector2(779, 319)
 shape = SubResource("RectangleShape2D_ukl6e")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DEBUG" unique_id=1807241362]
 position = Vector2(375, 348)
 shape = SubResource("RectangleShape2D_ukl6e")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DEBUG" unique_id=2142767124]
 position = Vector2(581, 453)
 shape = SubResource("RectangleShape2D_vymvp")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="DEBUG" unique_id=1434649110]
 position = Vector2(594, 366.75)
 shape = SubResource("RectangleShape2D_ovx2h")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="DEBUG"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="DEBUG" unique_id=1033079954]
 position = Vector2(593, 180)
 shape = SubResource("RectangleShape2D_ovx2h")
 
-[node name="Focus" type="Sprite2D" parent="."]
+[node name="Focus" type="Sprite2D" parent="." unique_id=1819969821]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(664, 367)
 texture = ExtResource("5_fhobr")
 
-[node name="Label" type="Label" parent="Focus"]
+[node name="Label" type="Label" parent="Focus" unique_id=907079342]
 offset_left = -408.0
 offset_top = -40.0
 offset_right = 95.0

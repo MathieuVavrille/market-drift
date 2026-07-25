@@ -93,14 +93,17 @@ The game will feature multiple levels, and performing a certain time awards meda
     - [x] Lemon
     - [] Tomato
     - [] Apple
-    - [] Grape
+    - [x] Grape
     - [] Chicken wing
     - [] Pineapple
     - [x] Cheese
     - [x] Cherry
     - [x] Toilet Paper
     - [x] Milk
-    - [x] Eggs ?
+    - [x] Eggs
+    - [x] Eggplant
+    - [x] Melon
+    - [x] Watermelon
 
 ### TO FIX
 

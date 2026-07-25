@@ -22,3 +22,18 @@ static func load(level_number: int) -> LevelTimes:
 	var save_data = SaveData.load()
 	level_times.pb_time = [save_data.best_normal_times[level_number], save_data.best_hard_times[level_number]]
 	return level_times
+
+func nb_medals():
+	var nb = 0
+	for i in range(2):
+		if pb_time[i] == 0:
+			continue
+		if bronze_time[i] <= pb_time[i]:
+			nb += 1
+		if silver_time[i] <= pb_time[i]:
+			nb += 1
+		if gold_time[i] <= pb_time[i]:
+			nb += 1
+		if author_time[i] <= pb_time[i]:
+			nb += 1
+	return nb

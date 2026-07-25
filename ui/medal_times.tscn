@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmdax8cqeil2n"]
+[gd_scene format=3 uid="uid://dmdax8cqeil2n"]
 
 [ext_resource type="PackedScene" uid="uid://b4ob6ydx3acs" path="res://ui/multi_medal.tscn" id="1_k0hft"]
 [ext_resource type="Script" uid="uid://bffmm83w1k2u3" path="res://ui/medal_times.gd" id="1_qr6fh"]
@@ -6,16 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://crb8y4vme7et8" path="res://ui/medal.tscn" id="3_sv858"]
 [ext_resource type="Texture2D" uid="uid://bi4fi1kus8y8g" path="res://assets/ui/finish_flag.png" id="5_sv858"]
 
-[node name="MedalTimes" type="Node2D"]
+[node name="MedalTimes" type="Node2D" unique_id=1955987595]
 script = ExtResource("1_qr6fh")
 
-[node name="MultiMedalFinalPosition" type="Marker2D" parent="."]
+[node name="MultiMedalFinalPosition" type="Marker2D" parent="." unique_id=743204122]
 position = Vector2(-119, 0)
 
-[node name="MultiMedal" parent="." instance=ExtResource("1_k0hft")]
+[node name="MultiMedal" parent="." unique_id=1553542927 instance=ExtResource("1_k0hft")]
 scale = Vector2(1.6, 1.6)
 
-[node name="MultiTimes" type="Control" parent="."]
+[node name="MultiTimes" type="Control" parent="." unique_id=927859392]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,7 +29,7 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Times" type="Label" parent="MultiTimes"]
+[node name="Times" type="Label" parent="MultiTimes" unique_id=916193057]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -53,34 +53,34 @@ x
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Logos" type="Node2D" parent="MultiTimes"]
+[node name="Logos" type="Node2D" parent="MultiTimes" unique_id=675041604]
 position = Vector2(0, -5)
 
-[node name="FinishL" type="Sprite2D" parent="MultiTimes/Logos"]
+[node name="FinishL" type="Sprite2D" parent="MultiTimes/Logos" unique_id=1488915894]
 position = Vector2(-92, -48)
 rotation = -3.14159
 scale = Vector2(0.08, -0.08)
 texture = ExtResource("5_sv858")
 
-[node name="FinishR" type="Sprite2D" parent="MultiTimes/Logos"]
+[node name="FinishR" type="Sprite2D" parent="MultiTimes/Logos" unique_id=1192700935]
 position = Vector2(92, -48)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("5_sv858")
 
-[node name="PbRibbonL" type="Sprite2D" parent="MultiTimes/Logos"]
+[node name="PbRibbonL" type="Sprite2D" parent="MultiTimes/Logos" unique_id=1708269937]
 position = Vector2(-92.0001, 2.38419e-07)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_qr6fh")
 
-[node name="PbRibbonR" type="Sprite2D" parent="MultiTimes/Logos"]
+[node name="PbRibbonR" type="Sprite2D" parent="MultiTimes/Logos" unique_id=1515084776]
 position = Vector2(92, 2.38419e-07)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_qr6fh")
 
-[node name="MedalL" parent="MultiTimes/Logos" instance=ExtResource("3_sv858")]
+[node name="MedalL" parent="MultiTimes/Logos" unique_id=1046070105 instance=ExtResource("3_sv858")]
 position = Vector2(-92, 48)
 scale = Vector2(0.07, 0.07)
 
-[node name="MedalR" parent="MultiTimes/Logos" instance=ExtResource("3_sv858")]
+[node name="MedalR" parent="MultiTimes/Logos" unique_id=1169734603 instance=ExtResource("3_sv858")]
 position = Vector2(92, 48)
 scale = Vector2(0.07, 0.07)

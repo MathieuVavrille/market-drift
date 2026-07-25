@@ -33,12 +33,15 @@ func load_save():
 	set_all_level_times()
 
 func set_all_level_times():
+	var nb_medals = 0
 	for i in range(10):
 		all_level_times.append(LevelTimes.load(i))
 		all_level_times[i].pb_time[0] = save_data.best_normal_times[i]
 		all_level_times[i].pb_time[1] = save_data.best_hard_times[i]
+		nb_medals += all_level_times[i].nb_medals()
 	$LevelSelectionMenu.all_level_times = all_level_times
 	$LevelSelectionMenu.set_all_buttons()
+	$MainMenu/Logo.set_nb_medals(nb_medals)
 
 const ANIMATION_TIME = 0.5
 func change_menu(old_menu, new_menu, width_factor, original_pos):
