@@ -1,6 +1,6 @@
 extends Node2D
 
-const OBJECT_NAMES = ["banana", "cherry", "orange", "strawberry", "cheese", "egg", "milk", "leek", "lemon", "toilet_paper"]
+const OBJECT_NAMES = ["banana", "cheese", "cherry", "egg", "eggplant", "grape", "leek", "lemon", "melon", "milk", "orange", "strawberry", "toilet_paper", "watermelon"]
 var texture = null:
 	set(value):
 		texture = value
@@ -12,7 +12,6 @@ func _ready():
 
 func set_random_texture(can_be_null = false):
 	var random_value = randi() % (len(OBJECT_NAMES) + (1 if can_be_null else 0))
-	print(random_value)
 	if random_value == len(OBJECT_NAMES):
 		texture = null
 	else:

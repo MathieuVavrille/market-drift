@@ -15,7 +15,7 @@ func _process(_delta):
 		return
 	visible = not target_visibility.is_on_screen()
 	var viewport_size = get_viewport().size
-	var angle = (target.global_position - camera.global_position).angle()
+	var angle = (target.global_position - camera.get_screen_center_position()).angle()#.global_position).angle()
 	global_rotation = angle
 	var ellipsis_vector = Vector2(cos(angle) * (viewport_size.x / 2.1 - 10),
 					  sin(angle) * (viewport_size.y / 2.1 - 20)) / camera.zoom  #TODO compute properly

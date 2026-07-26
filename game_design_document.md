@@ -72,8 +72,12 @@ The game will feature multiple levels, and performing a certain time awards meda
 - [] Mustn't go backward
 - [x] Unlock levels
 
+
 - [] Goal arrow actual sprite
 - [] Cart wheels
+- [] Crown
+- [x] Completion %
+- [] symbol for cash register in arrow
 
 - [x] Main menu
 - [x] Pause menu
@@ -85,7 +89,7 @@ The game will feature multiple levels, and performing a certain time awards meda
 
 - [x] Tutorial levels
 - [] Create 10 levels (2/10)
-- [] More objects
+- [x] More objects
     - [x] Orange
     - [x] Strawberry
     - [x] Leek

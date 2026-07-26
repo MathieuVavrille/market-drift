@@ -23,8 +23,8 @@ extends RigidBody2D
 		$Camera.limit_bottom = value
 
 @export_group("")
-@export var move_force := 1000.0
-@export var max_speed := 200.0
+@export var move_force := 1500.0
+@export var max_speed := 300.0
 
 var nb_objects = 0
 
@@ -46,20 +46,27 @@ func true_movement(cart_direction, input_vector):
 	if abs(angle) < PI/2:
 		apply_force(input_vector * move_force, force_position)
 	else:
-		apply_force(input_vector * move_force / 1, force_position)
+		apply_force(input_vector * move_force / 2, force_position)
 
 func turn_movement(cart_direction, input_vector):
 	"""The person turns the cart with their shoulders"""
 	var proj = (input_vector.dot(cart_direction) / cart_direction.length_squared()) * cart_direction
 	var cross = input_vector.cross(cart_direction)
-	apply_torque(-cross * 2500)
 	var force_position = $PlayerMesh.global_position - global_position
-	apply_force(proj * move_force, force_position)
+	var angle = cart_direction.angle_to(input_vector)
+	if abs(angle) < PI/2:
+		apply_force(proj * move_force, force_position)
+	else:
+		apply_force(proj * move_force / 2, force_position)
+	if abs(angle) < 3 * PI / 4:
+		apply_torque(-cross * 3000)
+	else:
+		apply_torque(cross * 1500)
 
-@export var object_weight = 200
+@export var object_weight = 500
 @export var inertia_factor = 5
 func _physics_process(_delta):
-	inertia = (160 + object_weight * nb_objects) * inertia_factor
+	inertia = (160 + object_weight * nb_objects / 10) * inertia_factor
 	center_of_mass = (80 * $PlayerCenter.position + (80 + object_weight * nb_objects) * $CartCenter.position) / (160 + object_weight * nb_objects)
 	var cart_direction = ($CartMesh.global_position - $PlayerMesh.global_position).normalized()
 	var input_vector = Vector2(

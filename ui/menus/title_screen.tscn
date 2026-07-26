@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhr1gp4k8fgpp"]
+[gd_scene format=3 uid="uid://dhr1gp4k8fgpp"]
 
 [ext_resource type="Script" uid="uid://ddmeqjwsk64if" path="res://ui/menus/title_screen.gd" id="1_bor1v"]
 [ext_resource type="PackedScene" uid="uid://cfdnaq48txqrv" path="res://ui/menus/main_menu.tscn" id="2_qer0c"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://berbnxowlj80" path="res://ui/menus/settings_menu.tscn" id="4_gn1cq"]
 [ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="5_gn1cq"]
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" unique_id=119041852]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,14 +15,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bor1v")
 
-[node name="MainMenu" parent="." instance=ExtResource("2_qer0c")]
+[node name="MainMenu" parent="." unique_id=584852622 instance=ExtResource("2_qer0c")]
 
-[node name="LevelSelectionMenu" parent="." instance=ExtResource("3_j327e")]
+[node name="LevelSelectionMenu" parent="." unique_id=208273714 instance=ExtResource("3_j327e")]
 visible = false
 
-[node name="SettingsMenu" parent="." instance=ExtResource("4_gn1cq")]
+[node name="SettingsMenu" parent="." unique_id=872535274 instance=ExtResource("4_gn1cq")]
 visible = false
 
-[node name="SceneChanger" parent="." instance=ExtResource("5_gn1cq")]
+[node name="SceneChanger" parent="." unique_id=1094373110 instance=ExtResource("5_gn1cq")]
 
 [connection signal="resetted" from="SettingsMenu" to="." method="resetted"]

@@ -89,10 +89,6 @@ player = NodePath("../../PlayerCart")
 
 [node name="Objects" type="Node2D" parent="." unique_id=443542550]
 
-[node name="Object2" parent="Objects" unique_id=1991428853 instance=ExtResource("6_e13os")]
-position = Vector2(-125, -26)
-rotation = -1.5707964
-
 [node name="Object4" parent="Objects" unique_id=3386224 instance=ExtResource("6_e13os")]
 position = Vector2(-75, -215)
 rotation = -1.5707964

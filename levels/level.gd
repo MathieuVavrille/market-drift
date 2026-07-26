@@ -45,6 +45,7 @@ func delete_edge(startx, endx, starty, width, is_horizontal):
 				$Market.erase_cell(Vector2i(x, y))
 				$MarketObjects.erase_cell(Vector2i(x, y))
 			else:
+				$Market.erase_cell(Vector2i(y, x))
 				$MarketObjects.erase_cell(Vector2i(y, x))
 
 func generate_maze():
@@ -148,5 +149,6 @@ func _on_level_end_next() -> void:
 
 
 func _on_menu() -> void:
+	print("menu")
 	$SceneChanger.next_scene = load("res://ui/menus/title_screen.tscn")
 	$SceneChanger.to_next_scene()

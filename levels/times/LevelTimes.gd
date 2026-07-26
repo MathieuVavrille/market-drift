@@ -28,12 +28,12 @@ func nb_medals():
 	for i in range(2):
 		if pb_time[i] == 0:
 			continue
-		if bronze_time[i] <= pb_time[i]:
+		if pb_time[i] <= bronze_time[i]:
 			nb += 1
-		if silver_time[i] <= pb_time[i]:
+		if pb_time[i] <= silver_time[i]:
 			nb += 1
-		if gold_time[i] <= pb_time[i]:
+		if pb_time[i] <= gold_time[i]:
 			nb += 1
-		if author_time[i] <= pb_time[i]:
+		if pb_time[i] <= author_time[i]:
 			nb += 1
 	return nb

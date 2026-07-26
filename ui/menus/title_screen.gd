@@ -9,10 +9,10 @@ var all_level_times = []
 func _ready():
 	var dir := DirAccess.open("res://assets/market_tiles/food")
 	#dir.list_dir_begin()
-	for file: String in dir.get_files():
-		if file.ends_with(".png"):
-			var resource := dir.get_current_dir() + "/" + file
-			print(resource)
+	#for file: String in dir.get_files():
+	#	if file.ends_with(".png"):
+	#		var resource := dir.get_current_dir() + "/" + file
+	#		print(resource)
 	get_tree().paused = false
 	$MainMenu/Control/Levels/Button.pressed.connect(_on_levels_button_pressed)
 	$MainMenu/Control/Settings/Button.pressed.connect(_on_settings_button_pressed)
@@ -41,7 +41,8 @@ func set_all_level_times():
 		nb_medals += all_level_times[i].nb_medals()
 	$LevelSelectionMenu.all_level_times = all_level_times
 	$LevelSelectionMenu.set_all_buttons()
-	$MainMenu/Logo.set_nb_medals(nb_medals)
+	$MainMenu/Control/Logo.set_nb_medals(nb_medals)
+	$SettingsMenu/Control/Progress/Percent.text = str(100 * nb_medals / 80) + "%"
 
 const ANIMATION_TIME = 0.5
 func change_menu(old_menu, new_menu, width_factor, original_pos):

@@ -177,6 +177,10 @@ theme_override_font_sizes/font_size = 100
 text = "Quit"
 horizontal_alignment = 1
 
+[node name="Logo" parent="Control" unique_id=480793160 instance=ExtResource("3_5ssi0")]
+position = Vector2(0, -44.99997)
+scale = Vector2(0.11, 0.11)
+
 [node name="DEBUG" type="Node2D" parent="." unique_id=121383303]
 visible = false
 
@@ -203,7 +207,3 @@ shape = SubResource("RectangleShape2D_ovx2h")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="DEBUG" unique_id=1951452514]
 position = Vector2(593, 180)
 shape = SubResource("RectangleShape2D_ovx2h")
-
-[node name="Logo" parent="." unique_id=480793160 instance=ExtResource("3_5ssi0")]
-position = Vector2(576, 279.00003)
-scale = Vector2(0.11, 0.11)
