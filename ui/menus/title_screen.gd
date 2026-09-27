@@ -46,6 +46,7 @@ func set_all_level_times():
 
 const ANIMATION_TIME = 0.5
 func change_menu(old_menu, new_menu, width_factor, original_pos):
+	$ScrollSound.play()
 	var old_control = old_menu.get_node("Control")
 	var old_rect = old_control.get_node("TextureRect")
 	var new_control = new_menu.get_node("Control")

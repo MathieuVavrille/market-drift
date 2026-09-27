@@ -182,8 +182,260 @@ text = "Reset progress
 press 3 times"
 horizontal_alignment = 1
 
+[node name="Music" type="Node2D" parent="Control" unique_id=299733041]
+position = Vector2(-130, -133)
+
+[node name="Button" parent="Control/Music" unique_id=1436592384 instance=ExtResource("2_dpsb8")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -60.0
+offset_top = -23.0
+offset_right = 940.0
+offset_bottom = 997.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.15, 0.046)
+is_disabled = true
+
+[node name="Label" type="Label" parent="Control/Music" unique_id=739214080]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -22.0
+offset_right = 287.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 80
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Percent" type="Label" parent="Control/Music" unique_id=976573808]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 162.99994
+offset_top = -20.0
+offset_right = 497.99994
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 80
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minus" parent="Control/Music" unique_id=1568870905 instance=ExtResource("2_dpsb8")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 119.0
+offset_top = -23.0
+offset_right = 1069.0
+offset_bottom = 946.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.046, 0.046)
+
+[node name="MinusLabel" type="Label" parent="Control/Music" unique_id=130207808]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 82.99994
+offset_top = -24.0
+offset_right = 417.99994
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 80
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" parent="Control/Music" unique_id=1707937419 instance=ExtResource("2_dpsb8")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 280.0
+offset_top = -23.0
+offset_right = 1230.0
+offset_bottom = 946.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.046, 0.046)
+
+[node name="PlusLabel" type="Label" parent="Control/Music" unique_id=336957717]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 243.99994
+offset_top = -22.0
+offset_right = 578.99994
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 80
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="Node2D" parent="Control" unique_id=292523080]
+position = Vector2(-130, -72)
+
+[node name="Button" parent="Control/SFX" unique_id=1057949764 instance=ExtResource("2_dpsb8")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -60.0
+offset_top = -23.0
+offset_right = 940.0
+offset_bottom = 997.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.15, 0.046)
+is_disabled = true
+
+[node name="Label" type="Label" parent="Control/SFX" unique_id=582317338]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -22.0
+offset_right = 287.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 80
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Percent" type="Label" parent="Control/SFX" unique_id=868006966]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 162.99994
+offset_top = -20.0
+offset_right = 497.99994
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 80
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minus" parent="Control/SFX" unique_id=1384668184 instance=ExtResource("2_dpsb8")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 119.0
+offset_top = -23.0
+offset_right = 1069.0
+offset_bottom = 946.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.046, 0.046)
+
+[node name="MinusLabel" type="Label" parent="Control/SFX" unique_id=1601669024]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 82.99994
+offset_top = -24.0
+offset_right = 417.99994
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 80
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" parent="Control/SFX" unique_id=1693690158 instance=ExtResource("2_dpsb8")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 280.0
+offset_top = -23.0
+offset_right = 1230.0
+offset_bottom = 946.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.046, 0.046)
+
+[node name="PlusLabel" type="Label" parent="Control/SFX" unique_id=967614223]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 243.99994
+offset_top = -22.0
+offset_right = 578.99994
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.847059, 0.596078, 0.333333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/font_size = 80
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Progress" type="Node2D" parent="Control" unique_id=112901275]
-position = Vector2(-130, -43)
+position = Vector2(-130, -8)
 
 [node name="Button" parent="Control/Progress" unique_id=904723588 instance=ExtResource("2_dpsb8")]
 anchors_preset = 0
@@ -225,9 +477,9 @@ anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 95.99994
+offset_left = 163.99994
 offset_top = -22.0
-offset_right = 430.99994
+offset_right = 498.99994
 offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -269,3 +521,7 @@ shape = SubResource("RectangleShape2D_ovx2h")
 
 [connection signal="pressed" from="Control/Back/Button" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Control/Reset/Button" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Control/Music/Minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="Control/Music/Plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="Control/SFX/Minus" to="." method="_on_sfx_minus_pressed"]
+[connection signal="pressed" from="Control/SFX/Plus" to="." method="_on_sfx_plus_pressed"]
