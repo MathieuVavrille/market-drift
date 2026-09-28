@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="8_es1hc"]
 [ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="9_al667"]
 [ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="10_rmjt4"]
-[ext_resource type="AudioStream" uid="uid://cc8y3p62thgcy" path="res://assets/music/supermarket_ambient.mp3" id="11_r7wb8"]
+[ext_resource type="PackedScene" uid="uid://c23gdflhugyrj" path="res://base/music_loop.tscn" id="12_ibd8a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("2_r7wb8")
@@ -130,9 +130,9 @@ Test your skill and luck
 GLHF"
 horizontal_alignment = 1
 
-[node name="NoisePlayer" type="AudioStreamPlayer" parent="." unique_id=2105288288]
-stream = ExtResource("11_r7wb8")
-parameters/looping = true
+[node name="MusicLoop" parent="." unique_id=985295936 instance=ExtResource("12_ibd8a")]
+process_mode = 3
+volume_db = -1.0
 
 [connection signal="finished" from="Registers/RegisterTop" to="." method="_on_register_finished"]
 [connection signal="finished" from="Registers/RegisterBot" to="." method="_on_register_finished"]

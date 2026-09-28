@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dxs2a3dqnl8fy" path="res://base/music_loop.gd" id="1_cw33c"]
 
 [node name="MusicLoop" type="AudioStreamPlayer" unique_id=985295936]
+bus = &"Music"
 script = ExtResource("1_cw33c")
 
 [connection signal="finished" from="." to="." method="_on_finished"]

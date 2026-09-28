@@ -27,6 +27,8 @@ func deactivate():
 func _on_mouse_entered():
 	if not disabled:
 		self.modulate = HOVER_MODULATE
+		$HoverSound.pitch_scale = 1 + randf_range(-0.2, 0.2)
+		$HoverSound.play()
 
 func _on_mouse_exited():
 	if not disabled:

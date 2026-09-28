@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://berbnxowlj80" path="res://ui/menus/settings_menu.tscn" id="4_gn1cq"]
 [ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="5_gn1cq"]
 [ext_resource type="AudioStream" uid="uid://bufich6vtlhx7" path="res://assets/sfx/scroll.mp3" id="6_b13tl"]
+[ext_resource type="AudioStream" uid="uid://bjw3cvxe8buag" path="res://assets/sfx/game_start.mp3" id="7_jyp2s"]
 
 [node name="TitleScreen" type="Control" unique_id=119041852]
 layout_mode = 3
@@ -28,5 +29,11 @@ visible = false
 
 [node name="ScrollSound" type="AudioStreamPlayer" parent="." unique_id=188245081]
 stream = ExtResource("6_b13tl")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="StartSound" type="AudioStreamPlayer" parent="." unique_id=964303630]
+stream = ExtResource("7_jyp2s")
+bus = &"SFX"
 
 [connection signal="resetted" from="SettingsMenu" to="." method="resetted"]

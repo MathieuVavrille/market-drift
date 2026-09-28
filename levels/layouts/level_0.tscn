@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="8_ydl4y"]
 [ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="9_dxwrf"]
 [ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="10_57nda"]
+[ext_resource type="PackedScene" uid="uid://c23gdflhugyrj" path="res://base/music_loop.tscn" id="12_77mke"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("2_dxwrf")
@@ -188,6 +189,10 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 text = "And then go to the cashier to pay"
 horizontal_alignment = 1
+
+[node name="MusicLoop" parent="." unique_id=985295936 instance=ExtResource("12_77mke")]
+process_mode = 3
+volume_db = -1.0
 
 [connection signal="go" from="Countdown" to="." method="_on_countdown_go"]
 [connection signal="menu" from="LevelEnd" to="." method="_on_menu"]

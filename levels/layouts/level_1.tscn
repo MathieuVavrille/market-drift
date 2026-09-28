@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="8_5g3y1"]
 [ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="9_1mf75"]
 [ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="10_um3bb"]
+[ext_resource type="PackedScene" uid="uid://c23gdflhugyrj" path="res://base/music_loop.tscn" id="12_iufdc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("2_w6vfs")
@@ -159,6 +160,10 @@ make
 the cart
 heavy
 "
+
+[node name="MusicLoop" parent="." unique_id=985295936 instance=ExtResource("12_iufdc")]
+process_mode = 3
+volume_db = -1.0
 
 [connection signal="next" from="LevelEnd" to="." method="_on_level_end_next"]
 [connection signal="restart" from="LevelEnd" to="." method="_on_restart"]

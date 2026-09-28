@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbc4lxxqtvui1"]
+[gd_scene format=3 uid="uid://bbc4lxxqtvui1"]
 
 [ext_resource type="Script" uid="uid://smuyf348he4i" path="res://ui/countdown.gd" id="1_qh2dl"]
 [ext_resource type="AudioStream" uid="uid://bah4m8y7yoacc" path="res://assets/sfx/countdown_tick.mp3" id="2_dhgls"]
 [ext_resource type="AudioStream" uid="uid://n46wgm4ea5dj" path="res://assets/sfx/countdown_go.mp3" id="3_2ikdk"]
 
-[node name="Countdown" type="Label"]
+[node name="Countdown" type="Label" unique_id=357692510]
 process_mode = 3
 visible = false
 anchors_preset = 15
@@ -27,8 +27,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_qh2dl")
 
-[node name="CountSound" type="AudioStreamPlayer" parent="."]
+[node name="CountSound" type="AudioStreamPlayer" parent="." unique_id=583270970]
 stream = ExtResource("2_dhgls")
+bus = &"SFX"
 
-[node name="GoSound" type="AudioStreamPlayer" parent="."]
+[node name="GoSound" type="AudioStreamPlayer" parent="." unique_id=818500512]
 stream = ExtResource("3_2ikdk")
+bus = &"SFX"

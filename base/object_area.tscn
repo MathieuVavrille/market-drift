@@ -1,26 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbggpxj780byp"]
+[gd_scene format=3 uid="uid://cbggpxj780byp"]
 
 [ext_resource type="Script" uid="uid://cyoy1ecojacg6" path="res://base/object_area.gd" id="1_1h7id"]
 [ext_resource type="Texture2D" uid="uid://gkg6uvnelk50" path="res://assets/object_area.png" id="2_1h7id"]
 [ext_resource type="PackedScene" uid="uid://bodl01b2cwaws" path="res://base/object_stack.tscn" id="2_mlca7"]
 [ext_resource type="Texture2D" uid="uid://cpts8ofxrjq3r" path="res://assets/market_tiles/food/cherry.png" id="3_bag5h"]
+[ext_resource type="AudioStream" uid="uid://bjw3cvxe8buag" path="res://assets/sfx/game_start.mp3" id="5_1by5g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_er367"]
 radius = 1.0
 
-[node name="ObjectArea" type="Area2D"]
+[node name="ObjectArea" type="Area2D" unique_id=1068518026]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_1h7id")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1562176228]
 shape = SubResource("CircleShape2D_er367")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1284083628]
 position = Vector2(-5.96046e-08, 5.96046e-08)
 scale = Vector2(0.1, 0.1)
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1079947807]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -37,16 +38,20 @@ scale = Vector2(0.25, 0.25)
 max_value = 1.0
 step = 0.001
 
-[node name="Vortex" type="Sprite2D" parent="."]
+[node name="Vortex" type="Sprite2D" parent="." unique_id=1433839288]
 position = Vector2(2.3841858e-07, 0)
 scale = Vector2(0.025, 0.025)
 texture = ExtResource("2_1h7id")
 
-[node name="ObjectStack" parent="." instance=ExtResource("2_mlca7")]
+[node name="ObjectStack" parent="." unique_id=470747866 instance=ExtResource("2_mlca7")]
 position = Vector2(10.000009, 0)
 scale = Vector2(0.05, 0.05)
 
-[node name="Object" type="Sprite2D" parent="."]
+[node name="Object" type="Sprite2D" parent="." unique_id=159413540]
 position = Vector2(10, 0)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("3_bag5h")
+
+[node name="AchievedSound" type="AudioStreamPlayer" parent="." unique_id=13890434]
+stream = ExtResource("5_1by5g")
+bus = &"SFX"

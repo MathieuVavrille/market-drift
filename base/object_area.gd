@@ -39,6 +39,8 @@ func _process(delta):
 const ACHIEVED_DURATION = 0.25
 func achieved():
 	is_achieved.emit()
+	$AchievedSound.pitch_scale = 1 + randf_range(-0.2, 0.2)
+	$AchievedSound.play()
 	var tween := get_tree().create_tween()
 	tween.tween_property($Vortex, "scale", Vector2(0, 0), ACHIEVED_DURATION).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	if not is_end:

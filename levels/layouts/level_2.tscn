@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bbc4lxxqtvui1" path="res://ui/countdown.tscn" id="8_l46dt"]
 [ext_resource type="PackedScene" uid="uid://bs2mg5xyq08mw" path="res://ui/menus/level_end.tscn" id="9_7d66l"]
 [ext_resource type="PackedScene" uid="uid://c8we56jh56iat" path="res://ui/scene_changer.tscn" id="10_ywhs3"]
+[ext_resource type="PackedScene" uid="uid://c23gdflhugyrj" path="res://base/music_loop.tscn" id="12_sugbd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("2_fvkgn")
@@ -117,6 +118,10 @@ visible = false
 process_mode = 3
 fade_time = 1.0
 root = "/root/Level"
+
+[node name="MusicLoop" parent="." unique_id=985295936 instance=ExtResource("12_sugbd")]
+process_mode = 3
+volume_db = -1.0
 
 [connection signal="go" from="Countdown" to="." method="_on_countdown_go"]
 [connection signal="menu" from="LevelEnd" to="." method="_on_menu"]

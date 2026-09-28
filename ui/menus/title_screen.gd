@@ -89,5 +89,6 @@ func _on_settings_back_button() -> void:
 
 func on_ith_level_pressed(i: int):
 	if $LevelSelectionMenu/Focus.modulate.a == 0.:
+		$StartSound.play()
 		$SceneChanger.next_scene = load("res://levels/layouts/level_" + str(i) + ".tscn")
 		$SceneChanger.to_next_scene()

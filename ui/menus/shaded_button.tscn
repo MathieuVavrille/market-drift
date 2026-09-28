@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cshjw5w1n760w"]
+[gd_scene format=3 uid="uid://cshjw5w1n760w"]
 
 [ext_resource type="Texture2D" uid="uid://ch4m151xhp43u" path="res://assets/ui/menu_background.png" id="1_0fbet"]
 [ext_resource type="Script" uid="uid://hal0dei8bhc3" path="res://ui/menus/shaded_button.gd" id="1_4uj76"]
+[ext_resource type="AudioStream" uid="uid://bu1mgs81c5xsv" path="res://assets/sfx/hover.mp3" id="3_d267l"]
 
-[node name="ShadedButton" type="TextureButton"]
+[node name="ShadedButton" type="TextureButton" unique_id=1573765789]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -13,6 +14,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("1_0fbet")
 script = ExtResource("1_4uj76")
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=990466311]
+stream = ExtResource("3_d267l")
+volume_db = -24.198
+bus = &"SFX"
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]

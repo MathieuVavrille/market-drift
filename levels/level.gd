@@ -20,9 +20,11 @@ func _ready():
 		instantiate_goal_arrow(object, object.get_texture())
 	for register in $Registers.get_children():
 		register.finished.connect(_on_register_finished)
-	get_tree().create_timer(0.01).timeout.connect(pause_at_the_start)
+	get_tree().paused = true
+	#get_tree().create_timer(0.01).timeout.connect(pause_at_the_start)
 	$SceneChanger.start_scene()
-	_on_countdown_go()
+	#_on_countdown_go()
+
 
 func random_list(n: int):
 	var result = {}
@@ -99,15 +101,15 @@ const BEFORE_COUNTDOWN_TIME = 0.5
 func _on_scene_changer_scene_started() -> void:
 	$Countdown.start()
 
+
 func _on_countdown_go() -> void:
 	get_tree().paused = false
 	$LevelEnd.is_started = true
-	
-	
+	$MusicLoop.play()
+
 func start():
 	start_time = Time.get_ticks_msec()
 	get_tree().paused = false
-	
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -149,6 +151,5 @@ func _on_level_end_next() -> void:
 
 
 func _on_menu() -> void:
-	print("menu")
 	$SceneChanger.next_scene = load("res://ui/menus/title_screen.tscn")
 	$SceneChanger.to_next_scene()
