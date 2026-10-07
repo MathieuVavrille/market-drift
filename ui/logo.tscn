@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://djrffg0f2oawj" path="res://assets/market_tiles/food/toilet_paper.png" id="11_ywhrc"]
 [ext_resource type="Texture2D" uid="uid://dehedfhx3v4x4" path="res://assets/market_tiles/food/melon.png" id="14_102kk"]
 [ext_resource type="Texture2D" uid="uid://ckgsjswjcmc1r" path="res://assets/market_tiles/food/watermelon.png" id="15_1wppe"]
+[ext_resource type="Texture2D" uid="uid://c71ug552ve0mp" path="res://assets/crown.png" id="18_ywhrc"]
 
 [node name="Logo" type="Node2D" unique_id=480793160]
 script = ExtResource("1_wpr5l")
@@ -99,6 +100,6 @@ texture = ExtResource("15_1wppe")
 texture = ExtResource("2_wgkrr")
 
 [node name="Crown" type="Sprite2D" parent="." unique_id=1683830133]
-position = Vector2(-177, -857)
-scale = Vector2(1.1574999, 0.52000004)
-texture = ExtResource("3_rlc36")
+position = Vector2(-204.99998, -854.99994)
+scale = Vector2(0.1414392, 0.17538466)
+texture = ExtResource("18_ywhrc")

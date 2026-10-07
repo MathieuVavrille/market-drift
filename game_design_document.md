@@ -75,20 +75,20 @@ The game will feature multiple levels, and performing a certain time awards meda
 
 - [] Goal arrow actual sprite
 - [] Cart wheels
-- [] Crown
+- [x] Crown
 - [x] Completion %
 - [] symbol for cash register in arrow
 
 - [x] Main menu
 - [x] Pause menu
 - [x] Level menu
-- [] Settings
-  - [] Sound
+- [x] Settings
+  - [x] Sound
   - [x] Reset
-  - [] Other ?
+  - [x] Other ?
 
 - [x] Tutorial levels
-- [] Create 10 levels (2/10)
+- [x] Create 10 levels (2/10)
 - [x] More objects
     - [x] Orange
     - [x] Strawberry
